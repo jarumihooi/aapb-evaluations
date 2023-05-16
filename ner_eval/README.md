@@ -1,0 +1,3 @@
+# ner-evaluation
+
+The full description of how to use the codes could be found at https://github.com/JinnyViboonlarp/ner-evaluation. The mmif files that are the outputs of [the spaCy wrapper app](https://github.com/clamsproject/app-spacy-wrapper) which processed the input mmif files containing the [gold standard transcripts](https://github.com/clamsproject/clams-aapb-annotations/tree/main/golds/ner/2022-jun-namedentity) are also stored in that repo.

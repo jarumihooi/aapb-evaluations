@@ -3,6 +3,7 @@ import os
 import sys
 from collections import defaultdict
 import json
+import re
 
 from clams.app import ClamsApp
 from clams.restify import Restifier
@@ -21,7 +22,7 @@ label_dict = {'PERSON':'person', 'ORG':'organization', 'FAC':'location', 'GPE':'
 valid_labels = set(list(label_dict.keys()) + list(label_dict.values()))
 
 
-def entity_to_tokens(entity):
+def entity_to_tokens(index, entity):
     """this function return a list of tokens (with a BIO label associated with
     each token) from an entity """
     
@@ -36,24 +37,24 @@ def entity_to_tokens(entity):
     for i, word in enumerate(words):
         end = start + len(word)
         if i==0:
-            tokens.append(((start, end), 'B-'+label))
+            tokens.append(((index, start, end), 'B-'+label))
         else:
-            tokens.append(((start, end), 'I-'+label))
+            tokens.append(((index, start, end), 'I-'+label))
         start = end + 1
     return tokens
 
 
-def file_to_tokens(filepath):
+def file_to_tokens(index, filepath):
     """this function check whether the file is in .ann or .mmif format, then
     send it to the respective function to get the list of tokens """
     
     if(filepath.endswith('.ann')):
-        return ann_to_tokens(filepath)
+        return ann_to_tokens(index, filepath)
     else: # mmif file, ends with .json or .mmif
-        return mmif_to_tokens(filepath)
+        return mmif_to_tokens(index, filepath)
     
 
-def ann_to_tokens(ann_path):
+def ann_to_tokens(index, ann_path):
     """this function read .ann input file and return the list of tokens"""
 
     with open(ann_path, 'r') as fh_in:
@@ -64,11 +65,11 @@ def ann_to_tokens(ann_path):
         ent = line.split()
         entity = { "start": int(ent[2]), "end": int(ent[3]),
                    "text": (" ".join(ent[4:])), "category": ent[1] }
-        tokens = tokens + entity_to_tokens(entity)
+        tokens = tokens + entity_to_tokens(index, entity)
     return tokens
 
 
-def mmif_to_tokens(mmif_path):
+def mmif_to_tokens(index, mmif_path):
     """this function read .mmif input file and return the list of tokens"""
     
     with open(mmif_path) as fh_in:
@@ -82,7 +83,8 @@ def mmif_to_tokens(mmif_path):
     tokens = []
     for annotation in annotations:
         entity = annotation.properties
-        tokens = tokens + entity_to_tokens(entity)
+        entity["start"] = view.get_annotation_by_id(entity["targets"][0]).properties["start"]
+        tokens = tokens + entity_to_tokens(index, entity)
     return tokens
 
 def tokens_to_tags(tokens, span_map, mode='strict'):
@@ -106,8 +108,8 @@ def label_dict_to_string():
 
 def write_result(result, goldfile, testfile, resultpath):
     # write out eval results to text file
-    s = "gold-standard file: " + goldfile + "\n"
-    s += ("model prediction file: " + testfile + "\n")
+    s = "gold-standard directory: " + goldfile + "\n"
+    s += ("model prediction directory: " + testfile + "\n")
     s += "\nStrict Evaluation Result\nevery token in an entity must have the matching tagging with \
 the gold standard to count as the same entity\n"
     s += result['strict']
@@ -122,10 +124,37 @@ any column of the following table will be discarded\n")
         fh_out.write(s)
              
 
-def evaluate(goldfile, testfile, resultpath):
+def directory_to_tokens(directory):
+    tokens = []
+    index = 0
+    for file in directory:
+        tokens = tokens + file_to_tokens(index, file)
+        index += 1
+    return tokens
 
-    tokens_true = file_to_tokens(goldfile)
-    tokens_pred = file_to_tokens(testfile)
+
+def file_match(golddirectory, testdirectory):
+    """compares the files in the golddirectory and testdirectory, returns lists of matching gold and test files in corresponding order"""
+    gold_matches = []
+    test_matches = []
+    gold_list = os.listdir(golddirectory)
+    test_list = os.listdir(testdirectory)
+    for gold_file in gold_list:
+        reg = "^" + os.path.splitext(gold_file)[0]
+        for test_file in test_list:
+            if re.search(reg, test_file):
+                gold_matches.append(gold_file)
+                test_matches.append(test_file)
+                continue
+        continue
+    return [os.path.join(golddirectory, match) for match in gold_matches], [os.path.join(testdirectory, match) for match in test_matches]
+
+def evaluate(golddirectory, testdirectory, resultpath):
+
+    gold_matches, test_matches = file_match(golddirectory, testdirectory)
+
+    tokens_true = directory_to_tokens(gold_matches)
+    tokens_pred = directory_to_tokens(test_matches)
 
     #find a dict that maps all entity spans to indices
     tokens_all = (tokens_true + tokens_pred)
@@ -140,24 +169,24 @@ def evaluate(goldfile, testfile, resultpath):
         #do NOT change mode to 'token' here even if we're doing token-based eval, since \
         #we have already dealt with that in the tokens_to_tags function
 
-    write_result(result, goldfile, testfile, resultpath)
-    print("finish evaluating "+testfile)
+    write_result(result, golddirectory, testdirectory, resultpath)
+    print("evaluation for "+ testdirectory + " is complete")
 
 
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('goldfile', nargs='?', help="gold annotation")
-    parser.add_argument('testfile', nargs='?', help="test annotation")
-    parser.add_argument('resultpath', nargs='?', help="path to print out eval result", default='results.txt')
+    parser.add_argument('gold_directory', nargs='?', help="directory that contains gold annotations")
+    parser.add_argument('test_directory', nargs='?', help="directory that contains test annotations")
+    parser.add_argument('result_path', nargs='?', help="path to print out eval result", default='results.txt')
     args = parser.parse_args()
 
-    evaluate(args.goldfile, args.testfile, args.resultpath)
+    evaluate(args.gold_directory, args.test_directory, args.result_path)
 
 """
 example usage:
-python evaluate.py gold-file-examples/gold-ann-example.ann test-file-examples/test-mmif-example.mmif result-examples/result-example.txt
-python evaluate.py gold-mmif.mmif test-mmif.mmif
+python evaluate.py gold-files test-files
+NOTE: gold annotation files and test output files that correspond to the same aapb catalog item must share the same file name (with the exception of file extension). i.e. gold-files/cpb-aacip-507-1v5bc3tf81-transcript.ann and test-files/cpb-aacip-507-1v5bc3tf81-transcript.mmif) 
 """
 
 #If gold is "Mark(B-PER) Zuckerburg(I-PER)" and model predict "Zuckerburg(B-PER)"

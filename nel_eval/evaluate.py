@@ -1,3 +1,18 @@
+"""Named Entity Linking Evaluation
+
+$ evaluate.py [-h] [-o [OUTPUT]] [test-dir] [gold-dir]
+
+Evaluate .mmif files with named entity linking annotations produced as output
+from the DBpedia Spotlight wrapper app. Compares system
+generated data with the gold data found in the aapb-annotations
+repository.
+
+NOTE: gold annotation files and test output files that correspond
+to the same aapb catalog item must share the same file name (with the exception of file extension).
+i.e. `gold-files/cpb-aacip-507-1v5bc3tf81.tsv` and `test-files/cpb-aacip-507-1v5bc3tf81.mmif`
+
+"""
+
 import argparse
 from collections import defaultdict
 import fnmatch

@@ -4,13 +4,14 @@ import csv
 import os
 import pandas as pd
 import mmif
-import pyannote.metrics
 import argparse
 import glob
 from pyannote.core import Segment, Timeline, Annotation
 from pyannote.metrics.detection import DetectionErrorRate
 from mmif import Mmif, DocumentTypes, AnnotationTypes
 from moviepy.editor import VideoFileClip
+import pathlib
+import math
 
 
 ########## small tools
@@ -58,17 +59,18 @@ def get_csv(gold_url):
     return 'goldfiles.csv'
 
 #adapt the code from Kelley Lynch - 'evaluate_chyrons.py'
-def load_gold_standard(file_name):
+def load_gold_standard(file_name, test_dir):
     gold_timeframes = {}
     with open(file_name, 'r') as gold_csv:
         reader = csv.DictReader(gold_csv)
         for row in reader:
             video_fileID = row["GUID"]
-            Slate_Start =convert_time(row["Slate Start ,"])
+            Slate_Start = convert_time(row["Slate Start ,"])
             Slate_End = convert_time(row["Slate End   ,"])
             if video_fileID not in gold_timeframes:
                 gold_timeframes[video_fileID] = Timeline()
-            gold_timeframes[video_fileID].add(Segment(Slate_Start, Slate_End))
+            if video_fileID in [filename.split(".")[0] for filename in os.listdir(test_dir)]:
+                gold_timeframes[video_fileID].add(Segment(Slate_Start, Slate_End))
     return gold_timeframes
 
 #give each mmif file an absolute path, return a list
@@ -78,7 +80,7 @@ def get_mmif(mmif_dir):
     return mmif_file_list
 
 #get info from mmif files
-def process_mmif_file(mmif_file_path, fps_dict):
+def process_mmif_file(mmif_file_path):
     mmif_files = get_mmif(mmif_file_path)
     test_timeframes = {}
     for mmif_file in mmif_files:
@@ -89,26 +91,27 @@ def process_mmif_file(mmif_file_path, fps_dict):
         if video_fileID not in test_timeframes:
             test_timeframes[video_fileID] = Timeline()
         #get the slate start and end time
-        Slate_Start = float(next(mmif.get_view_contains(AnnotationTypes.TimeFrame).get_annotations(
-            AnnotationTypes.TimeFrame)).properties["start"])
-        Slate_End = float(next(mmif.get_view_contains(AnnotationTypes.TimeFrame).get_annotations(
-            AnnotationTypes.TimeFrame)).properties["end"])
-        #check if it's been annotated baesd on the next version of the slate app
+        try:
+            Slate_Start = float(next(mmif.get_view_contains(AnnotationTypes.TimeFrame).get_annotations(AnnotationTypes.TimeFrame)).properties["start"])
+            Slate_End = float(next(mmif.get_view_contains(AnnotationTypes.TimeFrame).get_annotations(AnnotationTypes.TimeFrame)).properties["end"])
+        #check if it's been annotated based on the next version of the slate app
+        except:
+            continue
         result = mmif.get_all_views_contain(at_types=AnnotationTypes.TimeFrame)
         view = result[-1]
         annotations = view.get_annotations(at_type=AnnotationTypes.Annotation)
         annotations = list(annotations)
         ##if it's not annotated, actually read the video, aka the fps_dict just created
-        if annotations == []:
-            fps=float(fps_dict[video_fileID])
+        fps = 29.97
         ##if it's annotated, use the existing 'fps'
-        else:
+        if len(annotations) > 0:
             for annotation in annotations:
                 entity = annotation.properties
-                fps=float(entity['fps'])
+                if 'fps' in entity:
+                    fps=float(entity['fps'])
         # get the test_timeframes dict
-        calculated_Slate_Start = round(Slate_Start /fps, 2)
-        calculated_Slate_End = round(Slate_End / fps, 2)
+        calculated_Slate_Start = round(Slate_Start/fps, 2)
+        calculated_Slate_End = round(Slate_End/fps, 2)
         test_timeframes[video_fileID].add(Segment(calculated_Slate_Start , calculated_Slate_End))
     return test_timeframes
 
@@ -134,29 +137,65 @@ def calculate_detection_metrics(gold_timeframes_dict, test_timeframes):
             print(f"Error: {file_ID} not in annotations")
 
 
+def generate_side_by_side(golddir, testdir, outdir):
+    for guid in golddir:
+        path = outdir / f"{guid}.sbs.csv"
+        gold_time_chunks = []
+        test_time_chunks = []
+        for segment in golddir[guid]:
+            gold_start = math.floor(segment.start)
+            gold_end = math.ceil(segment.end)
+            gold_time_chunks.extend(range(gold_start, gold_end))
+        if guid in testdir:
+            for segment in testdir[guid]:
+                test_start = math.floor(segment.start)
+                test_end = math.ceil(segment.end)
+                test_time_chunks.extend(range(test_start, test_end))
+        if len(gold_time_chunks) > 0 and len(test_time_chunks) > 0:
+            maximum = max(max(gold_time_chunks), max(test_time_chunks))
+        elif len(gold_time_chunks) > 0:
+            maximum = max(gold_time_chunks)
+        elif len(test_time_chunks) > 0:
+            maximum = max(test_time_chunks)
+        else:
+            continue
+        with open(path, "w") as out_f:
+            i = 0
+            while i < maximum:
+                interval = (i, i+1)
+                if i in gold_time_chunks:
+                    gold = 1
+                else:
+                    gold = 0
+                if i in test_time_chunks:
+                    test = 1
+                else:
+                    test = 0
+                out_f.write(",".join([str(interval), str(gold), str(test)]))
+                out_f.write("\n")
+                i += 1
+
+
 if __name__ == "__main__":
     #get the absolute path of video-file-dir and hypothesis-file-dir
     parser = argparse.ArgumentParser(description='Process some directories.')
-    parser.add_argument('--video-file-dir', type=str, required=True,
-                        help='directory to the video file')
-    parser.add_argument('--hypothesis-file-dir', type=str, required=True,
-                        help='directory to the hypothesis file')
+    parser.add_argument('-m', '--machine_dir', type=str, required=True,
+                        help='directory containing machine annotated files')
+    parser.add_argument('-o', '--output_dir', help='directory to publish side-by-side results', default=None)
+    parser.add_argument('-g', '--gold_url', help='url to csv that contains the gold annotations', default = 'https://raw.githubusercontent.com/clamsproject/aapb-annotations/main/january-slates/230101-aapb-collaboration-7/CLAMS_slate_annotation_metadata.csv')
     args = parser.parse_args()
-
-    #create a dict of fps just in case it's not annotated
-    #I only consider the .mp4 file
-    mp4_files = glob.glob(os.path.join(args.video_file_dir, '*.mp4'))
-    fps_dict=video_to_fps_dict(mp4_files)
+    if args.output_dir:
+        outdir = pathlib.Path(args.output_dir)
+    else:
+        outdir = pathlib.Path(__file__).parent
 
     # create the 'gold_timeframes'
-    gold_url = 'https://raw.githubusercontent.com/clamsproject/aapb-annotations/main/uploads/2022-slates/annotations/CLAMS_slate_annotation_metadata.csv'
-    gold_timeframes_dict=load_gold_standard(get_csv(gold_url))
+
+    gold_timeframes_dict=load_gold_standard(get_csv(args.gold_url), args.machine_dir)
 
     # create the 'test_timeframes'
-    test_timeframes=process_mmif_file(args.hypothesis_file_dir,fps_dict)
+    test_timeframes=process_mmif_file(args.machine_dir)
 
-    #final calculate
+    #final calculation
     calculate_detection_metrics(gold_timeframes_dict, test_timeframes)
-
-
-
+    generate_side_by_side(gold_timeframes_dict, test_timeframes, outdir)

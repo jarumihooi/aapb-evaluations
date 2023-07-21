@@ -1,9 +1,8 @@
 import argparse
 import os
-import sys
 from collections import defaultdict
-import json
 import re
+import pathlib
 
 from clams.app import ClamsApp
 from clams.restify import Restifier
@@ -123,7 +122,6 @@ any column of the following table will be discarded\n")
     with open(resultpath, 'w') as fh_out:
         fh_out.write(s)
              
-
 def directory_to_tokens(directory):
     tokens = []
     index = 0
@@ -131,7 +129,6 @@ def directory_to_tokens(directory):
         tokens = tokens + file_to_tokens(index, file)
         index += 1
     return tokens
-
 
 def file_match(golddirectory, testdirectory):
     """compares the files in the golddirectory and testdirectory, returns lists of matching gold and test files in corresponding order"""
@@ -145,13 +142,132 @@ def file_match(golddirectory, testdirectory):
             if re.search(reg, test_file):
                 gold_matches.append(gold_file)
                 test_matches.append(test_file)
-                continue
-        continue
+                break
     return [os.path.join(golddirectory, match) for match in gold_matches], [os.path.join(testdirectory, match) for match in test_matches]
 
-def evaluate(golddirectory, testdirectory, resultpath):
+def file_match_with_source(golddirectory, testdirectory, sourcedirectory):
+    """compares the files in golddirectory, testdirectory, sourcedirectory, returns lists of matching gold, test, and source files in corresponding order"""
+    gold_matches = []
+    test_matches = []
+    source_matches = []
+    gold_list = os.listdir(golddirectory)
+    test_list = os.listdir(testdirectory)
+    source_list = os.listdir(sourcedirectory)
+    for gold_file in gold_list:
+        reg = "^" + os.path.splitext(gold_file)[0]
+        for test_file in test_list:
+            if re.search(reg, test_file):
+                for source_file in source_list:
+                    if re.search(reg, source_file):
+                        gold_matches.append(gold_file)
+                        test_matches.append(test_file)
+                        source_matches.append(source_file)
+                        break
+                break
+    return [os.path.join(golddirectory, match) for match in gold_matches], [os.path.join(testdirectory, match) for match in test_matches], [os.path.join(sourcedirectory, match) for match in source_matches]
 
-    gold_matches, test_matches = file_match(golddirectory, testdirectory)
+def tokenizer(file):
+    """returns indices of tokens in file (assumes file is a .txt)"""
+    with open(file) as f:
+        text = f.read()
+    tokens = text.split()
+    indices = []
+    prev_end = 0
+    for token in tokens:
+        find = re.search(re.escape(token), text)
+        start = find.start() + prev_end
+        end = find.end() + prev_end
+        index = (start, end)
+        indices.append(index)
+        text = text[find.end():]
+        prev_end = end
+    return indices
+
+def get_guid(triple):
+    """returns guid for a triple of files"""
+    name = pathlib.Path(triple[0]).stem
+    parts = re.split(r'[-_]', name)
+    guid = parts[0] + "-" + parts[1] + "-" + parts[2] + "-" + parts[3]
+    return guid
+
+def read_tokenized_labels(filepath):    
+    if(filepath.endswith('.ann')):
+        return ann_labels(filepath)
+    else: # mmif file, ends with .json or .mmif
+        return mmif_labels(filepath)
+    
+def ann_labels(ann_path):
+    with open(ann_path, 'r') as fh_in:
+        lines = fh_in.readlines()
+
+    tokens = {}
+    for line in lines:
+        ent = line.split()
+        entity = { "start": int(ent[2]), "end": int(ent[3]),
+                   "text": (" ".join(ent[4:])), "category": ent[1] }
+        tokens.update(entity_labels(entity))
+    return tokens
+
+def mmif_labels(mmif_path):    
+    with open(mmif_path) as fh_in:
+        mmif_serialized = fh_in.read()
+        
+    mmif = Mmif(mmif_serialized)
+    ner_views = mmif.get_all_views_contain(at_types = Uri.NE)
+    view = ner_views[-1] #read only the first view (from last) with Uri.NE
+    annotations = view.get_annotations(at_type = Uri.NE)
+
+    tokens = {}
+    for annotation in annotations:
+        entity = annotation.properties
+        entity["start"] = view.get_annotation_by_id(entity["targets"][0]).properties["start"]
+        tokens.update(entity_labels(entity))
+    return tokens
+
+def entity_labels(entity):
+    words = entity['text'].split()
+    start = entity['start']
+    tokens = {}
+    label = entity['category']
+    if(label not in valid_labels): #e.g. QUANTITY
+        return tokens # do not include in the final list of entities
+    if(label in label_dict):
+        label = label_dict[label] # e.g. ORG -> organization
+    for i, word in enumerate(words):
+        end = start + len(word)
+        if i==0:
+            tokens[(start, end)] ='B-'+label
+        else:
+            tokens[(start, end)] ='I-'+label
+        start = end + 1
+    return tokens
+
+def generate_side_by_side(triples, outdir):
+    for triple in triples:
+        guid = get_guid(triple)
+        path = outdir / f"{guid}.sbs.csv"
+        with open(path, "w") as out_f:
+            source_tokens = tokenizer(triple[0])
+            gold_tokenized_labels = read_tokenized_labels(triple[1])
+            pred_tokenized_labels = read_tokenized_labels(triple[2])
+            for token in source_tokens:
+                if token in gold_tokenized_labels:
+                    gold = gold_tokenized_labels[token]
+                else:
+                    gold = "O"
+                if token in pred_tokenized_labels:
+                    pred = pred_tokenized_labels[token]
+                else:
+                    pred = "O"
+                out_f.write(",".join([str(token), gold, pred]))
+                out_f.write("\n")
+
+def evaluate(golddirectory, testdirectory, sourcedirectory, resultpath, outdir):
+    if sourcedirectory:
+        gold_matches, test_matches, source_matches = file_match_with_source(golddirectory, testdirectory, sourcedirectory)
+        generate_side_by_side(zip(source_matches, gold_matches, test_matches), outdir) 
+    else:
+        gold_matches, test_matches = file_match(golddirectory, testdirectory)
 
     tokens_true = directory_to_tokens(gold_matches)
     tokens_pred = directory_to_tokens(test_matches)
@@ -176,12 +292,17 @@ def evaluate(golddirectory, testdirectory, resultpath):
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('gold_directory', nargs='?', help="directory that contains gold annotations")
-    parser.add_argument('test_directory', nargs='?', help="directory that contains test annotations")
-    parser.add_argument('result_path', nargs='?', help="path to print out eval result", default='results.txt')
+    parser.add_argument('-g', '--gold_directory', nargs='?', help="directory that contains gold annotations")
+    parser.add_argument('-m', '--machine_directory', nargs='?', help="directory that contains machine annotations")
+    parser.add_argument('-r', '--result_path', nargs='?', help="path to print out eval result", default='results.txt')
+    parser.add_argument('-s', '--source_directory', nargs='?', help="directory that contains original source files (without annotations)", default=None)
+    parser.add_argument('-o', '--out_directory', nargs='?', help="directory to publish the side by side comparison", default=None)
     args = parser.parse_args()
-
-    evaluate(args.gold_directory, args.test_directory, args.result_path)
+    if args.out_directory:
+        outdir = pathlib.Path(args.out_directory)
+    else:
+        outdir = pathlib.Path(__file__).parent
+    evaluate(args.gold_directory, args.machine_directory, args.source_directory, args.result_path, outdir)
 
 """
 example usage:

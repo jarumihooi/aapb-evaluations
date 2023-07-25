@@ -65,6 +65,10 @@ def load_slate_gold_standard(file_name, test_dir):
         reader = csv.DictReader(gold_csv)
         for row in reader:
             video_fileID = row["GUID"]
+            start = row["Slate Start ,"]
+            end = row["Slate End   ,"]
+            if start == "," or end == ",":
+                continue
             Slate_Start = convert_time(row["Slate Start ,"])
             Slate_End = convert_time(row["Slate End   ,"])
             if video_fileID in [filename.split(".")[0] for filename in os.listdir(test_dir)]:
@@ -79,8 +83,8 @@ def load_chyron_gold_standard(file_name, test_dir):
         reader = csv.DictReader(gold_csv)
         for row in reader:
             video_fileID = row["video_filename"].split(".")[0]
-            chyron_start = row["start_time"]
-            chyron_end = row["end_time"]
+            chyron_start = float(row["start_time"])
+            chyron_end = float(row["end_time"])
             if video_fileID in [filename.split(".")[0] for filename in os.listdir(test_dir)]:
                 if video_fileID not in gold_timeframes:
                     gold_timeframes[video_fileID] = Timeline()
@@ -94,7 +98,7 @@ def get_mmif(mmif_dir):
     return mmif_file_list
 
 #get info from mmif files
-def process_mmif_file(mmif_file_path):
+def process_mmif_file(mmif_file_path, gold_timeframe_dict):
     mmif_files = get_mmif(mmif_file_path)
     test_timeframes = {}
     for mmif_file in mmif_files:
@@ -102,31 +106,40 @@ def process_mmif_file(mmif_file_path):
         document_location = mmif.get_documents_by_type(DocumentTypes.VideoDocument)[0].location
         filename = os.path.basename(document_location)
         video_fileID = filename.split(".")[0]
-        if video_fileID not in test_timeframes:
-            test_timeframes[video_fileID] = Timeline()
-        #get the slate start and end time
-        try:
-            Slate_Start = float(next(mmif.get_view_contains(AnnotationTypes.TimeFrame).get_annotations(AnnotationTypes.TimeFrame)).properties["start"])
-            Slate_End = float(next(mmif.get_view_contains(AnnotationTypes.TimeFrame).get_annotations(AnnotationTypes.TimeFrame)).properties["end"])
-        #check if it's been annotated based on the next version of the slate app
-        except:
-            continue
-        result = mmif.get_all_views_contain(at_types=AnnotationTypes.TimeFrame)
-        view = result[-1]
-        annotations = view.get_annotations(at_type=AnnotationTypes.Annotation)
-        annotations = list(annotations)
-        ##if it's not annotated, actually read the video, aka the fps_dict just created
-        fps = 29.97
-        ##if it's annotated, use the existing 'fps'
-        if len(annotations) > 0:
-            for annotation in annotations:
-                entity = annotation.properties
-                if 'fps' in entity:
-                    fps=float(entity['fps'])
-        # get the test_timeframes dict
-        calculated_Slate_Start = round(Slate_Start/fps, 2)
-        calculated_Slate_End = round(Slate_End/fps, 2)
-        test_timeframes[video_fileID].add(Segment(calculated_Slate_Start, calculated_Slate_End))
+        if video_fileID in gold_timeframe_dict:
+            if video_fileID not in test_timeframes:
+                test_timeframes[video_fileID] = Timeline()
+            #get the slate start and end time
+            starts = []
+            ends = []
+            ann = mmif.get_view_contains(AnnotationTypes.TimeFrame).get_annotations(AnnotationTypes.TimeFrame)
+            while True:
+                try:
+                    cur = next(ann)
+                    starts.append(float(cur.properties["start"]))
+                    ends.append(float(cur.properties["end"]))
+                #check if it's been annotated based on the next version of the slate app
+                except:
+                    break
+            result = mmif.get_all_views_contain(at_types=AnnotationTypes.TimeFrame)
+            view = result[-1]
+            annotations = view.get_annotations(at_type=AnnotationTypes.Annotation)
+            annotations = list(annotations)
+            ##if it's not annotated, actually read the video, aka the fps_dict just created
+            fps = 29.97
+            ##if it's annotated, use the existing 'fps'
+            if len(annotations) > 0:
+                for annotation in annotations:
+                    entity = annotation.properties
+                    if 'fps' in entity:
+                        fps=float(entity['fps'])
+            # get the test_timeframes dict
+            calculated_starts = [round(start/fps, 2) for start in starts]
+            calculated_ends = [round(end/fps, 2) for end in ends]
+            i = 0
+            while i < len(calculated_ends):
+                test_timeframes[video_fileID].add(Segment(calculated_starts[i], calculated_ends[i]))
+                i += 1
     return test_timeframes
 
 #adapt the code from Kelley Lynch - 'evaluate_chyrons.py'
@@ -137,7 +150,7 @@ def calculate_detection_metrics(gold_timeframes_dict, test_timeframes, result_pa
     TP = 0
     FP = 0
     FN = 0
-    data = pd.DataFrame(columns= ['GUID', 'FN seconds', 'FP seconds', 'Total seconds'])
+    data = pd.DataFrame(columns= ['GUID', 'FN seconds', 'FP seconds', 'Total true seconds'])
     for file_ID in test_timeframes:
         reference = Annotation()
         for segment in gold_timeframes_dict[file_ID]:
@@ -153,23 +166,29 @@ def calculate_detection_metrics(gold_timeframes_dict, test_timeframes, result_pa
         TP += true_positive
         FP += false_positive
         FN += false_negative
-        data = pd.concat([data, pd.DataFrame({'GUID': file_ID, 'FN seconds': results_dict['miss'], 'FP seconds': results_dict['false alarm'], 'Total seconds': results_dict['total']}, index=[0])], ignore_index=True)
+        data = pd.concat([data, pd.DataFrame({'GUID': file_ID, 'FN seconds': results_dict['miss'], 'FP seconds': results_dict['false alarm'], 'Total true seconds': results_dict['total']}, index=[0])], ignore_index=True)
     precision = TP / (TP + FP)
     recall = TP / (TP + FN)
-    f1 = (2 * precision * recall)/ (precision + recall)
+    if precision + recall == 0:
+        f1 = 0.0
+    else:
+        f1 = (2 * precision * recall)/ (precision + recall)
     s = 'Total Precision = ' + str(precision) + '\t Total Recall = ' + str(recall) + '\t Total F1 = ' + str(f1) + '\n\n\n' + 'Individual file results: \n' + data.to_string()
     with open(result_path, 'w') as fh_out:
         fh_out.write(s)
 
 def generate_side_by_side(golddir, testdir, outdir):
     for guid in golddir:
+        no_detection = False
         path = outdir / f"{guid}.sbs.csv"
         gold_time_chunks = []
         test_time_chunks = []
         for segment in golddir[guid]:
+            if segment.end == 0:
+                continue
             gold_start = math.floor(segment.start)
             gold_end = math.floor(segment.end)
-            gold_time_chunks.extend(range(gold_start, gold_end))
+            gold_time_chunks.extend(range(gold_start, gold_end + 1))
         if guid in testdir:
             for segment in testdir[guid]:
                 test_start = math.floor(segment.start)
@@ -182,22 +201,25 @@ def generate_side_by_side(golddir, testdir, outdir):
         elif len(test_time_chunks) > 0:
             maximum = max(test_time_chunks)
         else:
-            continue
+            no_detection = True
         with open(path, "w") as out_f:
-            i = 0
-            while i < maximum:
-                interval = (i, i+1)
-                if i in gold_time_chunks:
-                    gold = 1
-                else:
-                    gold = 0
-                if i in test_time_chunks:
-                    test = 1
-                else:
-                    test = 0
-                out_f.write(",".join([str(interval), str(gold), str(test)]))
-                out_f.write("\n")
-                i += 1
+            if no_detection:
+                out_f.write("no timeframes annotated in gold or predicted by app")
+            else:
+                i = 0
+                while i < maximum + 1:
+                    interval = (i, i+1)
+                    if i in gold_time_chunks:
+                        gold = 1
+                    else:
+                        gold = 0
+                    if i in test_time_chunks:
+                        test = 1
+                    else:
+                        test = 0
+                    out_f.write(",".join([str(interval), str(gold), str(test)]))
+                    out_f.write("\n")
+                    i += 1
 
 if __name__ == "__main__":
     #get the absolute path of video-file-dir and hypothesis-file-dir
@@ -212,6 +234,8 @@ if __name__ == "__main__":
     args = parser.parse_args()
     if args.output_dir:
         outdir = pathlib.Path(args.output_dir)
+        if not outdir.exists():
+            outdir.mkdir()
     else:
         outdir = pathlib.Path(__file__).parent
 
@@ -223,7 +247,7 @@ if __name__ == "__main__":
         gold_timeframes_dict=load_chyron_gold_standard(get_csv(gold_url), args.machine_dir)
 
     # create the 'test_timeframes'
-    test_timeframes=process_mmif_file(args.machine_dir)
+    test_timeframes=process_mmif_file(args.machine_dir, gold_timeframes_dict)
 
     #final calculation
     calculate_detection_metrics(gold_timeframes_dict, test_timeframes, args.result_file)

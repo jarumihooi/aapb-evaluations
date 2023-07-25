@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "mmif": "http://mmif.clams.ai/1.0.0"
+  },
+  "documents": [
+    {
+      "@type": "http://mmif.clams.ai/vocabulary/TextDocument/v1",
+      "properties": {
+        "mime": "text",
+        "id": "d1",
+        "location": "baapb://cpb-aacip-507-nk3610wp6s.text"
+      }
+    }
+  ],
+  "views": [
+    {
+      "id": "v_0",
+      "metadata": {
+        "timestamp": "2023-07-25T20:40:19.360160",
+        "app": "http://apps.clams.ai/spacy-wrapper/v1.1",
+        "error": {
+          "message": "<class 'FileNotFoundError'>: [Errno 2] No such file or directory: 'The requested file does not exist in our server'",
+          "stackTrace": "  File \"/usr/local/lib/python3.8/site-packages/clams/restify/__init__.py\", line 146, in post\n    return self.json_to_response(self.cla.annotate(raw_data, **self.annotate_param_caster.cast(raw_params)))\n\t\n  File \"/usr/local/lib/python3.8/site-packages/clams/app/__init__.py\", line 116, in annotate\n    annotated = self._annotate(mmif, **runtime_params)\n\t\n  File \"/app/app.py\", line 64, in _annotate\n    in_doc = doc.text_value if not doc.location else open(doc.location_path()).read()\n"
+        }
+      },
+      "annotations": []
+    }
+  ]
+}

@@ -59,7 +59,7 @@ def get_csv(gold_url):
     return 'goldfiles.csv'
 
 #adapt the code from Kelley Lynch - 'evaluate_chyrons.py'
-def load_gold_standard(file_name, test_dir):
+def load_slate_gold_standard(file_name, test_dir):
     gold_timeframes = {}
     with open(file_name, 'r') as gold_csv:
         reader = csv.DictReader(gold_csv)
@@ -67,10 +67,24 @@ def load_gold_standard(file_name, test_dir):
             video_fileID = row["GUID"]
             Slate_Start = convert_time(row["Slate Start ,"])
             Slate_End = convert_time(row["Slate End   ,"])
-            if video_fileID not in gold_timeframes:
-                gold_timeframes[video_fileID] = Timeline()
             if video_fileID in [filename.split(".")[0] for filename in os.listdir(test_dir)]:
+                if video_fileID not in gold_timeframes:
+                    gold_timeframes[video_fileID] = Timeline()
                 gold_timeframes[video_fileID].add(Segment(Slate_Start, Slate_End))
+    return gold_timeframes
+
+def load_chyron_gold_standard(file_name, test_dir):
+    gold_timeframes = {}
+    with open(file_name, 'r') as gold_csv:
+        reader = csv.DictReader(gold_csv)
+        for row in reader:
+            video_fileID = row["video_filename"].split(".")[0]
+            chyron_start = row["start_time"]
+            chyron_end = row["end_time"]
+            if video_fileID in [filename.split(".")[0] for filename in os.listdir(test_dir)]:
+                if video_fileID not in gold_timeframes:
+                    gold_timeframes[video_fileID] = Timeline()
+                gold_timeframes[video_fileID].add(Segment(chyron_start, chyron_end))
     return gold_timeframes
 
 #give each mmif file an absolute path, return a list
@@ -175,23 +189,27 @@ def generate_side_by_side(golddir, testdir, outdir):
                 out_f.write("\n")
                 i += 1
 
-
 if __name__ == "__main__":
     #get the absolute path of video-file-dir and hypothesis-file-dir
     parser = argparse.ArgumentParser(description='Process some directories.')
     parser.add_argument('-m', '--machine_dir', type=str, required=True,
                         help='directory containing machine annotated files')
     parser.add_argument('-o', '--output_dir', help='directory to publish side-by-side results', default=None)
-    parser.add_argument('-g', '--gold_url', help='url to csv that contains the gold annotations', default = 'https://raw.githubusercontent.com/clamsproject/aapb-annotations/main/january-slates/230101-aapb-collaboration-7/CLAMS_slate_annotation_metadata.csv')
+    gold_group = parser.add_mutually_exclusive_group(required=True)
+    gold_group.add_argument('--slate', action='store_true', help='slate annotations')
+    gold_group.add_argument('--chyron', action='store_true', help='chyron annotations')
     args = parser.parse_args()
     if args.output_dir:
         outdir = pathlib.Path(args.output_dir)
     else:
         outdir = pathlib.Path(__file__).parent
 
-    # create the 'gold_timeframes'
-
-    gold_timeframes_dict=load_gold_standard(get_csv(args.gold_url), args.machine_dir)
+    if args.slate:
+        gold_url = 'https://raw.githubusercontent.com/clamsproject/aapb-annotations/62e4d399c3ba1ea47719d504d0f088a768486177/january-slates/230101-aapb-collaboration-7/CLAMS_slate_annotation_metadata.csv'
+        gold_timeframes_dict=load_slate_gold_standard(get_csv(gold_url), args.machine_dir)
+    elif args.chyron:
+        gold_url = 'https://raw.githubusercontent.com/clamsproject/aapb-annotations/61bd60e99ef24a1ca369e23de8b2c74bb2cb37d3/newshour-chyron/golds/batch2/2022-jul-chyron.csv'
+        gold_timeframes_dict=load_chyron_gold_standard(get_csv(gold_url), args.machine_dir)
 
     # create the 'test_timeframes'
     test_timeframes=process_mmif_file(args.machine_dir)

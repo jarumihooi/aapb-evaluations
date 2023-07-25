@@ -208,7 +208,7 @@ def generate_side_by_side(golddir, testdir, outdir):
             else:
                 i = 0
                 while i < maximum + 1:
-                    interval = (i, i+1)
+                    interval = "(" + str(i) + " - " + str(i + 1) + ")"
                     if i in gold_time_chunks:
                         gold = 1
                     else:
@@ -217,7 +217,7 @@ def generate_side_by_side(golddir, testdir, outdir):
                         test = 1
                     else:
                         test = 0
-                    out_f.write(",".join([str(interval), str(gold), str(test)]))
+                    out_f.write(",".join([interval, str(gold), str(test)]))
                     out_f.write("\n")
                     i += 1
 

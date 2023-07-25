@@ -7,7 +7,7 @@ import mmif
 import argparse
 import glob
 from pyannote.core import Segment, Timeline, Annotation
-from pyannote.metrics.detection import DetectionErrorRate
+from pyannote.metrics.detection import DetectionErrorRate, DetectionPrecisionRecallFMeasure
 from mmif import Mmif, DocumentTypes, AnnotationTypes
 from moviepy.editor import VideoFileClip
 import pathlib
@@ -126,30 +126,40 @@ def process_mmif_file(mmif_file_path):
         # get the test_timeframes dict
         calculated_Slate_Start = round(Slate_Start/fps, 2)
         calculated_Slate_End = round(Slate_End/fps, 2)
-        test_timeframes[video_fileID].add(Segment(calculated_Slate_Start , calculated_Slate_End))
+        test_timeframes[video_fileID].add(Segment(calculated_Slate_Start, calculated_Slate_End))
     return test_timeframes
 
 #adapt the code from Kelley Lynch - 'evaluate_chyrons.py'
 #add the situation which the mmif file is not in the gold timeframes
-def calculate_detection_metrics(gold_timeframes_dict, test_timeframes):
+def calculate_detection_metrics(gold_timeframes_dict, test_timeframes, result_path):
     metric = DetectionErrorRate()
+    final = DetectionPrecisionRecallFMeasure()
+    TP = 0
+    FP = 0
+    FN = 0
+    data = pd.DataFrame(columns= ['GUID', 'FN seconds', 'FP seconds', 'Total seconds'])
     for file_ID in test_timeframes:
         reference = Annotation()
-        try:
-            for segment in gold_timeframes_dict[file_ID]:
-                reference[segment] = "aapb"
-            hypothesis = Annotation()
-            for segment in test_timeframes[file_ID]:
-                hypothesis[segment] = "aapb"
-        except KeyError:
-            print(f"Error: {file_ID} not in the gold timeframes")
-            continue
-        try:
-            results_dict = metric.compute_components(reference, hypothesis, collar=1.0,detailed=True)
-            print (results_dict)
-        except KeyError:
-            print(f"Error: {file_ID} not in annotations")
-
+        for segment in gold_timeframes_dict[file_ID]:
+            reference[segment] = "aapb"
+        hypothesis = Annotation()
+        for segment in test_timeframes[file_ID]:
+            hypothesis[segment] = "aapb"
+        results_dict = metric.compute_components(reference, hypothesis, collar=1.0,detailed=True)
+        average = final.compute_components(reference, hypothesis, collar=1.0, detailed=True)
+        true_positive = average['relevant retrieved']
+        false_negative = average['relevant'] - true_positive
+        false_positive = average['retrieved'] - true_positive
+        TP += true_positive
+        FP += false_positive
+        FN += false_negative
+        data = pd.concat([data, pd.DataFrame({'GUID': file_ID, 'FN seconds': results_dict['miss'], 'FP seconds': results_dict['false alarm'], 'Total seconds': results_dict['total']}, index=[0])], ignore_index=True)
+    precision = TP / (TP + FP)
+    recall = TP / (TP + FN)
+    f1 = (2 * precision * recall)/ (precision + recall)
+    s = 'Total Precision = ' + str(precision) + '\t Total Recall = ' + str(recall) + '\t Total F1 = ' + str(f1) + '\n\n\n' + 'Individual file results: \n' + data.to_string()
+    with open(result_path, 'w') as fh_out:
+        fh_out.write(s)
 
 def generate_side_by_side(golddir, testdir, outdir):
     for guid in golddir:
@@ -195,6 +205,7 @@ if __name__ == "__main__":
     parser.add_argument('-m', '--machine_dir', type=str, required=True,
                         help='directory containing machine annotated files')
     parser.add_argument('-o', '--output_dir', help='directory to publish side-by-side results', default=None)
+    parser.add_argument('-r', '--result_file', help='file to store evaluation results', default='results.txt')
     gold_group = parser.add_mutually_exclusive_group(required=True)
     gold_group.add_argument('--slate', action='store_true', help='slate annotations')
     gold_group.add_argument('--chyron', action='store_true', help='chyron annotations')
@@ -215,5 +226,6 @@ if __name__ == "__main__":
     test_timeframes=process_mmif_file(args.machine_dir)
 
     #final calculation
-    calculate_detection_metrics(gold_timeframes_dict, test_timeframes)
+    calculate_detection_metrics(gold_timeframes_dict, test_timeframes, args.result_file)
     generate_side_by_side(gold_timeframes_dict, test_timeframes, outdir)
+    

@@ -144,7 +144,7 @@ def generate_side_by_side(golddir, testdir, outdir):
         test_time_chunks = []
         for segment in golddir[guid]:
             gold_start = math.floor(segment.start)
-            gold_end = math.ceil(segment.end)
+            gold_end = math.floor(segment.end)
             gold_time_chunks.extend(range(gold_start, gold_end))
         if guid in testdir:
             for segment in testdir[guid]:

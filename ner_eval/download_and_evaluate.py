@@ -6,17 +6,18 @@ from urllib.parse import urljoin, urlparse
 
 #============================================ set parameters here =========================================
 
-
 # links for gold-standard files and model prediction file to be downloaded from
+# gold_url = 'https://github.com/clamsproject/aapb-annotations/tree/main/newshour-namedentity/golds/aapb-collaboration-21'
+# test_url = 'https://github.com/clamsproject/aapb-collaboration/tree/master/21'
 gold_url = 'https://github.com/clamsproject/clams-aapb-annotations/tree/main/golds/ner/2022-jun-namedentity'
 test_url = 'https://github.com/JinnyViboonlarp/ner-evaluation/tree/main/testfiles'
 
 # local folders to save the files from gold_url and test_url respectively
 gold_folder = 'goldfiles'
-test_folder = 'testfiles'
+test_folder =  'testfiles'
 
 # path to save NER evaluation result
-resultpath = 'result.txt'
+resultpath = 'results.txt'
 
 #============================================ set parameters end here ====================================
 
@@ -25,7 +26,7 @@ def download(url=None, folder_name=None):
 
     # Extract the repository name from the URL, name would be the phrase after the last "/"
     repo_name = urlparse(url).path.split('/')[-1]
-    
+
     # Create a new directory to store the downloaded files on local computer
     if folder_name == None:
         folder_name = repo_name
@@ -51,14 +52,14 @@ def download(url=None, folder_name=None):
         with open(file_path, 'wb') as file:
             response = requests.get(raw_url)
             file.write(response.content)
- 
 
 if __name__ == "__main__":
-
-    download(gold_url, gold_folder)
+    print('a')
+    #download(gold_url, gold_folder)
     download(test_url, test_folder)
-    os.system("python evaluate.py " + gold_folder + "/ " + test_folder + "/ " + resultpath)
-
+    print('a')
+    #os.system("python evaluate.py " + gold_folder + "/ " + test_folder + "/ " + resultpath)
+    #
     # edit the text file to add in the url paths to the github repos
     with open(resultpath, 'r') as fh_in:
         s = fh_in.read()
@@ -66,3 +67,6 @@ if __name__ == "__main__":
          "link containing model prediction files: " + test_url + "\n\n" + s)
     with open(resultpath, 'w') as fh_out:
         fh_out.write(s)
+
+
+

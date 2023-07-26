@@ -137,7 +137,9 @@ def file_match(golddirectory, testdirectory):
     gold_list = os.listdir(golddirectory)
     test_list = os.listdir(testdirectory)
     for gold_file in gold_list:
-        reg = "^" + os.path.splitext(gold_file)[0]
+        #Yao: I've added the following two lines of code to make sure that the gold and test files have the same name
+        file_name_without_transcript = gold_file.replace('-transcript', '')
+        reg = "^" + os.path.splitext(file_name_without_transcript)[0]
         for test_file in test_list:
             if re.search(reg, test_file):
                 gold_matches.append(gold_file)

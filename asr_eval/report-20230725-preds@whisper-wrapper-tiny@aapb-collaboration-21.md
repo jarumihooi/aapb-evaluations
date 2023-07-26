@@ -18,21 +18,21 @@ Gold standard annotations are located [here](https://github.com/clamsproject/aap
 ### Evaluation results: 
 WER results are located [here](https://github.com/clamsproject/aapb-evaluations/tree/2-asr-eval/asr_eval/wer_results). Each of the 19 videos has their WER stored in a .json file.
 We evaluate MMIF files under 2 conditions:
->1. **Case-sensitive**: Upper case and lower case are treated differently, e.g. Apple ≠ apple. 
->2. **Non case-sensitive**: The transcripts from both gold and preds are converted into upper case, therefore making case insignificant, e.g. APPLE = APPLE.
+>1. **Case-sensitive (CaseS)**: Upper case and lower case are treated differently, e.g. Apple ≠ apple. 
+>2. **Case Insensitive (CaseI)**: The transcripts from both gold and preds are capitalized, thus making case insignificant, e.g. APPLE = APPLE.
 
 These 2 conditions generate 2 different WERs. Each .json files contains both numbers, with a notation referring the casing.
 
 #### A brief summary
-1. The lowest WER is **0.16295157372951508**, from `cpb-aacip-507-r785h7cp0z`, non case-sensitive.
-2. The highest WER is **0.9988582134246826**, from `cpb-aacip-507-n29p26qt59`, case-sensitive. This particular file has such a high WER due to the predictied transcrption being almost entirely wrong.
+1. The lowest WER is **0.16295157372951508**, from `cpb-aacip-507-r785h7cp0z`, CaseI.
+2. The highest WER is **0.9988582134246826**, from `cpb-aacip-507-n29p26qt59`, CaseS. This particular file has such a high WER due to the predictied transcrption being almost entirely wrong.
 3. The majority of the WERs fall within 20% ~ 35% range.
 4. When ignoring the case, **ALL** of the WERs become slighly lower, indicating a slightly higher accuracy.
 5. The avarage WER among 19 MMIF files are:
    
-    | Case-sensitive   | Non case-sensitive|
-    | -----------      | -----------       |
-    | 0.331559629032486| 0.307924005546068 |
+    | CaseS | CaseI |
+    | :---: | :---: |
+    | 0.331559629032486 | 0.307924005546068 |
 
 #### Full results
 | tiny | CaseS | CaseI |

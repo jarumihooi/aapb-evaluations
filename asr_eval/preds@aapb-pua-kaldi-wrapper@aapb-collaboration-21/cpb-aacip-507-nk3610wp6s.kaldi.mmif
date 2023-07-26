@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "mmif": "http://mmif.clams.ai/1.0.0"
+  },
+  "documents": [
+    {
+      "@type": "http://mmif.clams.ai/vocabulary/VideoDocument/v1",
+      "properties": {
+        "mime": "video",
+        "id": "d1",
+        "location": "baapb://cpb-aacip-507-nk3610wp6s.video"
+      }
+    }
+  ],
+  "views": [
+    {
+      "id": "v_0",
+      "metadata": {
+        "timestamp": "2023-07-26T06:23:37.807482",
+        "app": "http://apps.clams.ai/aapb-pua-kaldi-wrapper/unresolvable",
+        "error": {
+          "message": "<class 'ffmpeg._run.Error'>: ffmpeg error (see stderr output for detail)",
+          "stackTrace": "  File \"/usr/local/lib/python3.9/dist-packages/clams/restify/__init__.py\", line 146, in post\n    return self.json_to_response(self.cla.annotate(raw_data, **self.annotate_param_caster.cast(raw_params)))\n\t\n  File \"/usr/local/lib/python3.9/dist-packages/clams/app/__init__.py\", line 116, in annotate\n    annotated = self._annotate(mmif, **runtime_params)\n\t\n  File \"/app/app.py\", line 46, in _annotate\n    transcript_tmpdir = self._run_kaldi(files)\n\t\n  File \"/app/app.py\", line 289, in _run_kaldi\n    ffmpeg.input(audio_fname).output(resampled_audio_fname, ac=1, ar=16000).run()\n\t\n  File \"/usr/local/lib/python3.9/dist-packages/ffmpeg/_run.py\", line 325, in run\n    raise Error('ffmpeg', out, err)\n"
+        }
+      },
+      "annotations": []
+    }
+  ]
+}

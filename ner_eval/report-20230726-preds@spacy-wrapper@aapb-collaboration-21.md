@@ -78,3 +78,15 @@ Here are the evaluation results for this batch:
             macro avg       0.57      0.45      0.46     15084
          weighted avg       0.80      0.53      0.59     15084
 ```
+
+
+
+#### side-by-side views
+
+The side-by-side views of the gold annotations and app predictions can be found [here](https://github.com/clamsproject/aapb-evaluations/tree/0ad076f50bd1703133d3ae76dfddcb4c3ac4d7b1/ner_eval/results%40spacy-wrapper%40aapb-collaboration-21).
+Each file contains rows of token-offset intervals, gold annotations, and app predictions, in that order. For example, a row of
+
+> 4, PERSON, O
+
+means that for the 4th token from the document, the gold annotation records a PERSON, but the app predicted no NE.
+Note that the SBS view files are using token indices starting from 1. Also we use indices instead of words themselves to avoid copyrigth issues.

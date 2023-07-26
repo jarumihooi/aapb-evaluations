@@ -1,32 +1,31 @@
 # ASR Evalutation Report -- Whisper `base`
 
 ### App:
-1. [whisper-wrapper `v3`](https://github.com/clamsproject/app-whisper-wrapper) is used to generated the preds MMIF files from 20 videos. For this evaluation, MMIF files are generated through whisper `base` model. 
-2. Preds MMIF files can be found [here](https://github.com/clamsproject/aapb-evaluations/tree/2-asr-eval/asr_eval/preds%40whisper-wrapper-base%40aapb-collaboration-21).
+1. [whisper-wrapper `v3`](https://github.com/clamsproject/app-whisper-wrapper/tree/b9a423a04e9f3bf9c89bef48343f2ab0473b6d41) is used to generated the preds MMIF files from 20 videos. For this evaluation, MMIF files are generated through whisper `base` model. 
+2. Preds MMIF files can be found [here](https://github.com/clamsproject/aapb-evaluations/tree/db6bbb4598a845ea9fba1168ab9ed2f3d15411df/asr_eval/preds%40whisper-wrapper-base%40aapb-collaboration-21).
 * **Note**: 4 out of the 20 videos were not transcribed properly, therefore the total number of valid evaluation generated is **16**.
 
 ### Evaluation code: 
-The evaluation code can be found [here](https://github.com/clamsproject/aapb-evaluations/tree/2-asr-eval/asr_eval).
+The evaluation code can be found [here](https://github.com/clamsproject/aapb-evaluations/tree/db6bbb4598a845ea9fba1168ab9ed2f3d15411df/asr_eval).
 
 ### Evaluation metric: 
 **WER** (Word Error Rate) is used as the evaluation metric that is implemented by the above mentioned evaluation code. WER calculates the accuracy of Automatic Speech Recognition (ASR) on the word level. To get a WER, the number of errors is divided by the number of total words spoken. In other words, WER tells "how wrong" the predicted result can be. Therefore, a smaller WER indicates a better performance. More information can be found [here](https://en.wikipedia.org/wiki/Word_error_rate).
 `TorchMetrics` has a [WER module](https://torchmetrics.readthedocs.io/en/stable/text/word_error_rate.html) and is used in our evaluation code.
 
 ### Evaluation dataset: 
-Gold standard annotations are located [here](https://github.com/clamsproject/aapb-collaboration/tree/21-undocumented-changes/21), with file name starting with the corresponding video IDs.
+Gold standard annotations are located [here](https://github.com/clamsproject/aapb-collaboration/tree/89b8b123abbd4a9a67c525cc480173b52e0d05f0/21), with file name starting with the corresponding video IDs.
 
 ### Evaluation results: 
-WER results are located [here](https://github.com/clamsproject/aapb-evaluations/tree/2-asr-eval/asr_eval/wer_base_results). Each of the 16 videos has their WER stored in a .json file.
 We evaluate MMIF files under 2 conditions:
 >1. **Case-sensitive (CaseS)**: Upper case and lower case are treated differently, e.g. Apple ≠ apple. 
 >2. **Case Insensitive (CaseI)**: The transcripts from both gold and preds are capitalized, thus making case insignificant, e.g. APPLE = APPLE.
 
-These 2 conditions generate 2 different WERs. Each .json files contains both numbers, with a notation referring the casing.
+These 2 conditions generate 2 different WERs.
 
 #### A brief summary:
 1. The lowest WER is **0.14483363926410675**, from `cpb-aacip-507-r785h7cp0z`, CaseI.
 2. The highest WER is **0.3255138099193573**, from `cpb-aacip-507-n29p26qt59`, CaseS. 
-3. When ignoring the case, **ALL** of the WERs become slighly lower, indicating a higher accuracy. This is also observed from [`tiny` model evaluation](https://github.com/clamsproject/aapb-evaluations/blob/2-asr-eval/asr_eval/report-20230725-preds%40whisper-wrapper-tiny%40aapb-collaboration-21.md).
+3. When ignoring the case, **ALL** of the WERs become slighly lower, indicating a higher accuracy. This is also observed from [`tiny` model evaluation](https://github.com/clamsproject/aapb-evaluations/blob/db6bbb4598a845ea9fba1168ab9ed2f3d15411df/asr_eval/report-20230725-preds%40whisper-wrapper-tiny%40aapb-collaboration-21.md).
 4. The avarage WER among 16 MMIF files are:
    
     | CaseS | CaseI |

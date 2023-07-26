@@ -1,0 +1,3 @@
+mmif-python
+lapps
+seqeval

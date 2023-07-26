@@ -25,7 +25,7 @@ These 2 conditions generate 2 different WERs.
 #### A brief summary:
 1. The lowest WER is **0.3326976001262665**, from `cpb-aacip-507-6w96689725`, CaseI.
 2. The highest WER is **0.6443965435028076**, from `cpb-aacip-507-7659c6sk7z`, CaseS. 
-3. When ignoring the case, **ALL** of the WERs become slighly lower, indicating a higher accuracy. This is also observed from [whisper `tiny` model evaluation](https://github.com/clamsproject/aapb-evaluations/blob/main/asr_eval/report-20230725-preds%40whisper-wrapper-tiny%40aapb-collaboration-21.md) and [whisper `base` model evaluation](https://github.com/clamsproject/aapb-evaluations/blob/main/asr_eval/report-20230726-preds%40whisper-wrapper-base%40aapb-collaboration-21.md).
+3. When ignoring the case, **ALL** of the WERs become slighly lower, indicating a higher accuracy. This is also observed from [whisper `tiny` model evaluation](https://github.com/clamsproject/aapb-evaluations/blob/c84383e052d363399d7a4ba18ac38cc48a0f012a/asr_eval/report-20230725-preds%40whisper-wrapper-tiny%40aapb-collaboration-21.md) and [whisper `base` model evaluation](https://github.com/clamsproject/aapb-evaluations/blob/c84383e052d363399d7a4ba18ac38cc48a0f012a/asr_eval/report-20230726-preds%40whisper-wrapper-base%40aapb-collaboration-21.md).
 4. The avarage WER among 16 MMIF files are:
    
     | CaseS | CaseI |

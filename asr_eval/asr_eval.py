@@ -35,24 +35,22 @@ def process_text(text, ignore_case):
   # with open('/content/drive/MyDrive/output.mmif', 'r') as f:
   # mmif_obj = Mmif(f.read())
 
+def calculateWer(hyp_file, gold_file, exact_case):
+   # if we want to ignore casing
+  hyp = process_text(get_text_from_mmif(hyp_file), not exact_case)
+  gold = process_text(get_text_from_txt(gold_file), not exact_case)
+
+  wer = WordErrorRate()
+  return wer(hyp, gold).item()
+
 
 @click.command()
 @click.option("--hyp-file", type=click.Path(readable=True), required=True)
 @click.option("--gold-file", type=click.Path(readable=True), required=True)
 @click.option("--exact-case", is_flag=True)
 def main(hyp_file, gold_file, exact_case):
-  # argparse(f'')
-  # os.listdir or walk
-  # loop over two lists
-  wer = WordErrorRate()
-  # with open('/content/drive/MyDrive/output.mmif', 'r') as f:
-  #   data = json.load(f)
 
-  # if we want to ignore casing
-  hyp = process_text(get_text_from_mmif(hyp_file), not exact_case)
-  gold = process_text(get_text_from_txt(gold_file), not exact_case)
-
-  print(wer(hyp, gold).item())
+  print(calculateWer(hyp_file, gold_file, exact_case))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "mmif": "http://mmif.clams.ai/1.0.0"
+  },
+  "documents": [
+    {
+      "@type": "http://mmif.clams.ai/vocabulary/VideoDocument/v1",
+      "properties": {
+        "mime": "video",
+        "id": "d1",
+        "location": "baapb://cpb-aacip-322-68x96441.video"
+      }
+    }
+  ],
+  "views": [
+    {
+      "id": "v_0",
+      "metadata": {
+        "timestamp": "2023-07-22T14:23:30.847166",
+        "app": "http://apps.clams.ai/slatedetection",
+        "parameters": {
+          "threshold": "0.6",
+          "pretty": "True",
+          "stopAt": "9000"
+        },
+        "error": {
+          "message": "<class 'requests.exceptions.ConnectionError'>: HTTPConnectionPool(host='julia-child.cs-i.brandeis.edu', port=8080): Max retries exceeded with url: /searchapi?guid=cpb-aacip-322-68x96441&file=video (Caused by NameResolutionError(\"<urllib3.connection.HTTPConnection object at 0x7f16f47ba880>: Failed to resolve 'julia-child.cs-i.brandeis.edu' ([Errno -5] No address associated with hostname)\"))",
+          "stackTrace": "  File \"/usr/local/lib/python3.8/site-packages/clams/restify/__init__.py\", line 146, in post\n    return self.json_to_response(self.cla.annotate(raw_data, **self.annotate_param_caster.cast(raw_params)))\n\t\n  File \"/usr/local/lib/python3.8/site-packages/clams/app/__init__.py\", line 109, in annotate\n    annotated = self._annotate(mmif, **runtime_params)\n\t\n  File \"app.py\", line 58, in _annotate\n    for slate in self.run_slatedetection(vd, **conf):\n\t\n  File \"app.py\", line 67, in run_slatedetection\n    video_filename = vd.location_path()\n\t\n  File \"/usr/local/lib/python3.8/site-packages/mmif/serialize/annotation.py\", line 319, in location_path\n    return self.properties.location_path_resolved()\n\t\n  File \"/usr/local/lib/python3.8/site-packages/mmif/serialize/annotation.py\", line 473, in location_path_resolved\n    p = discovered_docloc_plugins[scheme].resolve(self.location)\n\t\n  File \"/usr/local/lib/python3.8/site-packages/mmif_docloc_baapb/__init__.py\", line 16, in resolve\n    r = requests.get(url, params={'guid': guid, 'file':document_type})\n\t\n  File \"/usr/local/lib/python3.8/site-packages/requests/api.py\", line 73, in get\n    return request(\"get\", url, params=params, **kwargs)\n\t\n  File \"/usr/local/lib/python3.8/site-packages/requests/api.py\", line 59, in request\n    return session.request(method=method, url=url, **kwargs)\n\t\n  File \"/usr/local/lib/python3.8/site-packages/requests/sessions.py\", line 589, in request\n    resp = self.send(prep, **send_kwargs)\n\t\n  File \"/usr/local/lib/python3.8/site-packages/requests/sessions.py\", line 703, in send\n    r = adapter.send(request, **kwargs)\n\t\n  File \"/usr/local/lib/python3.8/site-packages/requests/adapters.py\", line 519, in send\n    raise ConnectionError(e, request=request)\n"
+        }
+      },
+      "annotations": []
+    }
+  ]
+}

@@ -1,0 +1,459 @@
+{
+  "metadata": {
+    "mmif": "http://mmif.clams.ai/1.0.0"
+  },
+  "documents": [
+    {
+      "@type": "http://mmif.clams.ai/vocabulary/VideoDocument/v1",
+      "properties": {
+        "mime": "video",
+        "id": "d1",
+        "location": "baapb://cpb-aacip-507-154dn40c26.video"
+      }
+    }
+  ],
+  "views": [
+    {
+      "id": "v_0",
+      "metadata": {
+        "timestamp": "2023-07-24T21:55:55.049408",
+        "app": "http://apps.clams.ai/chyron-detection/v1.0",
+        "contains": {
+          "http://mmif.clams.ai/vocabulary/TimeFrame/v1": {
+            "timeUnit": "frames",
+            "document": "d1"
+          },
+          "http://mmif.clams.ai/vocabulary/Annotation/v2": {
+            "document": "d1"
+          }
+        }
+      },
+      "annotations": [
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 1455,
+            "end": 1475,
+            "frameType": "chyron",
+            "id": "tf_1"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 1480,
+            "end": 1500,
+            "frameType": "chyron",
+            "id": "tf_2"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 5395,
+            "end": 5485,
+            "frameType": "chyron",
+            "id": "tf_3"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 6645,
+            "end": 6905,
+            "frameType": "chyron",
+            "id": "tf_4"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 8275,
+            "end": 8295,
+            "frameType": "chyron",
+            "id": "tf_5"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 10690,
+            "end": 10710,
+            "frameType": "chyron",
+            "id": "tf_6"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 10715,
+            "end": 10730,
+            "frameType": "chyron",
+            "id": "tf_7"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 10735,
+            "end": 10780,
+            "frameType": "chyron",
+            "id": "tf_8"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 25535,
+            "end": 25635,
+            "frameType": "chyron",
+            "id": "tf_9"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 26225,
+            "end": 26315,
+            "frameType": "chyron",
+            "id": "tf_10"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 28705,
+            "end": 28850,
+            "frameType": "chyron",
+            "id": "tf_11"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 29585,
+            "end": 29710,
+            "frameType": "chyron",
+            "id": "tf_12"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 30595,
+            "end": 30650,
+            "frameType": "chyron",
+            "id": "tf_13"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 30655,
+            "end": 30675,
+            "frameType": "chyron",
+            "id": "tf_14"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 30680,
+            "end": 30740,
+            "frameType": "chyron",
+            "id": "tf_15"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 32945,
+            "end": 33130,
+            "frameType": "chyron",
+            "id": "tf_16"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 34850,
+            "end": 34865,
+            "frameType": "chyron",
+            "id": "tf_17"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 34870,
+            "end": 34915,
+            "frameType": "chyron",
+            "id": "tf_18"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 34925,
+            "end": 34980,
+            "frameType": "chyron",
+            "id": "tf_19"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 34985,
+            "end": 35010,
+            "frameType": "chyron",
+            "id": "tf_20"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 37800,
+            "end": 37855,
+            "frameType": "chyron",
+            "id": "tf_21"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 37865,
+            "end": 37985,
+            "frameType": "chyron",
+            "id": "tf_22"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 37990,
+            "end": 38020,
+            "frameType": "chyron",
+            "id": "tf_23"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 43445,
+            "end": 43655,
+            "frameType": "chyron",
+            "id": "tf_24"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 54275,
+            "end": 54450,
+            "frameType": "chyron",
+            "id": "tf_25"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 59050,
+            "end": 59065,
+            "frameType": "chyron",
+            "id": "tf_26"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 60690,
+            "end": 60835,
+            "frameType": "chyron",
+            "id": "tf_27"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 62135,
+            "end": 62240,
+            "frameType": "chyron",
+            "id": "tf_28"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 64230,
+            "end": 64445,
+            "frameType": "chyron",
+            "id": "tf_29"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 68945,
+            "end": 69150,
+            "frameType": "chyron",
+            "id": "tf_30"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 78030,
+            "end": 78215,
+            "frameType": "chyron",
+            "id": "tf_31"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 79240,
+            "end": 79365,
+            "frameType": "chyron",
+            "id": "tf_32"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 82130,
+            "end": 82315,
+            "frameType": "chyron",
+            "id": "tf_33"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 87565,
+            "end": 87580,
+            "frameType": "chyron",
+            "id": "tf_34"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 89645,
+            "end": 89715,
+            "frameType": "chyron",
+            "id": "tf_35"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 92885,
+            "end": 93040,
+            "frameType": "chyron",
+            "id": "tf_36"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 99250,
+            "end": 99400,
+            "frameType": "chyron",
+            "id": "tf_37"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 105060,
+            "end": 105150,
+            "frameType": "chyron",
+            "id": "tf_38"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 106015,
+            "end": 106210,
+            "frameType": "chyron",
+            "id": "tf_39"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 106215,
+            "end": 106295,
+            "frameType": "chyron",
+            "id": "tf_40"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 106450,
+            "end": 106465,
+            "frameType": "chyron",
+            "id": "tf_41"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 106470,
+            "end": 106500,
+            "frameType": "chyron",
+            "id": "tf_42"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 106505,
+            "end": 106520,
+            "frameType": "chyron",
+            "id": "tf_43"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 106525,
+            "end": 106555,
+            "frameType": "chyron",
+            "id": "tf_44"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 106585,
+            "end": 106600,
+            "frameType": "chyron",
+            "id": "tf_45"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/TimeFrame/v1",
+          "properties": {
+            "start": 106615,
+            "end": 106635,
+            "frameType": "chyron",
+            "id": "tf_46"
+          }
+        },
+        {
+          "@type": "http://mmif.clams.ai/vocabulary/Annotation/v2",
+          "properties": {
+            "fps": 29.97,
+            "frameCount": 106849.0,
+            "duration": 3565199.0,
+            "durationTimeUnit": "milliseconds",
+            "id": "a_1"
+          }
+        }
+      ]
+    }
+  ]
+}

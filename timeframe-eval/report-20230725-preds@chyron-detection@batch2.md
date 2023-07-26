@@ -1,5 +1,5 @@
 #### app
-The clipsearch app was used to generate the preds MMIF files (located [here](https://github.com/clamsproject/aapb-evaluations/tree/750fa21c415c16b780c2c0e2fb3e6f031ab88511/timeframe-eval/preds%40clipsearch%40batch2)).
+The `chyron-detection` ([https://apps.clams.ai/chyron-detection/v1.0/](https://apps.clams.ai/chyron-detection/v1.0/)) app was used to generate the preds MMIF files .
 
 #### evaluation dataset
 The gold annotation can be found [here](https://github.com/clamsproject/aapb-annotations/blob/61bd60e99ef24a1ca369e23de8b2c74bb2cb37d3/newshour-chyron/golds/batch2/2022-jul-chyron.csv).
@@ -21,11 +21,9 @@ Precision is a measure of the number of correctly identified chyron timeframes a
 #### evaluation results
 The evaluation results for this batch were as follows (where F1 is the harmonic mean of the precision and recall):
 
-* Precision = 0.0  
-* Recall = 0.0  
-* F1 = 0.0  
-
-Some reasons for the low scores include small batch size and the inherent difficult of the chyron task.
+* Precision = 0.42
+* Recall = 0.23
+* F1 = 0.30
 
 #### side-by-side views
 The side-by-side views of the gold annotations and app predictions can be found [here](https://github.com/clamsproject/aapb-evaluations/tree/4c96f78f8b03d6ad9660810673989973620a6650/timeframe-eval/results%40clipsearch%40batch2).

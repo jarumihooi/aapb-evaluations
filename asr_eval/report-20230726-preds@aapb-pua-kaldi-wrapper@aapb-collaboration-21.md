@@ -1,19 +1,19 @@
 # ASR Evalutation Report -- Kaldi
 
 ### App:
-1. [AAPB-PUA Kaldi Wrapper (v2)](https://github.com/clamsproject/app-aapb-pua-kaldi-wrapper) is used to generated the preds MMIF files from 20 videos. For this evaluation, MMIF files are generated through Kaldi. 
-2. Preds MMIF files can be found [here](https://github.com/clamsproject/aapb-evaluations/tree/main/asr_eval/preds%40aapb-pua-kaldi-wrapper%40aapb-collaboration-21).
+1. [AAPB-PUA Kaldi Wrapper (v2)](https://github.com/clamsproject/app-aapb-pua-kaldi-wrapper/tree/bc7209a0b548c87878948ed5b820fd74c1c7819a) is used to generated the preds MMIF files from 20 videos. For this evaluation, MMIF files are generated through Kaldi. 
+2. Preds MMIF files can be found [here](https://github.com/clamsproject/aapb-evaluations/tree/c581728ff6703856c687159fd2d3829f77f127dc/asr_eval/preds%40aapb-pua-kaldi-wrapper%40aapb-collaboration-21).
 * **Note**: 4 out of the 20 videos were not transcribed properly, therefore the total number of valid evaluation generated is **16**.
 
 ### Evaluation code: 
-The evaluation code can be found [here](https://github.com/clamsproject/aapb-evaluations/tree/main/asr_eval).
+The evaluation code can be found [here](https://github.com/clamsproject/aapb-evaluations/tree/db6bbb4598a845ea9fba1168ab9ed2f3d15411df/asr_eval).
 
 ### Evaluation metric: 
 **WER** (Word Error Rate) is used as the evaluation metric that is implemented by the above mentioned evaluation code. WER calculates the accuracy of Automatic Speech Recognition (ASR) on the word level. To get a WER, the number of errors is divided by the number of total words spoken. In other words, WER tells "how wrong" the predicted result can be. Therefore, a smaller WER indicates a better performance. More information can be found [here](https://en.wikipedia.org/wiki/Word_error_rate).
 `TorchMetrics` has a [WER module](https://torchmetrics.readthedocs.io/en/stable/text/word_error_rate.html) and is used in our evaluation code.
 
 ### Evaluation dataset: 
-Gold standard annotations are located [here](https://github.com/clamsproject/aapb-collaboration/tree/21-undocumented-changes/21), with file name starting with the corresponding video IDs.
+Gold standard annotations are located [here](https://github.com/clamsproject/aapb-collaboration/tree/89b8b123abbd4a9a67c525cc480173b52e0d05f0/21), with file name starting with the corresponding video IDs.
 
 ### Evaluation results: 
 We evaluate MMIF files under 2 conditions:

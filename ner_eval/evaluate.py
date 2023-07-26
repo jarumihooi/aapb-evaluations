@@ -252,10 +252,10 @@ def entity_labels(entity):
         label = label_dict[label]  # e.g. ORG -> organization
     for i, word in enumerate(words):
         end = start + len(word)
-        if i == 0:
-            tokens[(start, end)] = 'B-' + label
-        else:
-            tokens[(start, end)] = 'I-' + label
+        # if i == 0:
+        #     tokens[(start, end)] = 'B-' + label
+        # else:
+        tokens[(start, end)] = label
         start = end + 1
     return tokens
 
@@ -268,7 +268,7 @@ def generate_side_by_side(triples, outdir):
             source_tokens = tokenizer(triple[0])
             gold_tokenized_labels = read_tokenized_labels(triple[1])
             pred_tokenized_labels = read_tokenized_labels(triple[2])
-            for token in source_tokens:
+            for i, token in enumerate(source_tokens, 1):
                 if token in gold_tokenized_labels:
                     gold = gold_tokenized_labels[token]
                 else:
@@ -277,7 +277,7 @@ def generate_side_by_side(triples, outdir):
                     pred = pred_tokenized_labels[token]
                 else:
                     pred = "O"
-                out_f.write(",".join([str(token), gold, pred]))
+                out_f.write(",".join([str(i), gold, pred]))
                 out_f.write("\n")
 
 

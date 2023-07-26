@@ -6,7 +6,7 @@ The Spacy NLP wrapper was used to generate the preds MMIF files. http://apps.cla
 The gold annotation can be found [here](https://github.com/clamsproject/aapb-annotations/tree/main/newshour-namedentity/golds/aapb-collaboration-21).
 
 #### evaluation code
-The script used for evaluation is [here](https://github.com/clamsproject/aapb-evaluations/blob/17-side-by-side-view-in-ner-eval-script/ner_eval/evaluate.py).
+The script used for evaluation is [here](https://github.com/clamsproject/aapb-evaluations/blob/0ad076f50bd1703133d3ae76dfddcb4c3ac4d7b1/ner_eval/evaluate.py).
 
 #### evaluation metrics
 

@@ -7,7 +7,7 @@ The gold annotation data files are in TSV format and can be found [here](https:/
 
 #### evaluation code
 
-The script used for evaluation is [here]().
+The script used for evaluation is [here](https://github.com/clamsproject/aapb-evaluations/blob/c01ae38e993b42865a09e319635991e89783611f/nel_eval/evaluate.py).
 
 #### evaluation metrics
 

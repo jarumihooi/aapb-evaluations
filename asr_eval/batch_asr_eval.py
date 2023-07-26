@@ -51,11 +51,14 @@ def batch_run_wer(hyp_dir, gold_dir):
 def main(hyp_dir, gold_dir):
     # change the path name when needed 
     try: 
-        shutil.rmtree('wer_results')
+        try:
+            shutil.rmtree('wer_results')
+        except Exception as error:
+            print(error)
         os.mkdir('wer_results')
         batch_run_wer(hyp_dir, gold_dir)
-    except Exception as error:
-        print(error)
+    except Exception as batch_run_error:
+        print(batch_run_error)
 
 if __name__ == "__main__":
   main()

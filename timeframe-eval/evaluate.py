@@ -9,7 +9,7 @@ import glob
 from pyannote.core import Segment, Timeline, Annotation
 from pyannote.metrics.detection import DetectionErrorRate, DetectionPrecisionRecallFMeasure
 from mmif import Mmif, DocumentTypes, AnnotationTypes
-from moviepy.editor import VideoFileClip
+from requests.exceptions import ConnectionError
 import pathlib
 import math
 
@@ -34,23 +34,6 @@ def convert_time(time_str):
         return total_seconds
     else:
         return 0
-
-#get fps info from a video file
-def get_video_fps(url):
-    video = VideoFileClip(url)
-    fps = video.fps
-    return fps
-
-##########
-
-#read the video file, turn that into a dict looks like: {file_id: fps; ...}
-def video_to_fps_dict(mp4_files):
-    video_fps_dict = {}
-    for directory in mp4_files:
-        filename = os.path.basename(directory)
-        file_id = filename.split('.')[0]
-        video_fps_dict[file_id]=get_video_fps(directory)
-    return video_fps_dict
 
 #download the 'goldfile' from github
 def get_csv(gold_url):
@@ -102,17 +85,24 @@ def process_mmif_file(mmif_file_path, gold_timeframe_dict):
     mmif_files = get_mmif(mmif_file_path)
     test_timeframes = {}
     for mmif_file in mmif_files:
+        print(mmif_file)
         mmif = Mmif(open(mmif_file).read())
-        document_location = mmif.get_documents_by_type(DocumentTypes.VideoDocument)[0].location
-        filename = os.path.basename(document_location)
-        video_fileID = filename.split(".")[0]
+        vds = mmif.get_documents_by_type(DocumentTypes.VideoDocument)
+        if vds:
+            vd = vds[0]
+        else:
+            continue
+        video_fileID = os.path.basename(vd.location).split(".")[0]
         if video_fileID in gold_timeframe_dict:
             if video_fileID not in test_timeframes:
                 test_timeframes[video_fileID] = Timeline()
             #get the slate start and end time
             starts = []
             ends = []
-            ann = mmif.get_view_contains(AnnotationTypes.TimeFrame).get_annotations(AnnotationTypes.TimeFrame)
+            v = mmif.get_view_contains(AnnotationTypes.TimeFrame)
+            if v is None:
+                continue
+            ann = v.get_annotations(AnnotationTypes.TimeFrame)
             while True:
                 try:
                     cur = next(ann)
@@ -123,17 +113,7 @@ def process_mmif_file(mmif_file_path, gold_timeframe_dict):
                     break
             result = mmif.get_all_views_contain(at_types=AnnotationTypes.TimeFrame)
             view = result[-1]
-            annotations = view.get_annotations(at_type=AnnotationTypes.Annotation)
-            annotations = list(annotations)
-            ##if it's not annotated, actually read the video, aka the fps_dict just created
-            fps = 29.97
-            ##if it's annotated, use the existing 'fps'
-            if len(annotations) > 0:
-                for annotation in annotations:
-                    entity = annotation.properties
-                    if 'fps' in entity:
-                        fps=float(entity['fps'])
-            # get the test_timeframes dict
+            fps = vd.get_property('fps')
             calculated_starts = [round(start/fps, 2) for start in starts]
             calculated_ends = [round(end/fps, 2) for end in ends]
             i = 0
@@ -167,8 +147,14 @@ def calculate_detection_metrics(gold_timeframes_dict, test_timeframes, result_pa
         FP += false_positive
         FN += false_negative
         data = pd.concat([data, pd.DataFrame({'GUID': file_ID, 'FN seconds': results_dict['miss'], 'FP seconds': results_dict['false alarm'], 'Total true seconds': results_dict['total']}, index=[0])], ignore_index=True)
-    precision = TP / (TP + FP)
-    recall = TP / (TP + FN)
+    try:
+        precision = TP / (TP + FP)
+    except ZeroDivisionError:
+        precision = 0
+    try:
+        recall = TP / (TP + FN)
+    except ZeroDivisionError:
+        recall = 0
     if precision + recall == 0:
         f1 = 0.0
     else:

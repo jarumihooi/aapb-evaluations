@@ -1,5 +1,2 @@
-mmif
+mmif-python
 pyannote.metrics
-glob
-argparse
-moviepy

@@ -48,8 +48,10 @@ def batch_run_wer(hyp_dir, gold_dir):
 @click.command()
 @click.option("--hyp-dir", type=click.Path(readable=True), required=True)
 @click.option("--gold-dir", type=click.Path(readable=True), required=True)
+
+
 def main(hyp_dir, gold_dir):
-    # change the path name when needed 
+    # change the path name if needed 
     try: 
         try:
             shutil.rmtree('wer_results')

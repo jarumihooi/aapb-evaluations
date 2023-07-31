@@ -28,9 +28,10 @@ from warnings import warn
 class NamedEntityLink:
     def __init__(self, surface_form: str, uris: Union[List[str], str]) -> None:
         """
-        Initializes NEL instance.
+        Initializes NEL instance. Gold data provides the URI as a string, whereas system output MMIFs provide
+        the URI(s) in a list format.
         :param surface_form: the text span corresponding to the entity.
-        :param uris: the Wikidata URIs grounding the entity.
+        :param uris: the Wikidata URI(s) grounding the entity.
         """
         self.surface_form = surface_form
         if isinstance(uris, str):
@@ -62,16 +63,24 @@ class NamedEntityLink:
         """Returns True if another object is an NEL instance with the same surface form
         and QID as this one. Returns False otherwise."""
         if isinstance(other, NamedEntityLink):
-            if other.surface_form == self.surface_form and other.qid == self.qid:
-                return True
+            if isinstance(self.qid, str):
+                if self.qid == other.qid and self.surface_form == other.surface_form:
+                    return True
+            elif isinstance(self.qid, list):
+                if other.qid in self.qid and self.surface_form == other.surface_form:
+                    return True
         return False
 
     def substring_match(self, other) -> bool:
         """Returns True if the surface form of this instance is a substring of the surface form
         of another NEL instance and both objects have the same QID."""
         if isinstance(other, NamedEntityLink):
-            if self.surface_form in other.surface_form and other.qid == self.qid:
-                return True
+            if isinstance(self.qid, str):
+                if self.qid == other.qid and self.surface_form in other.surface_form:
+                    return True
+            elif isinstance(self.qid, list):
+                if other.qid in self.qid and self.surface_form in other.surface_form:
+                    return True
         return False
 
 

@@ -1,9 +1,9 @@
-Total Precision = 0.996763737399742	 Total Recall = 0.6952650481056941	 Total F1 = 0.8191527162774934
+Total Precision = 0.99639306066445	 Total Recall = 0.6952224607571261	 Total F1 = 0.8189979658431242
 
 
 Individual file results:
                         GUID  FN seconds  FP seconds Total true seconds  Detection Error Rate
-0   cpb-aacip-507-n29p26qt59   1301151.0      8203.0            3778056              0.346568
+0   cpb-aacip-507-n29p26qt59   1300789.0     10331.0            3775566              0.347264
 1   cpb-aacip-507-4t6f18t178    512078.0      4396.0            1697471              0.304261
 2   cpb-aacip-507-7659c6sk7z    753246.0      2870.0            1536172              0.492208
 3   cpb-aacip-507-4746q1t25k   1313698.0      7735.0            3705128              0.356650
@@ -16,7 +16,7 @@ Individual file results:
 10  cpb-aacip-507-zw18k75z4h    384703.0      4166.0            1685729              0.230683
 11  cpb-aacip-507-v11vd6pz5w   1314098.0      7750.0            3757628              0.351777
 12  cpb-aacip-507-r785h7cp0z    926117.0      7753.0            3476553              0.268620
-13  cpb-aacip-507-9882j68s35    474984.0      4542.0            1695670              0.282794
+13  cpb-aacip-507-9882j68s35    472326.0     17404.0            1680150              0.291480
 14  cpb-aacip-507-zk55d8pd1h   1267602.0      6813.0            3454967              0.368865
 15  cpb-aacip-507-1v5bc3tf81   1093021.0      8023.0            3585495              0.307083
 16  cpb-aacip-507-nk3610wp6s    788657.0      8355.0            3396476              0.234659

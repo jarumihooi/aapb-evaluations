@@ -1,35 +1,35 @@
 import os
 from mmif.serialize import Mmif
 from mmif.vocabulary import AnnotationTypes, DocumentTypes
-from lapps.discriminators import Uri
 from pyannote.core import Segment, Timeline, Annotation
 from pyannote.metrics.detection import DetectionErrorRate, DetectionPrecisionRecallFMeasure
-import re
 import argparse
-import pysrt
 import pandas as pd
 
 #Yao: If the mmif file ends with .spacy.mmif, then you need to change the code. e.g. it should be 'file.endswith(".spacy.mmif")' instead of 'file.endswith(".mmif")'
 
 ########## small tools ##########
 def time_to_ms(time_str):
-    h, m, s = time_str.split(':')
-    s, ms = s.split(',')
-    return int(h) * 3600000 + int(m) * 60000 + int(s) * 1000 + int(ms)
+    try:
+        h, m, s = time_str.split(':')
+        s, ms = s.split('.')
+        return int(h) * 3600000 + int(m) * 60000 + int(s) * 1000 + int(ms)
+    except ValueError:
+        raise ValueError("Invalid time format. Expected format: hh:mm:ss.mmm")
 
 ########## small tools end ##########
 
-def get_srt_list(srt_dir):
-    srt_files = os.listdir(srt_dir)
-    return [os.path.join(srt_dir, file) for file in srt_files if file.endswith(".srt")]
+def get_tsv_list(tsv_dir):
+    srt_files = os.listdir(tsv_dir)
+    return [os.path.join(tsv_dir, file) for file in srt_files if file.endswith(".tsv")]
 
-def process_srt(srt_file_list):
+def process_tsv(tsv_file_list):
     gold_timeframes = {}
-    for srt_file in srt_file_list:
-        gold_timeframes[os.path.splitext(os.path.basename(srt_file))[0]] = Timeline()
-        subs = pysrt.open(srt_file)
-        for sub in subs:
-            gold_timeframes[os.path.splitext(os.path.basename(srt_file))[0]].add(Segment(time_to_ms(str(sub.start)), time_to_ms(str(sub.end))))
+    for tsv_file in tsv_file_list:
+        gold_timeframes[os.path.splitext(os.path.basename(tsv_file))[0]] = Timeline()
+        df = pd.read_csv(tsv_file, sep='\t')
+        for index, row in df[['starts', 'ends']].iterrows():
+            gold_timeframes[os.path.splitext(os.path.basename(tsv_file))[0]].add(Segment(time_to_ms(row['starts']), time_to_ms(row['ends'])))
     return gold_timeframes
 
 def get_mmif_list(mmif_dir):
@@ -48,7 +48,7 @@ def process_mmif(mmif_file_list):
                 try:
                     starts.append(float(cur.properties["start"]))
                     ends.append(float(cur.properties["end"]))
-                except StopIteration:  # Use specific exception
+                except StopIteration:
                     break
             for start, end in zip(starts, ends):
                 test_timeframes[os.path.splitext(os.path.basename(mmif_file))[0]].add(Segment(start, end))
@@ -79,12 +79,6 @@ def calculate_detection_metrics(gold_timeframes, test_timeframes, result_path):
             TP += true_positive
             FP += false_positive
             FN += false_negative
-            file_precision = true_positive / (
-                        true_positive + false_positive) if true_positive + false_positive > 0 else 0.0
-            file_recall = true_positive / (
-                        true_positive + false_negative) if true_positive + false_negative > 0 else 0.0
-            file_f1 = (2 * file_precision * file_recall) / (
-                        file_precision + file_recall) if file_precision + file_recall > 0 else 0.0
             data_row = {
                 'GUID': file_ID,
                 'FN seconds': results_dict['miss'],
@@ -109,7 +103,7 @@ if __name__ == "__main__":
     parser.add_argument('-o', '--gold_dir', help='directory containing human annotated files', default=None)
     parser.add_argument('-r', '--result_file', help='file to store evaluation results', default='results.txt')
     args = parser.parse_args()
-    gold_timeframes = process_srt(get_srt_list(args.gold_dir))
+    gold_timeframes = process_tsv(get_tsv_list(args.gold_dir))
     test_timeframes = process_mmif(get_mmif_list(args.machine_dir))
     calculate_detection_metrics(gold_timeframes, test_timeframes, args.result_file)
 

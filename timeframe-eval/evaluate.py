@@ -14,6 +14,9 @@ import pathlib
 import math
 
 
+#####Yao: So for now, if we want to evaluate the slate app, we need to run the code like this:
+#python evaluate.py -m /your/preds/path -g /your/gold/path --slate -o /your/output/path -r /your/result/path --slate
+
 ########## small tools
 
 #convert time from string in csv to the pyannote-style time format
@@ -41,20 +44,25 @@ def get_csv(gold_url):
     df.to_csv('goldfiles.csv', index=False)
     return 'goldfiles.csv'
 
+def get_tsv_list(tsv_dir):
+    srt_files = os.listdir(tsv_dir)
+    return [os.path.join(tsv_dir, file) for file in srt_files if file.endswith(".tsv")]
+
 #adapt the code from Kelley Lynch - 'evaluate_chyrons.py'
-def load_slate_gold_standard(file_name, test_dir):
+def load_slate_gold_standard(tsv_file_list, test_dir):
     gold_timeframes = {}
-    with open(file_name, 'r') as gold_csv:
-        reader = csv.DictReader(gold_csv)
-        for row in reader:
+    valid_files = set(filename.split(".")[0] for filename in os.listdir(test_dir))
+    for tsv_file in tsv_file_list:
+        df = pd.read_csv(tsv_file, sep=',')
+        for index, row in df[["GUID", "Slate Start", "Slate End"]].iterrows():
             video_fileID = row["GUID"]
-            start = row["Slate Start ,"]
-            end = row["Slate End   ,"]
-            if start == "," or end == ",":
+            start = row["Slate Start"]
+            end = row["Slate End"]
+            if pd.isna(start) or pd.isna(end):
                 continue
-            Slate_Start = convert_time(row["Slate Start ,"])
-            Slate_End = convert_time(row["Slate End   ,"])
-            if video_fileID in [filename.split(".")[0] for filename in os.listdir(test_dir)]:
+            Slate_Start = convert_time(start)
+            Slate_End = convert_time(end)
+            if video_fileID in valid_files:
                 if video_fileID not in gold_timeframes:
                     gold_timeframes[video_fileID] = Timeline()
                 gold_timeframes[video_fileID].add(Segment(Slate_Start, Slate_End))
@@ -214,6 +222,7 @@ if __name__ == "__main__":
                         help='directory containing machine annotated files')
     parser.add_argument('-o', '--output_dir', help='directory to publish side-by-side results', default=None)
     parser.add_argument('-r', '--result_file', help='file to store evaluation results', default='results.txt')
+    parser.add_argument('-g', '--gold_dir', help='file to store gold standard', default=None)
     gold_group = parser.add_mutually_exclusive_group(required=True)
     gold_group.add_argument('--slate', action='store_true', help='slate annotations')
     gold_group.add_argument('--chyron', action='store_true', help='chyron annotations')
@@ -226,8 +235,7 @@ if __name__ == "__main__":
         outdir = pathlib.Path(__file__).parent
 
     if args.slate:
-        gold_url = 'https://raw.githubusercontent.com/clamsproject/aapb-annotations/62e4d399c3ba1ea47719d504d0f088a768486177/january-slates/230101-aapb-collaboration-7/CLAMS_slate_annotation_metadata.csv'
-        gold_timeframes_dict=load_slate_gold_standard(get_csv(gold_url), args.machine_dir)
+        gold_timeframes_dict = load_slate_gold_standard(get_tsv_list(args.gold_dir), args.machine_dir)
     elif args.chyron:
         gold_url = 'https://raw.githubusercontent.com/clamsproject/aapb-annotations/61bd60e99ef24a1ca369e23de8b2c74bb2cb37d3/newshour-chyron/golds/batch2/2022-jul-chyron.csv'
         gold_timeframes_dict=load_chyron_gold_standard(get_csv(gold_url), args.machine_dir)

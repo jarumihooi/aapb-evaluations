@@ -22,6 +22,7 @@ from mmif.serialize import Mmif
 import os
 import pandas as pd
 
+import goldretriever
 from nel import NamedEntityLink
 
 
@@ -102,7 +103,9 @@ def tsv_to_ne(gold_tsv_path) -> list:
     return ne_list
 
 
-def evaluate(test_dir, gold_dir):
+def evaluate(test_dir, gold_dir=None):
+    if gold_dir is None:
+        gold_dir = goldretriever.download_golds('https://github.com/clamsproject/aapb-annotations/tree/feaf342477fc27e57dcdcbb74c067aba4a02e40d/newshour-namedentity-wikipedialink/golds/aapb-collaboration-21')
     results = defaultdict(dict)
     file_matches = match_files(test_dir, gold_dir)
     for sys_file, gold_file in file_matches:

@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "mmif": "http://mmif.clams.ai/1.0.0"
+  },
+  "documents": [
+    {
+      "@type": "http://mmif.clams.ai/vocabulary/VideoDocument/v1",
+      "properties": {
+        "mime": "video",
+        "id": "d1",
+        "location": "baapb://cpb-aacip-507-pc2t43js98.video"
+      }
+    }
+  ],
+  "views": []
+}

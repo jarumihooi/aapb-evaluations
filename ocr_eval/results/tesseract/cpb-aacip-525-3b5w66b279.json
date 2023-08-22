@@ -1,0 +1,182 @@
+{
+  "292.2922922922923": {
+    "gold_text": "brig. gen. daniel menard\\ncommander of coalition forces in kandahar",
+    "test_text": "d a n i e l",
+    "cer": 0.8656716346740723
+  },
+  "293.2932932932933": {
+    "gold_text": "brig. gen. daniel menard\\ncommander of coalition forces in kandahar",
+    "test_text": "d a n i e l",
+    "cer": 0.8656716346740723
+  },
+  "294.29429429429433": {
+    "gold_text": "brig. gen. daniel menard\\ncommander of coalition forces in kandahar",
+    "test_text": "f a",
+    "cer": 0.9552238583564758
+  },
+  "295.2952952952953": {
+    "gold_text": "brig. gen. daniel menard\\ncommander of coalition forces in kandahar",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "296.2962962962963": {
+    "gold_text": "brig. gen. daniel menard\\ncommander of coalition forces in kandahar",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "340.34034034034033": {
+    "gold_text": "joby warrick\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "341.3413413413414": {
+    "gold_text": "joby warrick\\nthe washington post",
+    "test_text": "a",
+    "cer": 0.9696969985961914
+  },
+  "342.34234234234236": {
+    "gold_text": "joby warrick\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "343.34334334334335": {
+    "gold_text": "joby warrick\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "410.4104104104104": {
+    "gold_text": "joby warrick\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "411.41141141141145": {
+    "gold_text": "joby warrick\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "412.41241241241244": {
+    "gold_text": "joby warrick\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "413.4134134134134": {
+    "gold_text": "joby warrick\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "414.4144144144144": {
+    "gold_text": "joby warrick\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "415.41541541541545": {
+    "gold_text": "joby warrick\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "416.41641641641644": {
+    "gold_text": "joby warrick\\nthe washington post",
+    "test_text": "j o b y",
+    "cer": 0.8787878751754761
+  },
+  "417.4174174174174": {
+    "gold_text": "joby warrick\\nthe washington post",
+    "test_text": "z g",
+    "cer": 0.939393937587738
+  },
+  "418.4184184184184": {
+    "gold_text": "joby warrick\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "524.5245245245245": {
+    "gold_text": "joby warrick\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "525.5255255255255": {
+    "gold_text": "joby warrick\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "526.5265265265266": {
+    "gold_text": "joby warrick\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "527.5275275275276": {
+    "gold_text": "joby warrick\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "528.5285285285286": {
+    "gold_text": "joby warrick\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "529.5295295295296": {
+    "gold_text": "joby warrick\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "530.5305305305305": {
+    "gold_text": "joby warrick\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "531.5315315315315": {
+    "gold_text": "joby warrick\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "532.5325325325325": {
+    "gold_text": "joby warrick\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "533.5335335335335": {
+    "gold_text": "joby warrick\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "579.5795795795796": {
+    "gold_text": "matt apuzzo\\nthe associated press",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "580.5805805805807": {
+    "gold_text": "matt apuzzo\\nthe associated press",
+    "test_text": "t h e   f",
+    "cer": 0.8181818127632141
+  },
+  "581.5815815815816": {
+    "gold_text": "matt apuzzo\\nthe associated press",
+    "test_text": "e s l   o e :",
+    "cer": 0.8484848737716675
+  },
+  "582.5825825825826": {
+    "gold_text": "matt apuzzo\\nthe associated press",
+    "test_text": "t h e   f",
+    "cer": 0.8181818127632141
+  },
+  "583.5835835835836": {
+    "gold_text": "matt apuzzo\\nthe associated press",
+    "test_text": "t h e a",
+    "cer": 0.8181818127632141
+  },
+  "584.5845845845846": {
+    "gold_text": "matt apuzzo\\nthe associated press",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "585.5855855855856": {
+    "gold_text": "matt apuzzo\\nthe associated press",
+    "test_text": "t h e a",
+    "cer": 0.8181818127632141
+  },
+  "586.5865865865866": {
+    "gold_text": "matt apuzzo\\nthe associated press",
+    "test_text": "a s l   e l",
+    "cer": 0.8484848737716675
+  }
+}

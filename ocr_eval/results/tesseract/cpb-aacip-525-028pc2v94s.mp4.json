@@ -1,0 +1,167 @@
+{
+  "143.14314314314313": {
+    "gold_text": "washington, dc\\ndamian paletta\\nthe washington post",
+    "test_text": "h o u f",
+    "cer": 0.9215686321258545
+  },
+  "144.14414414414415": {
+    "gold_text": "washington, dc\\ndamian paletta\\nthe washington post",
+    "test_text": "1 0 1 8 ) ;",
+    "cer": 0.9215686321258545
+  },
+  "145.14514514514516": {
+    "gold_text": "washington, dc\\ndamian paletta\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "146.14614614614615": {
+    "gold_text": "washington, dc\\ndamian paletta\\nthe washington post",
+    "test_text": "1 0 )   8 ) ;",
+    "cer": 0.9215686321258545
+  },
+  "147.14714714714717": {
+    "gold_text": "washington, dc\\ndamian paletta\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "212.21221221221222": {
+    "gold_text": "washington, dc\\ndamian paletta\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "213.2132132132132": {
+    "gold_text": "washington, dc\\ndamian paletta\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "214.21421421421422": {
+    "gold_text": "washington, dc\\ndamian paletta\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "215.2152152152152": {
+    "gold_text": "washington, dc\\ndamian paletta\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "216.21621621621622": {
+    "gold_text": "washington, dc\\ndamian paletta\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "217.21721721721724": {
+    "gold_text": "washington, dc\\ndamian paletta\\nthe washington post",
+    "test_text": "h o u f",
+    "cer": 0.9215686321258545
+  },
+  "218.21821821821823": {
+    "gold_text": "washington, dc\\ndamian paletta\\nthe washington post",
+    "test_text": "h o u f",
+    "cer": 0.9215686321258545
+  },
+  "341.3413413413414": {
+    "gold_text": "washington, dc\\ndamian paletta\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "342.34234234234236": {
+    "gold_text": "washington, dc\\ndamian paletta\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "343.34334334334335": {
+    "gold_text": "washington, dc\\ndamian paletta\\nthe washington post",
+    "test_text": "1 0 1 8 ) ;",
+    "cer": 0.9215686321258545
+  },
+  "344.34434434434434": {
+    "gold_text": "washington, dc\\ndamian paletta\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "345.3453453453454": {
+    "gold_text": "washington, dc\\ndamian paletta\\nthe washington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "464.46446446446447": {
+    "gold_text": "washington, dc\\nnahal toosi\\npolitico",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "465.46546546546546": {
+    "gold_text": "washington, dc\\nnahal toosi\\npolitico",
+    "test_text": "h o u r",
+    "cer": 0.8918918967247009
+  },
+  "466.4664664664665": {
+    "gold_text": "washington, dc\\nnahal toosi\\npolitico",
+    "test_text": "h o u r",
+    "cer": 0.8918918967247009
+  },
+  "467.4674674674675": {
+    "gold_text": "washington, dc\\nnahal toosi\\npolitico",
+    "test_text": "h o u r",
+    "cer": 0.8918918967247009
+  },
+  "468.4684684684685": {
+    "gold_text": "washington, dc\\nnahal toosi\\npolitico",
+    "test_text": "h o u r",
+    "cer": 0.8918918967247009
+  },
+  "518.5185185185186": {
+    "gold_text": "washington, dc\\nnahal toosi\\npolitico",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "519.5195195195196": {
+    "gold_text": "washington, dc\\nnahal toosi\\npolitico",
+    "test_text": "( @ n a h a c t !",
+    "cer": 0.8648648858070374
+  },
+  "520.5205205205206": {
+    "gold_text": "washington, dc\\nnahal toosi\\npolitico",
+    "test_text": "\u2018 @ n a h a l t o o s",
+    "cer": 0.7837837934494019
+  },
+  "521.5215215215215": {
+    "gold_text": "washington, dc\\nnahal toosi\\npolitico",
+    "test_text": "\u2018 @ n a h a l t o o s",
+    "cer": 0.7837837934494019
+  },
+  "522.5225225225225": {
+    "gold_text": "washington, dc\\nnahal toosi\\npolitico",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "523.5235235235235": {
+    "gold_text": "washington, dc\\nnahal toosi\\npolitico",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "568.5685685685686": {
+    "gold_text": "washington, dc\\nnahal toosi\\npolitico",
+    "test_text": "h o u r",
+    "cer": 0.8918918967247009
+  },
+  "569.5695695695696": {
+    "gold_text": "washington, dc\\nnahal toosi\\npolitico",
+    "test_text": "h o u r",
+    "cer": 0.8918918967247009
+  },
+  "570.5705705705706": {
+    "gold_text": "washington, dc\\nnahal toosi\\npolitico",
+    "test_text": "h o u r",
+    "cer": 0.8918918967247009
+  },
+  "571.5715715715716": {
+    "gold_text": "washington, dc\\nnahal toosi\\npolitico",
+    "test_text": "h o u r",
+    "cer": 0.8918918967247009
+  },
+  "572.5725725725725": {
+    "gold_text": "washington, dc\\nnahal toosi\\npolitico",
+    "test_text": "r e l e ;",
+    "cer": 0.9189189076423645
+  }
+}

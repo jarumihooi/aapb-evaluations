@@ -1,0 +1,27 @@
+{
+  "561.5615615615616": {
+    "gold_text": "donald rumsfeld\\nsecretary of defense-designate",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "562.5625625625626": {
+    "gold_text": "donald rumsfeld\\nsecretary of defense-designate",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "563.5635635635635": {
+    "gold_text": "donald rumsfeld\\nsecretary of defense-designate",
+    "test_text": "a e",
+    "cer": 0.936170220375061
+  },
+  "564.5645645645645": {
+    "gold_text": "donald rumsfeld\\nsecretary of defense-designate",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "565.5655655655656": {
+    "gold_text": "donald rumsfeld\\nsecretary of defense-designate",
+    "test_text": "",
+    "cer": 1.0
+  }
+}

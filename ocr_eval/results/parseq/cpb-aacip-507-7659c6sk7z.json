@@ -1,0 +1,62 @@
+{
+  "187.1871871871872": {
+    "gold_text": "robert macneil\\nnew york",
+    "test_text": "china's",
+    "cer": 0.875
+  },
+  "188.1881881881882": {
+    "gold_text": "robert macneil\\nnew york",
+    "test_text": "china's",
+    "cer": 0.875
+  },
+  "189.1891891891892": {
+    "gold_text": "robert macneil\\nnew york",
+    "test_text": "china's",
+    "cer": 0.875
+  },
+  "190.1901901901902": {
+    "gold_text": "robert macneil\\nnew york",
+    "test_text": "china's",
+    "cer": 0.875
+  },
+  "419.41941941941946": {
+    "gold_text": "lin biao\\ntechnical manager",
+    "test_text": "lin",
+    "cer": 0.8888888955116272
+  },
+  "420.42042042042044": {
+    "gold_text": "lin biao\\ntechnical manager",
+    "test_text": "lin",
+    "cer": 0.8888888955116272
+  },
+  "421.4214214214214": {
+    "gold_text": "lin biao\\ntechnical manager",
+    "test_text": "lin",
+    "cer": 0.8888888955116272
+  },
+  "422.4224224224224": {
+    "gold_text": "lin biao\\ntechnical manager",
+    "test_text": "manager",
+    "cer": 0.7407407164573669
+  },
+  "522.5225225225225": {
+    "gold_text": "david mcleod\\nhong kong businessman",
+    "test_text": "kong",
+    "cer": 0.8857142925262451
+  },
+  "523.5235235235235": {
+    "gold_text": "david mcleod\\nhong kong businessman",
+    "test_text": "kong",
+    "cer": 0.8857142925262451
+  },
+  "524.5245245245245": {
+    "gold_text": "david mcleod\\nhong kong businessman",
+    "test_text": "kong",
+    "cer": 0.8857142925262451
+  },
+  "525.5255255255255": {
+    "gold_text": "david mcleod\\nhong kong businessman",
+    "test_text": "kong",
+    "cer": 0.8857142925262451
+  }
+}

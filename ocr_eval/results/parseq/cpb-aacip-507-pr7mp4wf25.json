@@ -1,0 +1,77 @@
+{
+  "302.30230230230234": {
+    "gold_text": "strobe talbott\\ndeputy secretary of state",
+    "test_text": "state",
+    "cer": 0.8780487775802612
+  },
+  "303.3033033033033": {
+    "gold_text": "strobe talbott\\ndeputy secretary of state",
+    "test_text": "state",
+    "cer": 0.8780487775802612
+  },
+  "304.3043043043043": {
+    "gold_text": "strobe talbott\\ndeputy secretary of state",
+    "test_text": "state",
+    "cer": 0.8780487775802612
+  },
+  "305.3053053053053": {
+    "gold_text": "strobe talbott\\ndeputy secretary of state",
+    "test_text": "state",
+    "cer": 0.8780487775802612
+  },
+  "516.5165165165165": {
+    "gold_text": "sen. john mccain\\nrepublican presidential candidate",
+    "test_text": "aaiiiii",
+    "cer": 0.8823529481887817
+  },
+  "517.5175175175175": {
+    "gold_text": "sen. john mccain\\nrepublican presidential candidate",
+    "test_text": "aaim",
+    "cer": 0.9411764740943909
+  },
+  "518.5185185185186": {
+    "gold_text": "sen. john mccain\\nrepublican presidential candidate",
+    "test_text": "wn",
+    "cer": 0.9803921580314636
+  },
+  "519.5195195195196": {
+    "gold_text": "sen. john mccain\\nrepublican presidential candidate",
+    "test_text": "nnin",
+    "cer": 0.9215686321258545
+  },
+  "520.5205205205206": {
+    "gold_text": "sen. john mccain\\nrepublican presidential candidate",
+    "test_text": "jnnm",
+    "cer": 0.9411764740943909
+  },
+  "521.5215215215215": {
+    "gold_text": "sen. john mccain\\nrepublican presidential candidate",
+    "test_text": "bellin",
+    "cer": 0.9215686321258545
+  },
+  "593.5935935935936": {
+    "gold_text": "orrin hatch\\n(r) presidential candidate",
+    "test_text": "(a)",
+    "cer": 0.9487179517745972
+  },
+  "594.5945945945946": {
+    "gold_text": "orrin hatch\\n(r) presidential candidate",
+    "test_text": "(r)",
+    "cer": 0.9230769276618958
+  },
+  "595.5955955955956": {
+    "gold_text": "orrin hatch\\n(r) presidential candidate",
+    "test_text": "(a)",
+    "cer": 0.9487179517745972
+  },
+  "596.5965965965967": {
+    "gold_text": "orrin hatch\\n(r) presidential candidate",
+    "test_text": "(a)",
+    "cer": 0.9487179517745972
+  },
+  "597.5975975975977": {
+    "gold_text": "orrin hatch\\n(r) presidential candidate",
+    "test_text": "(a)",
+    "cer": 0.9487179517745972
+  }
+}

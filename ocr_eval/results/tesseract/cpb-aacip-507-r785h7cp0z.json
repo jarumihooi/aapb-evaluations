@@ -1,0 +1,82 @@
+{
+  "317.3173173173173": {
+    "gold_text": "sen. bob dole\\n(r) kansas",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "318.31831831831835": {
+    "gold_text": "sen. bob dole\\n(r) kansas",
+    "test_text": "e y",
+    "cer": 0.9200000166893005
+  },
+  "319.31931931931933": {
+    "gold_text": "sen. bob dole\\n(r) kansas",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "395.3953953953954": {
+    "gold_text": "william mcgowan\\nmci",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "396.3963963963964": {
+    "gold_text": "william mcgowan\\nmci",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "397.3973973973974": {
+    "gold_text": "william mcgowan\\nmci",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "485.4854854854855": {
+    "gold_text": "merrill brown\\nwashington post",
+    "test_text": "p o s t",
+    "cer": 0.8333333134651184
+  },
+  "486.4864864864865": {
+    "gold_text": "merrill brown\\nwashington post",
+    "test_text": "p o s t",
+    "cer": 0.8333333134651184
+  },
+  "487.4874874874875": {
+    "gold_text": "merrill brown\\nwashington post",
+    "test_text": "p o s t",
+    "cer": 0.8333333134651184
+  },
+  "488.4884884884885": {
+    "gold_text": "merrill brown\\nwashington post",
+    "test_text": "p o s t",
+    "cer": 0.8333333134651184
+  },
+  "489.48948948948953": {
+    "gold_text": "merrill brown\\nwashington post",
+    "test_text": "s e e",
+    "cer": 0.9333333373069763
+  },
+  "490.4904904904905": {
+    "gold_text": "merrill brown\\nwashington post",
+    "test_text": "s 1 8   e e",
+    "cer": 0.9333333373069763
+  },
+  "591.5915915915916": {
+    "gold_text": "merrill brown\\nwashington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "592.5925925925926": {
+    "gold_text": "merrill brown\\nwashington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "593.5935935935936": {
+    "gold_text": "merrill brown\\nwashington post",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "594.5945945945946": {
+    "gold_text": "merrill brown\\nwashington post",
+    "test_text": "s v e n   e - a r l   f e",
+    "cer": 0.8999999761581421
+  }
+}

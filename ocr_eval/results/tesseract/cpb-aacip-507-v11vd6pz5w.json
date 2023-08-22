@@ -1,0 +1,17 @@
+{
+  "233.23323323323325": {
+    "gold_text": "brig. gen. mark kimmitt\\nu.s. army",
+    "test_text": "a r m y",
+    "cer": 0.8235294222831726
+  },
+  "234.23423423423424": {
+    "gold_text": "brig. gen. mark kimmitt\\nu.s. army",
+    "test_text": "a r m y",
+    "cer": 0.8235294222831726
+  },
+  "235.23523523523525": {
+    "gold_text": "brig. gen. mark kimmitt\\nu.s. army",
+    "test_text": "a r m y",
+    "cer": 0.8235294222831726
+  }
+}

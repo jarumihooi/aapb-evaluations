@@ -1,0 +1,212 @@
+{
+  "211.2112112112112": {
+    "gold_text": "november 2010\\nrep. john boehner\\nrepublican leader",
+    "test_text": "to",
+    "cer": 0.9803921580314636
+  },
+  "212.21221221221222": {
+    "gold_text": "november 2010\\nrep. john boehner\\nrepublican leader",
+    "test_text": "to",
+    "cer": 0.9803921580314636
+  },
+  "213.2132132132132": {
+    "gold_text": "november 2010\\nrep. john boehner\\nrepublican leader",
+    "test_text": "\\ple",
+    "cer": 0.9215686321258545
+  },
+  "214.21421421421422": {
+    "gold_text": "november 2010\\nrep. john boehner\\nrepublican leader",
+    "test_text": "to",
+    "cer": 0.9803921580314636
+  },
+  "215.2152152152152": {
+    "gold_text": "november 2010\\nrep. john boehner\\nrepublican leader",
+    "test_text": "to.",
+    "cer": 0.9607843160629272
+  },
+  "257.25725725725727": {
+    "gold_text": "september 2010\\nrep. jeb hensarling\\n(r) texas",
+    "test_text": "rep.",
+    "cer": 0.9130434989929199
+  },
+  "258.25825825825825": {
+    "gold_text": "september 2010\\nrep. jeb hensarling\\n(r) texas",
+    "test_text": "rep.",
+    "cer": 0.9130434989929199
+  },
+  "259.2592592592593": {
+    "gold_text": "september 2010\\nrep. jeb hensarling\\n(r) texas",
+    "test_text": "rep.",
+    "cer": 0.9130434989929199
+  },
+  "260.2602602602603": {
+    "gold_text": "september 2010\\nrep. jeb hensarling\\n(r) texas",
+    "test_text": "rep.",
+    "cer": 0.9130434989929199
+  },
+  "261.26126126126127": {
+    "gold_text": "september 2010\\nrep. jeb hensarling\\n(r) texas",
+    "test_text": "rep.",
+    "cer": 0.9130434989929199
+  },
+  "318.31831831831835": {
+    "gold_text": "november 2010\\nsen.-elect mike lee\\n(r) utah",
+    "test_text": "2010",
+    "cer": 0.9090909361839294
+  },
+  "319.31931931931933": {
+    "gold_text": "november 2010\\nsen.-elect mike lee\\n(r) utah",
+    "test_text": "2010",
+    "cer": 0.9090909361839294
+  },
+  "345.3453453453454": {
+    "gold_text": "rep. rosa delauro\\n(d) connecticut",
+    "test_text": "rep.",
+    "cer": 0.8823529481887817
+  },
+  "346.34634634634637": {
+    "gold_text": "rep. rosa delauro\\n(d) connecticut",
+    "test_text": "rosa",
+    "cer": 0.8823529481887817
+  },
+  "347.34734734734735": {
+    "gold_text": "rep. rosa delauro\\n(d) connecticut",
+    "test_text": "1111111111111111111111111",
+    "cer": 1.0
+  },
+  "348.34834834834834": {
+    "gold_text": "rep. rosa delauro\\n(d) connecticut",
+    "test_text": "imp",
+    "cer": 0.970588207244873
+  },
+  "349.3493493493494": {
+    "gold_text": "rep. rosa delauro\\n(d) connecticut",
+    "test_text": "met",
+    "cer": 0.9411764740943909
+  },
+  "383.3833833833834": {
+    "gold_text": "rep. nancy pelosi\\nspeaker of the house",
+    "test_text": "g",
+    "cer": 1.0
+  },
+  "384.3843843843844": {
+    "gold_text": "rep. nancy pelosi\\nspeaker of the house",
+    "test_text": "g",
+    "cer": 1.0
+  },
+  "385.3853853853854": {
+    "gold_text": "rep. nancy pelosi\\nspeaker of the house",
+    "test_text": "o",
+    "cer": 0.9743589758872986
+  },
+  "386.3863863863864": {
+    "gold_text": "rep. nancy pelosi\\nspeaker of the house",
+    "test_text": "m",
+    "cer": 1.0
+  },
+  "387.3873873873874": {
+    "gold_text": "rep. nancy pelosi\\nspeaker of the house",
+    "test_text": "the",
+    "cer": 0.9230769276618958
+  },
+  "443.44344344344347": {
+    "gold_text": "diane lim rogers\\nthe concord coalition",
+    "test_text": "lim",
+    "cer": 0.9230769276618958
+  },
+  "444.44444444444446": {
+    "gold_text": "diane lim rogers\\nthe concord coalition",
+    "test_text": "lim",
+    "cer": 0.9230769276618958
+  },
+  "445.44544544544544": {
+    "gold_text": "diane lim rogers\\nthe concord coalition",
+    "test_text": "lim",
+    "cer": 0.9230769276618958
+  },
+  "446.4464464464465": {
+    "gold_text": "diane lim rogers\\nthe concord coalition",
+    "test_text": "lim",
+    "cer": 0.9230769276618958
+  },
+  "447.4474474474475": {
+    "gold_text": "diane lim rogers\\nthe concord coalition",
+    "test_text": "lim",
+    "cer": 0.9230769276618958
+  },
+  "448.44844844844846": {
+    "gold_text": "diane lim rogers\\nthe concord coalition",
+    "test_text": "lim",
+    "cer": 0.9230769276618958
+  },
+  "449.44944944944945": {
+    "gold_text": "diane lim rogers\\nthe concord coalition",
+    "test_text": "lim",
+    "cer": 0.9230769276618958
+  },
+  "450.4504504504505": {
+    "gold_text": "diane lim rogers\\nthe concord coalition",
+    "test_text": "lim",
+    "cer": 0.9230769276618958
+  },
+  "502.5025025025025": {
+    "gold_text": "james horney\\ncenter on budget & policy priorities",
+    "test_text": "g",
+    "cer": 0.9800000190734863
+  },
+  "503.5035035035035": {
+    "gold_text": "james horney\\ncenter on budget & policy priorities",
+    "test_text": "james",
+    "cer": 0.8999999761581421
+  },
+  "504.5045045045045": {
+    "gold_text": "james horney\\ncenter on budget & policy priorities",
+    "test_text": "james",
+    "cer": 0.8999999761581421
+  },
+  "505.50550550550554": {
+    "gold_text": "james horney\\ncenter on budget & policy priorities",
+    "test_text": "james",
+    "cer": 0.8999999761581421
+  },
+  "506.5065065065065": {
+    "gold_text": "james horney\\ncenter on budget & policy priorities",
+    "test_text": "g",
+    "cer": 0.9800000190734863
+  },
+  "507.5075075075075": {
+    "gold_text": "james horney\\ncenter on budget & policy priorities",
+    "test_text": "s",
+    "cer": 0.9800000190734863
+  },
+  "560.5605605605606": {
+    "gold_text": "diane lim rogers\\nthe concord coalition",
+    "test_text": "lim",
+    "cer": 0.9230769276618958
+  },
+  "561.5615615615616": {
+    "gold_text": "diane lim rogers\\nthe concord coalition",
+    "test_text": "lim",
+    "cer": 0.9230769276618958
+  },
+  "562.5625625625626": {
+    "gold_text": "diane lim rogers\\nthe concord coalition",
+    "test_text": "lim",
+    "cer": 0.9230769276618958
+  },
+  "563.5635635635635": {
+    "gold_text": "diane lim rogers\\nthe concord coalition",
+    "test_text": "lim",
+    "cer": 0.9230769276618958
+  },
+  "564.5645645645645": {
+    "gold_text": "diane lim rogers\\nthe concord coalition",
+    "test_text": "lim",
+    "cer": 0.9230769276618958
+  },
+  "565.5655655655656": {
+    "gold_text": "diane lim rogers\\nthe concord coalition",
+    "test_text": "lim",
+    "cer": 0.9230769276618958
+  }
+}

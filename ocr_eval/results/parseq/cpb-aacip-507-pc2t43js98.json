@@ -1,0 +1,37 @@
+{
+  "445.44544544544544": {
+    "gold_text": "dr. scott mcivor\\ngeneticist",
+    "test_text": "dr.",
+    "cer": 0.8928571343421936
+  },
+  "446.4464464464465": {
+    "gold_text": "dr. scott mcivor\\ngeneticist",
+    "test_text": "cs",
+    "cer": 0.9285714030265808
+  },
+  "447.4474474474475": {
+    "gold_text": "dr. scott mcivor\\ngeneticist",
+    "test_text": "www.",
+    "cer": 1.0
+  },
+  "448.44844844844846": {
+    "gold_text": "dr. scott mcivor\\ngeneticist",
+    "test_text": "yes",
+    "cer": 0.9285714030265808
+  },
+  "578.5785785785786": {
+    "gold_text": "fred de sam lazaro\\nktca",
+    "test_text": "ktca",
+    "cer": 0.8333333134651184
+  },
+  "579.5795795795796": {
+    "gold_text": "fred de sam lazaro\\nktca",
+    "test_text": "ktca",
+    "cer": 0.8333333134651184
+  },
+  "580.5805805805807": {
+    "gold_text": "fred de sam lazaro\\nktca",
+    "test_text": "publicr",
+    "cer": 0.9166666865348816
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "mmif": "http://mmif.clams.ai/1.0.0"
+  },
+  "documents": [
+    {
+      "@type": "http://mmif.clams.ai/vocabulary/VideoDocument/v1",
+      "properties": {
+        "mime": "video",
+        "id": "d1",
+        "location": "baapb://cpb-aacip-507-7659c6sk7z.video"
+      }
+    }
+  ],
+  "views": [
+    {
+      "id": "v_0",
+      "metadata": {
+        "timestamp": "2023-08-20T17:15:15.044999",
+        "app": "http://apps.clams.ai/east-textdetection/v1.1",
+        "error": {
+          "message": "<class 'ValueError'>: invalid literal for int() with base 10: '2 * 60 * 60 * 30'",
+          "stackTrace": "  File \"/usr/local/lib/python3.8/site-packages/clams/restify/__init__.py\", line 146, in post\n    return self.json_to_response(self.cla.annotate(raw_data, **self.annotate_param_caster.cast(raw_params)))\n\t\n  File \"/usr/local/lib/python3.8/site-packages/clams/app/__init__.py\", line 116, in annotate\n    annotated = self._annotate(mmif, **runtime_params)\n\t\n  File \"/app/app.py\", line 31, in _annotate\n    mmif = self.run_on_video(mmif, videodocument, new_view, **config)\n\t\n  File \"/app/app.py\", line 72, in run_on_video\n    end_frame=min(int(config['stopAt']), videodocument.get_property(\"frameCount\"))\n"
+        }
+      },
+      "annotations": []
+    }
+  ]
+}

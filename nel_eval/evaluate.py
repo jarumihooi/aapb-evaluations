@@ -124,7 +124,10 @@ def evaluate(test_dir, gold_dir=None):
         recall = len(gold_instances.intersection(sys_instances)) / len(gold_instances)
 
         # calculate F1
-        f1 = 2 * (precision * recall) / (precision + recall)
+        if precision + recall == 0:  # avoid ZeroDivisionError
+            f1 = 0.0
+        else:
+            f1 = 2 * (precision * recall) / (precision + recall)
 
         results[guid]['Precision'] = "{:.2f}".format(precision)
         results[guid]['Recall'] = "{:.2f}".format(recall)

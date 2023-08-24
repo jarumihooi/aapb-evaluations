@@ -19,11 +19,14 @@ def download_golds(gold_dir_url=None, folder_name=None):
     if not (len(os.listdir(folder_name)) == 0):
         raise Exception("The folder '" + folder_name + "' already exists and is not empty")
 
+    print(gold_dir_url)
+
     # Send a GET request to the repository URL and extract the HTML content
     response = requests.get(gold_dir_url)
-    
+
     # github responses with JSON? wow
     payload = json.loads(response.text)['payload']
+    print(payload)
     links = [i['path'] for i in payload['tree']['items']]
 
     # Download each file in the links list into the created folder

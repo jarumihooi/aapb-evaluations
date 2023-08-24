@@ -25,11 +25,7 @@ Which, in practice, looks like the following:
 
 ```json
 "cpb-aacip-507-pr7mp4wf25": {
-    "302.30230230230234": {
-        "gold_text": "strobe talbott\\ndeputy secretary of state",
-        "test_text": "",
-        "cer": 1.0
-    },
+
 }
 ```
 
@@ -43,27 +39,27 @@ Document level averages for CER are as follows:
 
 | Document               |Tesseract  | Parseq   |
 | ---------------------  | --------- | -----    |
-|cpb-aacip-507-bz6154fc44|  0.8678   | 0.8816   |
-|cpb-aacip-507-cf9j38m509|  0.8603   | 0.9344   |
-|cpb-aacip-507-zw18k75z4h|  0.9815   | 0.7821   |
-|cpb-aacip-507-pc2t43js98|  0.9524   | 0.9048   |
-|cpb-aacip-525-9g5gb1zh9b|  0.9031   | 0.9368   |
-|cpb-aacip-507-n29p26qt59|  0.9872   | 0.9574   |
-|cpb-aacip-507-nk3610wp6s|  0.9026   | 0.8947   |
-|cpb-aacip-507-7659c6sk7z|  0.8912   | 0.8709   |
-|cpb-aacip-507-vd6nz81n6r|  0 (empty)| 0 (empty)|
-|cpb-aacip-525-bg2h70914g|  0.8892   | 0.8795   |
-|cpb-aacip-507-4t6f18t178|  0.9485   | 0.8766   |
-|cpb-aacip-507-6w96689725|  1.0      | 0.8078   |
-|cpb-aacip-507-zk55d8pd1h|  1.0      | 0.8866   |
-|cpb-aacip-525-028pc2v94s|  0.9398   | 0.9355   |
-|cpb-aacip-507-v40js9j432|  1.0      | 0.9419   |
-|cpb-aacip-507-m61bk17f5g|  0.8753   | 0.7692   |
-|cpb-aacip-507-pr7mp4wf25|  0.9427   | 0.9212   |
-|cpb-aacip-507-vm42r3pt6h|  0.8831   | 0.8326   |
-|cpb-aacip-507-9882j68s35|  1.0      | 0.8507   |
-|cpb-aacip-525-3b5w66b279|  0.9568   | 0.8979   |
-|cpb-aacip-507-v11vd6pz5w|  0.8235   | 0.8824   |
-|cpb-aacip-507-r785h7cp0z|  0.9387   | 0.8617   |
-|cpb-aacip-507-154dn40c26|  0.9807   | 0.8880   |
-| **TOTAL**              |**0.8924** | **0.8432**|
+|cpb-aacip-507-bz6154fc44|  0.8678   |
+|cpb-aacip-507-cf9j38m509|  0.8603   |
+|cpb-aacip-507-zw18k75z4h|  0.9815   |
+|cpb-aacip-507-pc2t43js98|  0.9524   |
+|cpb-aacip-525-9g5gb1zh9b|  0.9031   |
+|cpb-aacip-507-n29p26qt59|  0.9872   |
+|cpb-aacip-507-nk3610wp6s|  0.9026   |
+|cpb-aacip-507-7659c6sk7z|  0.8912   |
+|cpb-aacip-507-vd6nz81n6r|  0 (empty)|
+|cpb-aacip-525-bg2h70914g|  0.8892   |
+|cpb-aacip-507-4t6f18t178|  0.9485   |
+|cpb-aacip-507-6w96689725|  1.0      |
+|cpb-aacip-507-zk55d8pd1h|  1.0      |
+|cpb-aacip-525-028pc2v94s|  0.9398   |
+|cpb-aacip-507-v40js9j432|  1.0      |
+|cpb-aacip-507-m61bk17f5g|  0.8753   |
+|cpb-aacip-507-pr7mp4wf25|  0.9427   |
+|cpb-aacip-507-vm42r3pt6h|  0.8831   |
+|cpb-aacip-507-9882j68s35|  1.0      |
+|cpb-aacip-525-3b5w66b279|  0.9568   |
+|cpb-aacip-507-v11vd6pz5w|  0.8235   |
+|cpb-aacip-507-r785h7cp0z|  0.9387   |
+|cpb-aacip-507-154dn40c26|  0.9807   |
+| **TOTAL**              |**0.8924** |

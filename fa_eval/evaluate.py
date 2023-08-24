@@ -1,10 +1,12 @@
+import argparse
 import os
+
+import pandas as pd
 from mmif.serialize import Mmif
-from mmif.vocabulary import AnnotationTypes, DocumentTypes
+from mmif.vocabulary import AnnotationTypes
 from pyannote.core import Segment, Timeline, Annotation
 from pyannote.metrics.detection import DetectionErrorRate, DetectionPrecisionRecallFMeasure
-import argparse
-import pandas as pd
+
 
 #Yao: If the mmif file ends with .spacy.mmif, then you need to change the code. e.g. it should be 'file.endswith(".spacy.mmif")' instead of 'file.endswith(".mmif")'
 

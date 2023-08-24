@@ -15,7 +15,7 @@ from torchmetrics.text import CharErrorRate
 import goldretriever
 
 # Constants ==|
-GOLD_URL = 'https://raw.githubusercontent.com/clamsproject/aapb-annotations/80a36781fd55b5b8cb74f2de187be026f1ecbb7f/newshour-chyron/golds/batch2/2022-jul-chyron.csv'
+GOLD_URL = 'https://github.com/clamsproject/aapb-annotations/tree/f96f857ef83acf85f64d9a10ac8fe919e06ce51e/newshour-chyron/golds/batch2'
 
 # File Loaders ==|
 def get_csv(out_dir, gold_url: str) -> Sequence[str]:
@@ -115,7 +115,7 @@ def calculate_results(gold_data: Dict[str, Dict[tuple, str]], test_data:Dict[str
 
 # Main Block
 if __name__ == "__main__":
-    APPNAME = "tesseractocr-wrapper" #default app
+    APPNAME = "parseqocr-wrapper" #default app
     APPVERSION = 1.0                 #default version 
 
     parser = argparse.ArgumentParser(description="compare the results of CLAMS OCR apps to a gold standard")
@@ -135,7 +135,7 @@ if __name__ == "__main__":
 
     # Gold Dir
     if args.gold_dir is None:
-        args.gold_dir = goldretriever.download_golds(GOLD_URL,  'golds')
+        args.gold_dir = goldretriever.download_golds(GOLD_URL)
 
     # Test Dir
     if args.test_dir is None:

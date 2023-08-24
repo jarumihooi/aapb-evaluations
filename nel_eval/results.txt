@@ -1,0 +1,200 @@
+{
+    "cpb-aacip-507-154dn40c26": {
+        "Gold Entities": {
+            "count": 367
+        },
+        "System Entities": {
+            "count": 253
+        },
+        "Precision": "0.20",
+        "Recall": "0.14",
+        "F1": "0.16"
+    },
+    "cpb-aacip-507-v11vd6pz5w": {
+        "Gold Entities": {
+            "count": 431
+        },
+        "System Entities": {
+            "count": 200
+        },
+        "Precision": "0.32",
+        "Recall": "0.15",
+        "F1": "0.20"
+    },
+    "cpb-aacip-507-v40js9j432": {
+        "Gold Entities": {
+            "count": 548
+        },
+        "System Entities": {
+            "count": 200
+        },
+        "Precision": "0.32",
+        "Recall": "0.12",
+        "F1": "0.17"
+    },
+    "cpb-aacip-507-9882j68s35": {
+        "Gold Entities": {
+            "count": 81
+        },
+        "System Entities": {
+            "count": 89
+        },
+        "Precision": "0.15",
+        "Recall": "0.16",
+        "F1": "0.15"
+    },
+    "cpb-aacip-507-n29p26qt59": {
+        "Gold Entities": {
+            "count": 469
+        },
+        "System Entities": {
+            "count": 259
+        },
+        "Precision": "0.33",
+        "Recall": "0.18",
+        "F1": "0.24"
+    },
+    "cpb-aacip-507-vm42r3pt6h": {
+        "Gold Entities": {
+            "count": 351
+        },
+        "System Entities": {
+            "count": 203
+        },
+        "Precision": "0.22",
+        "Recall": "0.13",
+        "F1": "0.16"
+    },
+    "cpb-aacip-507-7659c6sk7z": {
+        "Gold Entities": {
+            "count": 139
+        },
+        "System Entities": {
+            "count": 91
+        },
+        "Precision": "0.25",
+        "Recall": "0.17",
+        "F1": "0.20"
+    },
+    "cpb-aacip-507-4746q1t25k": {
+        "Gold Entities": {
+            "count": 492
+        },
+        "System Entities": {
+            "count": 235
+        },
+        "Precision": "0.25",
+        "Recall": "0.12",
+        "F1": "0.16"
+    },
+    "cpb-aacip-507-cf9j38m509": {
+        "Gold Entities": {
+            "count": 488
+        },
+        "System Entities": {
+            "count": 264
+        },
+        "Precision": "0.31",
+        "Recall": "0.17",
+        "F1": "0.22"
+    },
+    "cpb-aacip-507-pc2t43js98": {
+        "Gold Entities": {
+            "count": 392
+        },
+        "System Entities": {
+            "count": 296
+        },
+        "Precision": "0.21",
+        "Recall": "0.16",
+        "F1": "0.18"
+    },
+    "cpb-aacip-507-r785h7cp0z": {
+        "Gold Entities": {
+            "count": 378
+        },
+        "System Entities": {
+            "count": 234
+        },
+        "Precision": "0.24",
+        "Recall": "0.15",
+        "F1": "0.18"
+    },
+    "cpb-aacip-507-6w96689725": {
+        "Gold Entities": {
+            "count": 137
+        },
+        "System Entities": {
+            "count": 71
+        },
+        "Precision": "0.20",
+        "Recall": "0.10",
+        "F1": "0.13"
+    },
+    "cpb-aacip-507-6h4cn6zk04": {
+        "Gold Entities": {
+            "count": 552
+        },
+        "System Entities": {
+            "count": 192
+        },
+        "Precision": "0.28",
+        "Recall": "0.10",
+        "F1": "0.14"
+    },
+    "cpb-aacip-507-pr7mp4wf25": {
+        "Gold Entities": {
+            "count": 531
+        },
+        "System Entities": {
+            "count": 267
+        },
+        "Precision": "0.36",
+        "Recall": "0.18",
+        "F1": "0.24"
+    },
+    "cpb-aacip-507-zw18k75z4h": {
+        "Gold Entities": {
+            "count": 132
+        },
+        "System Entities": {
+            "count": 62
+        },
+        "Precision": "0.26",
+        "Recall": "0.12",
+        "F1": "0.16"
+    },
+    "cpb-aacip-507-4t6f18t178": {
+        "Gold Entities": {
+            "count": 138
+        },
+        "System Entities": {
+            "count": 65
+        },
+        "Precision": "0.23",
+        "Recall": "0.11",
+        "F1": "0.15"
+    },
+    "cpb-aacip-507-zk55d8pd1h": {
+        "Gold Entities": {
+            "count": 331
+        },
+        "System Entities": {
+            "count": 169
+        },
+        "Precision": "0.18",
+        "Recall": "0.09",
+        "F1": "0.12"
+    },
+    "cpb-aacip-507-1v5bc3tf81": {
+        "Gold Entities": {
+            "count": 528
+        },
+        "System Entities": {
+            "count": 238
+        },
+        "Precision": "0.37",
+        "Recall": "0.17",
+        "F1": "0.23"
+    }
+}

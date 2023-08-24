@@ -1,4 +1,4 @@
-####app
+#### app
 The `dbpedia-spotlight-wrapper` app ([https://apps.clams.ai/dbpedia-spotlight-wrapper/v1.1/](https://apps.clams.ai/dbpedia-spotlight-wrapper/v1.1/)) was used with default runtime parameters to generate the preds MMIF files.
 
 #### evaluation dataset

@@ -1,0 +1,52 @@
+{
+  "333.33333333333337": {
+    "gold_text": "sen. pete domenici\\nchairman, budget committee",
+    "test_text": "pete",
+    "cer": 0.9130434989929199
+  },
+  "334.33433433433436": {
+    "gold_text": "sen. pete domenici\\nchairman, budget committee",
+    "test_text": "sen",
+    "cer": 0.9347826242446899
+  },
+  "335.33533533533534": {
+    "gold_text": "sen. pete domenici\\nchairman, budget committee",
+    "test_text": "sen",
+    "cer": 0.9347826242446899
+  },
+  "336.33633633633633": {
+    "gold_text": "sen. pete domenici\\nchairman, budget committee",
+    "test_text": "pete",
+    "cer": 0.9130434989929199
+  },
+  "421.4214214214214": {
+    "gold_text": "voice of\\nlt. jim king\\noklahoma highway patrol",
+    "test_text": "of",
+    "cer": 0.957446813583374
+  },
+  "422.4224224224224": {
+    "gold_text": "voice of\\nlt. jim king\\noklahoma highway patrol",
+    "test_text": "lley",
+    "cer": 0.936170220375061
+  },
+  "423.42342342342346": {
+    "gold_text": "voice of\\nlt. jim king\\noklahoma highway patrol",
+    "test_text": "of",
+    "cer": 0.957446813583374
+  },
+  "424.42442442442444": {
+    "gold_text": "voice of\\nlt. jim king\\noklahoma highway patrol",
+    "test_text": "of",
+    "cer": 0.957446813583374
+  },
+  "425.42542542542543": {
+    "gold_text": "voice of\\nlt. jim king\\noklahoma highway patrol",
+    "test_text": "of",
+    "cer": 0.957446813583374
+  },
+  "426.4264264264264": {
+    "gold_text": "voice of\\nlt. jim king\\noklahoma highway patrol",
+    "test_text": "of",
+    "cer": 0.957446813583374
+  }
+}

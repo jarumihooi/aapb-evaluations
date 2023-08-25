@@ -1,0 +1,117 @@
+{
+  "225.22522522522524": {
+    "gold_text": "jim lehrer\\nwashington",
+    "test_text": "jim",
+    "cer": 0.8636363744735718
+  },
+  "226.22622622622623": {
+    "gold_text": "jim lehrer\\nwashington",
+    "test_text": "jim",
+    "cer": 0.8636363744735718
+  },
+  "227.22722722722725": {
+    "gold_text": "jim lehrer\\nwashington",
+    "test_text": "jim",
+    "cer": 0.8636363744735718
+  },
+  "228.22822822822823": {
+    "gold_text": "jim lehrer\\nwashington",
+    "test_text": "jimi",
+    "cer": 0.8181818127632141
+  },
+  "229.22922922922925": {
+    "gold_text": "jim lehrer\\nwashington",
+    "test_text": "jim",
+    "cer": 0.8636363744735718
+  },
+  "230.23023023023023": {
+    "gold_text": "jim lehrer\\nwashington",
+    "test_text": "jmi",
+    "cer": 0.8636363744735718
+  },
+  "311.31131131131133": {
+    "gold_text": "jerry jones\\numw local president",
+    "test_text": "new",
+    "cer": 0.90625
+  },
+  "312.3123123123123": {
+    "gold_text": "jerry jones\\numw local president",
+    "test_text": "new",
+    "cer": 0.90625
+  },
+  "313.3133133133133": {
+    "gold_text": "jerry jones\\numw local president",
+    "test_text": "new",
+    "cer": 0.90625
+  },
+  "314.31431431431434": {
+    "gold_text": "jerry jones\\numw local president",
+    "test_text": "new",
+    "cer": 0.90625
+  },
+  "315.31531531531533": {
+    "gold_text": "jerry jones\\numw local president",
+    "test_text": "new",
+    "cer": 0.90625
+  },
+  "316.3163163163163": {
+    "gold_text": "jerry jones\\numw local president",
+    "test_text": "new",
+    "cer": 0.90625
+  },
+  "317.3173173173173": {
+    "gold_text": "jerry jones\\numw local president",
+    "test_text": "new",
+    "cer": 0.90625
+  },
+  "318.31831831831835": {
+    "gold_text": "jerry jones\\numw local president",
+    "test_text": "umw",
+    "cer": 0.90625
+  },
+  "415.41541541541545": {
+    "gold_text": "jerry jones\\numw local president",
+    "test_text": "umw",
+    "cer": 0.90625
+  },
+  "416.41641641641644": {
+    "gold_text": "jerry jones\\numw local president",
+    "test_text": "umw",
+    "cer": 0.90625
+  },
+  "417.4174174174174": {
+    "gold_text": "jerry jones\\numw local president",
+    "test_text": "umw",
+    "cer": 0.90625
+  },
+  "418.4184184184184": {
+    "gold_text": "jerry jones\\numw local president",
+    "test_text": "umw",
+    "cer": 0.90625
+  },
+  "543.5435435435436": {
+    "gold_text": "thomas n. bethell\\neditor, \"coal patrol\"",
+    "test_text": "patrol",
+    "cer": 0.8500000238418579
+  },
+  "544.5445445445446": {
+    "gold_text": "thomas n. bethell\\neditor, \"coal patrol\"",
+    "test_text": "bethell",
+    "cer": 0.824999988079071
+  },
+  "545.5455455455456": {
+    "gold_text": "thomas n. bethell\\neditor, \"coal patrol\"",
+    "test_text": "bethell",
+    "cer": 0.824999988079071
+  },
+  "546.5465465465466": {
+    "gold_text": "thomas n. bethell\\neditor, \"coal patrol\"",
+    "test_text": "bethell",
+    "cer": 0.824999988079071
+  },
+  "547.5475475475475": {
+    "gold_text": "thomas n. bethell\\neditor, \"coal patrol\"",
+    "test_text": "bethell",
+    "cer": 0.824999988079071
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "227.22722722722725": {
+    "gold_text": "robert gates\\ndirector, cia",
+    "test_text": "c i a",
+    "cer": 0.8518518805503845
+  },
+  "228.22822822822823": {
+    "gold_text": "robert gates\\ndirector, cia",
+    "test_text": "c i a",
+    "cer": 0.8518518805503845
+  },
+  "325.32532532532537": {
+    "gold_text": "georgy shakhnazarov\\nsenior gorbachev aide",
+    "test_text": "g o r b a c h e v   a",
+    "cer": 0.8095238208770752
+  },
+  "326.32632632632635": {
+    "gold_text": "georgy shakhnazarov\\nsenior gorbachev aide",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "327.32732732732734": {
+    "gold_text": "georgy shakhnazarov\\nsenior gorbachev aide",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "360.36036036036035": {
+    "gold_text": "andrei grachev\\nchief presidential spokesman",
+    "test_text": "p r e s i d e n t i ,",
+    "cer": 0.8181818127632141
+  },
+  "361.3613613613614": {
+    "gold_text": "andrei grachev\\nchief presidential spokesman",
+    "test_text": "p r e s i d e n t i z",
+    "cer": 0.8181818127632141
+  },
+  "362.3623623623624": {
+    "gold_text": "andrei grachev\\nchief presidential spokesman",
+    "test_text": "p r e s i d e n t i a",
+    "cer": 0.7954545617103577
+  },
+  "389.3893893893894": {
+    "gold_text": "eduard shevardnadze\\nsoviet foreign minister",
+    "test_text": ")   s h e v :",
+    "cer": 0.8863636255264282
+  },
+  "390.3903903903904": {
+    "gold_text": "eduard shevardnadze\\nsoviet foreign minister",
+    "test_text": "",
+    "cer": 1.0
+  }
+}

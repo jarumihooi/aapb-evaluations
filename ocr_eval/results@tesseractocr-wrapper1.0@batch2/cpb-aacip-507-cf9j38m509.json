@@ -1,0 +1,77 @@
+{
+  "206.20620620620622": {
+    "gold_text": "raanan gissin\\nadviser, israeli prime minister",
+    "test_text": "p r i m e",
+    "cer": 0.8260869383811951
+  },
+  "207.2072072072072": {
+    "gold_text": "raanan gissin\\nadviser, israeli prime minister",
+    "test_text": "p r i m e",
+    "cer": 0.8260869383811951
+  },
+  "208.20820820820822": {
+    "gold_text": "raanan gissin\\nadviser, israeli prime minister",
+    "test_text": "p r i m e",
+    "cer": 0.8260869383811951
+  },
+  "243.24324324324326": {
+    "gold_text": "condoleezza rice\\nsecretary of state",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "244.24424424424424": {
+    "gold_text": "condoleezza rice\\nsecretary of state",
+    "test_text": "s e c r e t a r y   \u00a2",
+    "cer": 0.7777777910232544
+  },
+  "245.24524524524526": {
+    "gold_text": "condoleezza rice\\nsecretary of state",
+    "test_text": "s e c r e t a r y   \u00ab",
+    "cer": 0.7777777910232544
+  },
+  "246.24624624624624": {
+    "gold_text": "condoleezza rice\\nsecretary of state",
+    "test_text": "s e c r e t a r y   \u00a2",
+    "cer": 0.7777777910232544
+  },
+  "247.24724724724726": {
+    "gold_text": "condoleezza rice\\nsecretary of state",
+    "test_text": "s e c r e t a r y   \u00a2",
+    "cer": 0.7777777910232544
+  },
+  "514.5145145145145": {
+    "gold_text": "josh bolten\\ndirector, office of management and budget",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "515.5155155155155": {
+    "gold_text": "josh bolten\\ndirector, office of management and budget",
+    "test_text": "t   a n d",
+    "cer": 0.8333333134651184
+  },
+  "516.5165165165165": {
+    "gold_text": "josh bolten\\ndirector, office of management and budget",
+    "test_text": "o f f i c e",
+    "cer": 0.8333333134651184
+  },
+  "517.5175175175175": {
+    "gold_text": "josh bolten\\ndirector, office of management and budget",
+    "test_text": "o f f i c e   |",
+    "cer": 0.8148148059844971
+  },
+  "537.5375375375376": {
+    "gold_text": "kwame holman",
+    "test_text": "",
+    "cer": 1.0
+  },
+  "538.5385385385385": {
+    "gold_text": "kwame holman",
+    "test_text": "w e",
+    "cer": 0.8333333134651184
+  },
+  "539.5395395395395": {
+    "gold_text": "kwame holman",
+    "test_text": "",
+    "cer": 1.0
+  }
+}

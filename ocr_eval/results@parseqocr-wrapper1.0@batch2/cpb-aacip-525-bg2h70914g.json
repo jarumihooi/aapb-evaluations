@@ -1,0 +1,52 @@
+{
+  "234.23423423423424": {
+    "gold_text": "voice of interpreter\\ndjoko murjatmodjo\\nacting director general of air transportation,\\nindonesian transport ministry",
+    "test_text": "interpreter",
+    "cer": 0.9067796468734741
+  },
+  "235.23523523523525": {
+    "gold_text": "voice of interpreter\\ndjoko murjatmodjo\\nacting director general of air transportation,\\nindonesian transport ministry",
+    "test_text": "interpreter",
+    "cer": 0.9067796468734741
+  },
+  "236.23623623623624": {
+    "gold_text": "voice of interpreter\\ndjoko murjatmodjo\\nacting director general of air transportation,\\nindonesian transport ministry",
+    "test_text": "interpreter",
+    "cer": 0.9067796468734741
+  },
+  "237.23723723723725": {
+    "gold_text": "voice of interpreter\\ndjoko murjatmodjo\\nacting director general of air transportation,\\nindonesian transport ministry",
+    "test_text": "live",
+    "cer": 0.9745762944221497
+  },
+  "238.23823823823824": {
+    "gold_text": "voice of interpreter\\ndjoko murjatmodjo\\nacting director general of air transportation,\\nindonesian transport ministry",
+    "test_text": "live",
+    "cer": 0.9745762944221497
+  },
+  "564.5645645645645": {
+    "gold_text": "friday\\nheather abbott\\nbombing survivor",
+    "test_text": "bombing",
+    "cer": 0.824999988079071
+  },
+  "565.5655655655656": {
+    "gold_text": "friday\\nheather abbott\\nbombing survivor",
+    "test_text": "bombing",
+    "cer": 0.824999988079071
+  },
+  "566.5665665665666": {
+    "gold_text": "friday\\nheather abbott\\nbombing survivor",
+    "test_text": "bombing",
+    "cer": 0.824999988079071
+  },
+  "567.5675675675676": {
+    "gold_text": "friday\\nheather abbott\\nbombing survivor",
+    "test_text": "bombing",
+    "cer": 0.824999988079071
+  },
+  "568.5685685685686": {
+    "gold_text": "friday\\nheather abbott\\nbombing survivor",
+    "test_text": "bombing",
+    "cer": 0.824999988079071
+  }
+}

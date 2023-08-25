@@ -21,7 +21,7 @@ def download_golds(gold_dir_url=None, folder_name=None):
 
     # Send a GET request to the repository URL and extract the HTML content
     response = requests.get(gold_dir_url)
-    
+
     # github responses with JSON? wow
     payload = json.loads(response.text)['payload']
     links = [i['path'] for i in payload['tree']['items']]

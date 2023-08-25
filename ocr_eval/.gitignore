@@ -1,0 +1,5 @@
+# Ignore gold data directory
+gold_data/
+
+# ignore directory w/ intermediate mmifs
+mid_process_mmifs/

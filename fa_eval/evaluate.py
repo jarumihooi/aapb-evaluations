@@ -2,6 +2,7 @@ import argparse
 import os
 
 import pandas as pd
+import goldretriever
 from mmif.serialize import Mmif
 from mmif.vocabulary import AnnotationTypes
 from pyannote.core import Segment, Timeline, Annotation
@@ -105,6 +106,8 @@ if __name__ == "__main__":
     parser.add_argument('-o', '--gold_dir', help='directory containing human annotated files', default=None)
     parser.add_argument('-r', '--result_file', help='file to store evaluation results', default='results.txt')
     args = parser.parse_args()
+    if args.gold_dir is None:
+        args.gold_dir = goldretriever.download_golds('https://github.com/clamsproject/aapb-annotations/tree/f884e10d0b9d4b1d68e294d83c6e838528d2c249/newshour-transcript-sync/golds/aapb-collaboration-21')
     gold_timeframes = process_tsv(get_tsv_list(args.gold_dir))
     test_timeframes = process_mmif(get_mmif_list(args.machine_dir))
     calculate_detection_metrics(gold_timeframes, test_timeframes, args.result_file)

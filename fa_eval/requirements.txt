@@ -1,0 +1,3 @@
+mmif-python
+pyannote.metrics
+pandas

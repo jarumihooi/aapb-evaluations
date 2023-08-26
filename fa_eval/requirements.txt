@@ -1,3 +1,4 @@
 mmif-python
+lapps
 pyannote.metrics
 pandas

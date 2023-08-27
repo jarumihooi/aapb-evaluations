@@ -28,7 +28,9 @@ def load_reference(ref_fname) -> Dict[Tuple[float, float], str]:
             if i == 0:
                 continue
             start, end, text = row
+            # text normalization MUST write about this in the report!
             text = text.strip().lower()
+            text = text.replace(r'\n', ' ')
             gold_annotations.update({(start, end): text})
     return gold_annotations
 

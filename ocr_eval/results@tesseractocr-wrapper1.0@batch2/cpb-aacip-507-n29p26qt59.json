@@ -1,27 +1,8 @@
 {
-  "561.5615615615616": {
-    "gold_text": "donald rumsfeld\\nsecretary of defense-designate",
-    "test_text": "",
-    "cer": 1.0
+  "561.5271": {
+    "ref_text": "donald rumsfeld secretary of defense-designate",
+    "hyp_text": " g d e s ; e n a t e d o n a l d  s e c r e t a r y t r a n s i t i o \u00a5 *   b u s h - c h ",
+    "cer": 1.5
   },
-  "562.5625625625626": {
-    "gold_text": "donald rumsfeld\\nsecretary of defense-designate",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "563.5635635635635": {
-    "gold_text": "donald rumsfeld\\nsecretary of defense-designate",
-    "test_text": "a e",
-    "cer": 0.936170220375061
-  },
-  "564.5645645645645": {
-    "gold_text": "donald rumsfeld\\nsecretary of defense-designate",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "565.5655655655656": {
-    "gold_text": "donald rumsfeld\\nsecretary of defense-designate",
-    "test_text": "",
-    "cer": 1.0
-  }
+  "mean_cer": 1.5
 }

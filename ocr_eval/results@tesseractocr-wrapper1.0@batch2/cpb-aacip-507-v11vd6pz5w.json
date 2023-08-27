@@ -1,17 +1,8 @@
 {
-  "233.23323323323325": {
-    "gold_text": "brig. gen. mark kimmitt\\nu.s. army",
-    "test_text": "a r m y",
-    "cer": 0.8235294222831726
+  "232.5271": {
+    "ref_text": "brig. gen. mark kimmitt u.s. army",
+    "hyp_text": "w i e )   e e ( e a n - k i m m i t t m a r k u . s . a r m y",
+    "cer": 1.1515151262283325
   },
-  "234.23423423423424": {
-    "gold_text": "brig. gen. mark kimmitt\\nu.s. army",
-    "test_text": "a r m y",
-    "cer": 0.8235294222831726
-  },
-  "235.23523523523525": {
-    "gold_text": "brig. gen. mark kimmitt\\nu.s. army",
-    "test_text": "a r m y",
-    "cer": 0.8235294222831726
-  }
+  "mean_cer": 1.1515151262283325
 }

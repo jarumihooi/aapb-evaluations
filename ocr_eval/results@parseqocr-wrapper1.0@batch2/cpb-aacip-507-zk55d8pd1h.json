@@ -1,37 +1,13 @@
 {
-  "268.2682682682683": {
-    "gold_text": "daniel ortega\\npresident, nicaragua",
-    "test_text": "daniel",
-    "cer": 0.8285714387893677
+  "267.7771": {
+    "ref_text": "daniel ortega president, nicaragua",
+    "hyp_text": "interpreter nicaragua voice ortega president daniel",
+    "cer": 1.0
   },
-  "269.2692692692693": {
-    "gold_text": "daniel ortega\\npresident, nicaragua",
-    "test_text": "danie",
-    "cer": 0.8571428656578064
+  "331.5271": {
+    "ref_text": "james baker secretary of state",
+    "hyp_text": "secretary baker james state of",
+    "cer": 0.7333333492279053
   },
-  "270.27027027027026": {
-    "gold_text": "daniel ortega\\npresident, nicaragua",
-    "test_text": "danie",
-    "cer": 0.8571428656578064
-  },
-  "271.2712712712713": {
-    "gold_text": "daniel ortega\\npresident, nicaragua",
-    "test_text": "danie",
-    "cer": 0.8571428656578064
-  },
-  "332.3323323323323": {
-    "gold_text": "james baker\\nsecretary of state",
-    "test_text": "of",
-    "cer": 0.9354838728904724
-  },
-  "333.33333333333337": {
-    "gold_text": "james baker\\nsecretary of state",
-    "test_text": "of",
-    "cer": 0.9354838728904724
-  },
-  "334.33433433433436": {
-    "gold_text": "james baker\\nsecretary of state",
-    "test_text": "of",
-    "cer": 0.9354838728904724
-  }
+  "mean_cer": 0.8666666746139526
 }

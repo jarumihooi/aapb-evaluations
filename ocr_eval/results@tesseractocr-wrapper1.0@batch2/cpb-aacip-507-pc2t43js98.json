@@ -1,37 +1,13 @@
 {
-  "445.44544544544544": {
-    "gold_text": "dr. scott mcivor\\ngeneticist",
-    "test_text": "",
-    "cer": 1.0
+  "445.2771": {
+    "ref_text": "dr. scott mcivor geneticist",
+    "hyp_text": "m e c l v o r s c o t t g e n e t i c i s t d r . ",
+    "cer": 1.296296238899231
   },
-  "446.4464464464465": {
-    "gold_text": "dr. scott mcivor\\ngeneticist",
-    "test_text": "",
-    "cer": 1.0
+  "578.0271": {
+    "ref_text": "fred de sam lazaro ktca",
+    "hyp_text": "f r e d l a z a r o a y   l e e ) d e  k i c a",
+    "cer": 1.43478262424469
   },
-  "447.4474474474475": {
-    "gold_text": "dr. scott mcivor\\ngeneticist",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "448.44844844844846": {
-    "gold_text": "dr. scott mcivor\\ngeneticist",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "578.5785785785786": {
-    "gold_text": "fred de sam lazaro\\nktca",
-    "test_text": "k i c a",
-    "cer": 0.8333333134651184
-  },
-  "579.5795795795796": {
-    "gold_text": "fred de sam lazaro\\nktca",
-    "test_text": "k i c a",
-    "cer": 0.8333333134651184
-  },
-  "580.5805805805807": {
-    "gold_text": "fred de sam lazaro\\nktca",
-    "test_text": "",
-    "cer": 1.0
-  }
+  "mean_cer": 1.3655394315719604
 }

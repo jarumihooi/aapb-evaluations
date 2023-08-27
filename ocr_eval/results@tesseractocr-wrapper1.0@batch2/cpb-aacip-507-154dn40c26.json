@@ -1,57 +1,18 @@
 {
-  "276.2762762762763": {
-    "gold_text": "john block\\nsecretary of agriculture",
-    "test_text": "",
+  "275.7771": {
+    "ref_text": "john block secretary of agriculture",
+    "hyp_text": "s e c r e f o r y t e e l e   i l i e c e   ",
+    "cer": 1.0571428537368774
+  },
+  "356.7771": {
+    "ref_text": "rep. thomas p. o'neill speaker of the house",
+    "hyp_text": " e y   a i i   h o u s e t u s ",
+    "cer": 0.7209302186965942
+  },
+  "516.5271": {
+    "ref_text": "rita lavelle former e.p.a. official",
+    "hyp_text": "\u201c o f f i c i a l a v e u e e  t e a r s ",
     "cer": 1.0
   },
-  "277.2772772772773": {
-    "gold_text": "john block\\nsecretary of agriculture",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "278.27827827827826": {
-    "gold_text": "john block\\nsecretary of agriculture",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "279.2792792792793": {
-    "gold_text": "john block\\nsecretary of agriculture",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "357.3573573573574": {
-    "gold_text": "rep. thomas p. o'neill\\nspeaker of the house",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "358.3583583583584": {
-    "gold_text": "rep. thomas p. o'neill\\nspeaker of the house",
-    "test_text": "y i",
-    "cer": 0.9545454382896423
-  },
-  "359.35935935935936": {
-    "gold_text": "rep. thomas p. o'neill\\nspeaker of the house",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "517.5175175175175": {
-    "gold_text": "rita lavelle\\nformer e.p.a. official",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "518.5185185185186": {
-    "gold_text": "rita lavelle\\nformer e.p.a. official",
-    "test_text": "a e",
-    "cer": 0.9166666865348816
-  },
-  "519.5195195195196": {
-    "gold_text": "rita lavelle\\nformer e.p.a. official",
-    "test_text": "a",
-    "cer": 0.9722222089767456
-  },
-  "520.5205205205206": {
-    "gold_text": "rita lavelle\\nformer e.p.a. official",
-    "test_text": "a 4",
-    "cer": 0.9444444179534912
-  }
+  "mean_cer": 0.9260243574778239
 }

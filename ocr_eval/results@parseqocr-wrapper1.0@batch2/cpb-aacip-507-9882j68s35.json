@@ -1,42 +1,13 @@
 {
-  "263.2632632632633": {
-    "gold_text": "jim lehrer\\nwashington",
-    "test_text": "jim",
-    "cer": 0.8636363744735718
+  "262.5271": {
+    "ref_text": "jim lehrer washington",
+    "hyp_text": "washington lehrer jim",
+    "cer": 0.8571428656578064
   },
-  "264.2642642642643": {
-    "gold_text": "jim lehrer\\nwashington",
-    "test_text": "jim",
-    "cer": 0.8636363744735718
+  "405.7771": {
+    "ref_text": "james scanlon university of illinois",
+    "hyp_text": "university offillinois james scanlon",
+    "cer": 0.8055555820465088
   },
-  "265.26526526526527": {
-    "gold_text": "jim lehrer\\nwashington",
-    "test_text": "jim",
-    "cer": 0.8636363744735718
-  },
-  "266.26626626626626": {
-    "gold_text": "jim lehrer\\nwashington",
-    "test_text": "jim",
-    "cer": 0.8636363744735718
-  },
-  "406.4064064064064": {
-    "gold_text": "james scanlon\\nuniversity of illinois",
-    "test_text": "james",
-    "cer": 0.8648648858070374
-  },
-  "407.40740740740745": {
-    "gold_text": "james scanlon\\nuniversity of illinois",
-    "test_text": "scanlon",
-    "cer": 0.8108108043670654
-  },
-  "408.40840840840843": {
-    "gold_text": "james scanlon\\nuniversity of illinois",
-    "test_text": "scanlon",
-    "cer": 0.8108108043670654
-  },
-  "409.4094094094094": {
-    "gold_text": "james scanlon\\nuniversity of illinois",
-    "test_text": "james",
-    "cer": 0.8648648858070374
-  }
+  "mean_cer": 0.8313492238521576
 }

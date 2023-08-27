@@ -1,117 +1,38 @@
 {
-  "181.1811811811812": {
-    "gold_text": "sen. robert dole\\nmajority leader",
-    "test_text": "sen.",
-    "cer": 0.8787878751754761
+  "181.0271": {
+    "ref_text": "sen. robert dole majority leader",
+    "hyp_text": "majority robert leader dole sen.",
+    "cer": 0.6875
   },
-  "182.1821821821822": {
-    "gold_text": "sen. robert dole\\nmajority leader",
-    "test_text": "dole",
-    "cer": 0.8787878751754761
+  "269.0271": {
+    "ref_text": "rep. newt gingrinch speaker of the house",
+    "hyp_text": "newt gingrich speak house the of rep.",
+    "cer": 0.44999998807907104
   },
-  "183.1831831831832": {
-    "gold_text": "sen. robert dole\\nmajority leader",
-    "test_text": "sen.",
-    "cer": 0.8787878751754761
+  "297.2771": {
+    "ref_text": "sen. pete domenici chairman, budget committee",
+    "hyp_text": "pete sen. chairman, domenici budget committee",
+    "cer": 0.4444444477558136
   },
-  "184.1841841841842": {
-    "gold_text": "sen. robert dole\\nmajority leader",
-    "test_text": "dole",
-    "cer": 0.8787878751754761
+  "313.5271": {
+    "ref_text": "leon panetta white house chief of staff",
+    "hyp_text": "staff leon chief house white panetta vvvv",
+    "cer": 0.692307710647583
   },
-  "269.2692692692693": {
-    "gold_text": "rep. newt gingrinch\\nspeaker of the house",
-    "test_text": "rep.",
-    "cer": 0.9024389982223511
+  "368.0271": {
+    "ref_text": "sen. alfonse d'amato chairman, whitewater committee",
+    "hyp_text": "alfonse whitewater d'amato committee chairman, sen.",
+    "cer": 0.7450980544090271
   },
-  "270.27027027027026": {
-    "gold_text": "rep. newt gingrinch\\nspeaker of the house",
-    "test_text": "the",
-    "cer": 0.9268292784690857
+  "407.7771": {
+    "ref_text": "sen. paul sarbanes (d) maryland",
+    "hyp_text": "sarbanes maryland paul sen.",
+    "cer": 0.7419354915618896
   },
-  "271.2712712712713": {
-    "gold_text": "rep. newt gingrinch\\nspeaker of the house",
-    "test_text": "of",
-    "cer": 0.9512194991111755
+  "466.5271": {
+    "ref_text": "rep. newt gingrinch speaker of the house",
+    "hyp_text": "grich iewt speaker the house gino rep.",
+    "cer": 0.699999988079071
   },
-  "297.2972972972973": {
-    "gold_text": "sen. pete domenici\\nchairman, budget committee",
-    "test_text": "sen",
-    "cer": 0.9347826242446899
-  },
-  "298.29829829829833": {
-    "gold_text": "sen. pete domenici\\nchairman, budget committee",
-    "test_text": "sen.",
-    "cer": 0.9130434989929199
-  },
-  "299.2992992992993": {
-    "gold_text": "sen. pete domenici\\nchairman, budget committee",
-    "test_text": "committee",
-    "cer": 0.804347813129425
-  },
-  "300.3003003003003": {
-    "gold_text": "sen. pete domenici\\nchairman, budget committee",
-    "test_text": "chairman,",
-    "cer": 0.804347813129425
-  },
-  "314.31431431431434": {
-    "gold_text": "leon panetta\\nwhite house chief of staff",
-    "test_text": "vvvv",
-    "cer": 1.0
-  },
-  "315.31531531531533": {
-    "gold_text": "leon panetta\\nwhite house chief of staff",
-    "test_text": "fof",
-    "cer": 0.925000011920929
-  },
-  "316.3163163163163": {
-    "gold_text": "leon panetta\\nwhite house chief of staff",
-    "test_text": "house",
-    "cer": 0.875
-  },
-  "368.3683683683684": {
-    "gold_text": "sen. alfonse d'amato\\nchairman, whitewater committee",
-    "test_text": "sen.",
-    "cer": 0.9230769276618958
-  },
-  "369.3693693693694": {
-    "gold_text": "sen. alfonse d'amato\\nchairman, whitewater committee",
-    "test_text": "sen.",
-    "cer": 0.9230769276618958
-  },
-  "370.3703703703704": {
-    "gold_text": "sen. alfonse d'amato\\nchairman, whitewater committee",
-    "test_text": "chairman,",
-    "cer": 0.8269230723381042
-  },
-  "371.37137137137137": {
-    "gold_text": "sen. alfonse d'amato\\nchairman, whitewater committee",
-    "test_text": "sen.",
-    "cer": 0.9230769276618958
-  },
-  "408.40840840840843": {
-    "gold_text": "sen. paul sarbanes\\n(d) maryland",
-    "test_text": "sen.",
-    "cer": 0.875
-  },
-  "409.4094094094094": {
-    "gold_text": "sen. paul sarbanes\\n(d) maryland",
-    "test_text": "sen.",
-    "cer": 0.875
-  },
-  "410.4104104104104": {
-    "gold_text": "sen. paul sarbanes\\n(d) maryland",
-    "test_text": "sen.",
-    "cer": 0.875
-  },
-  "467.4674674674675": {
-    "gold_text": "rep. newt gingrinch\\nspeaker of the house",
-    "test_text": "rep.",
-    "cer": 0.9024389982223511
-  },
-  "468.4684684684685": {
-    "gold_text": "rep. newt gingrinch\\nspeaker of the house",
-    "test_text": "rep.",
-    "cer": 0.9024389982223511
-  }
+  "mean_cer": 0.6373265257903508
 }

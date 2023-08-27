@@ -1,62 +1,18 @@
 {
-  "187.1871871871872": {
-    "gold_text": "robert macneil\\nnew york",
-    "test_text": "f e i )",
-    "cer": 0.8333333134651184
-  },
-  "188.1881881881882": {
-    "gold_text": "robert macneil\\nnew york",
-    "test_text": "i e - i i",
-    "cer": 0.8333333134651184
-  },
-  "189.1891891891892": {
-    "gold_text": "robert macneil\\nnew york",
-    "test_text": "",
+  "186.5271": {
+    "ref_text": "robert macneil new york",
+    "hyp_text": " l v   i v e !    i e - i i",
     "cer": 1.0
   },
-  "190.1901901901902": {
-    "gold_text": "robert macneil\\nnew york",
-    "test_text": "t e   i t p   i u",
-    "cer": 0.8333333134651184
+  "418.7771": {
+    "ref_text": "lin biao technical manager",
+    "hyp_text": "   c a i . h",
+    "cer": 0.807692289352417
   },
-  "419.41941941941946": {
-    "gold_text": "lin biao\\ntechnical manager",
-    "test_text": "",
-    "cer": 1.0
+  "522.0271": {
+    "ref_text": "david mcleod hong kong businessman",
+    "hyp_text": "  h o n g u s i n e s s m a k o n g",
+    "cer": 0.9117646813392639
   },
-  "420.42042042042044": {
-    "gold_text": "lin biao\\ntechnical manager",
-    "test_text": "c a i . h",
-    "cer": 0.8518518805503845
-  },
-  "421.4214214214214": {
-    "gold_text": "lin biao\\ntechnical manager",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "422.4224224224224": {
-    "gold_text": "lin biao\\ntechnical manager",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "522.5225225225225": {
-    "gold_text": "david mcleod\\nhong kong businessman",
-    "test_text": "k o n g",
-    "cer": 0.8571428656578064
-  },
-  "523.5235235235235": {
-    "gold_text": "david mcleod\\nhong kong businessman",
-    "test_text": "k o n g",
-    "cer": 0.8571428656578064
-  },
-  "524.5245245245245": {
-    "gold_text": "david mcleod\\nhong kong businessman",
-    "test_text": "i   < e )   i e",
-    "cer": 0.800000011920929
-  },
-  "525.5255255255255": {
-    "gold_text": "david mcleod\\nhong kong businessman",
-    "test_text": "d e )   i c",
-    "cer": 0.8285714387893677
-  }
+  "mean_cer": 0.9064856568972269
 }

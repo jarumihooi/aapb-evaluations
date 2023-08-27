@@ -1,0 +1,33 @@
+{
+  "142.7771": {
+    "ref_text": "washington, dc damian paletta the washington post",
+    "hyp_text": "damianpa washington.do new npaletta pbso thewashington hour news",
+    "cer": 0.6530612111091614
+  },
+  "212.0271": {
+    "ref_text": "washington, dc damian paletta the washington post",
+    "hyp_text": "damianpa koed9 washington.do new npaletta pbso thewashington hour hour news",
+    "cer": 0.8775510191917419
+  },
+  "341.0271": {
+    "ref_text": "washington, dc damian paletta the washington post",
+    "hyp_text": "damianpa koed9 npaletta washington.dc news pbso thewashington hour hour",
+    "cer": 0.9591836929321289
+  },
+  "463.5271": {
+    "ref_text": "washington, dc nahal toosi politico",
+    "hyp_text": "nahai toosi koed washington, news politico hour",
+    "cer": 0.8285714387893677
+  },
+  "517.7771": {
+    "ref_text": "washington, dc nahal toosi politico",
+    "hyp_text": "nahai toosi koed. washington,d news @nahaltoos hour",
+    "cer": 0.9428571462631226
+  },
+  "568.0271": {
+    "ref_text": "washington, dc nahal toosi politico",
+    "hyp_text": "nahai toosi washington, koed. news politico hour",
+    "cer": 0.8285714387893677
+  },
+  "mean_cer": 0.8482993245124817
+}

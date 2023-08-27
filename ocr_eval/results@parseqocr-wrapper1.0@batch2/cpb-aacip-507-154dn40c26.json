@@ -1,57 +1,18 @@
 {
-  "276.2762762762763": {
-    "gold_text": "john block\\nsecretary of agriculture",
-    "test_text": "s",
-    "cer": 0.9722222089767456
+  "275.7771": {
+    "ref_text": "john block secretary of agriculture",
+    "hyp_text": "secretary agriculture block john s",
+    "cer": 0.7714285850524902
   },
-  "277.2772772772773": {
-    "gold_text": "john block\\nsecretary of agriculture",
-    "test_text": "john",
-    "cer": 0.8888888955116272
+  "356.7771": {
+    "ref_text": "rep. thomas p. o'neill speaker of the house",
+    "hyp_text": "speaker o'neill thomas' rep house. the of",
+    "cer": 0.6976743936538696
   },
-  "278.27827827827826": {
-    "gold_text": "john block\\nsecretary of agriculture",
-    "test_text": "john",
-    "cer": 0.8888888955116272
+  "516.5271": {
+    "ref_text": "rita lavelle former e.p.a. official",
+    "hyp_text": "official lavelle rita former e.p.a.",
+    "cer": 0.5714285969734192
   },
-  "279.2792792792793": {
-    "gold_text": "john block\\nsecretary of agriculture",
-    "test_text": "john",
-    "cer": 0.8888888955116272
-  },
-  "357.3573573573574": {
-    "gold_text": "rep. thomas p. o'neill\\nspeaker of the house",
-    "test_text": "house",
-    "cer": 0.8863636255264282
-  },
-  "358.3583583583584": {
-    "gold_text": "rep. thomas p. o'neill\\nspeaker of the house",
-    "test_text": "of",
-    "cer": 0.9545454382896423
-  },
-  "359.35935935935936": {
-    "gold_text": "rep. thomas p. o'neill\\nspeaker of the house",
-    "test_text": "of",
-    "cer": 0.9545454382896423
-  },
-  "517.5175175175175": {
-    "gold_text": "rita lavelle\\nformer e.p.a. official",
-    "test_text": "e.p.a.",
-    "cer": 0.8333333134651184
-  },
-  "518.5185185185186": {
-    "gold_text": "rita lavelle\\nformer e.p.a. official",
-    "test_text": "e.p.a.",
-    "cer": 0.8333333134651184
-  },
-  "519.5195195195196": {
-    "gold_text": "rita lavelle\\nformer e.p.a. official",
-    "test_text": "e.p.a.",
-    "cer": 0.8333333134651184
-  },
-  "520.5205205205206": {
-    "gold_text": "rita lavelle\\nformer e.p.a. official",
-    "test_text": "e.p.a.",
-    "cer": 0.8333333134651184
-  }
+  "mean_cer": 0.6801771918932596
 }

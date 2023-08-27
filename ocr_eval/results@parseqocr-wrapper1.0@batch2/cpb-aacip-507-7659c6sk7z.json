@@ -1,62 +1,18 @@
 {
-  "187.1871871871872": {
-    "gold_text": "robert macneil\\nnew york",
-    "test_text": "china's",
-    "cer": 0.875
+  "186.5271": {
+    "ref_text": "robert macneil new york",
+    "hyp_text": "robert magneil economy york new china's",
+    "cer": 0.8260869383811951
   },
-  "188.1881881881882": {
-    "gold_text": "robert macneil\\nnew york",
-    "test_text": "china's",
-    "cer": 0.875
+  "418.7771": {
+    "ref_text": "lin biao technical manager",
+    "hyp_text": "biao technical manager lin",
+    "cer": 0.3076923191547394
   },
-  "189.1891891891892": {
-    "gold_text": "robert macneil\\nnew york",
-    "test_text": "china's",
-    "cer": 0.875
+  "522.0271": {
+    "ref_text": "david mcleod hong kong businessman",
+    "hyp_text": "mcleod david hong businessman kong",
+    "cer": 0.5
   },
-  "190.1901901901902": {
-    "gold_text": "robert macneil\\nnew york",
-    "test_text": "china's",
-    "cer": 0.875
-  },
-  "419.41941941941946": {
-    "gold_text": "lin biao\\ntechnical manager",
-    "test_text": "lin",
-    "cer": 0.8888888955116272
-  },
-  "420.42042042042044": {
-    "gold_text": "lin biao\\ntechnical manager",
-    "test_text": "lin",
-    "cer": 0.8888888955116272
-  },
-  "421.4214214214214": {
-    "gold_text": "lin biao\\ntechnical manager",
-    "test_text": "lin",
-    "cer": 0.8888888955116272
-  },
-  "422.4224224224224": {
-    "gold_text": "lin biao\\ntechnical manager",
-    "test_text": "manager",
-    "cer": 0.7407407164573669
-  },
-  "522.5225225225225": {
-    "gold_text": "david mcleod\\nhong kong businessman",
-    "test_text": "kong",
-    "cer": 0.8857142925262451
-  },
-  "523.5235235235235": {
-    "gold_text": "david mcleod\\nhong kong businessman",
-    "test_text": "kong",
-    "cer": 0.8857142925262451
-  },
-  "524.5245245245245": {
-    "gold_text": "david mcleod\\nhong kong businessman",
-    "test_text": "kong",
-    "cer": 0.8857142925262451
-  },
-  "525.5255255255255": {
-    "gold_text": "david mcleod\\nhong kong businessman",
-    "test_text": "kong",
-    "cer": 0.8857142925262451
-  }
+  "mean_cer": 0.5445930858453115
 }

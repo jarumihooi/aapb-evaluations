@@ -1,27 +1,8 @@
 {
-  "561.5615615615616": {
-    "gold_text": "donald rumsfeld\\nsecretary of defense-designate",
-    "test_text": "cavel",
-    "cer": 0.936170220375061
+  "561.5271": {
+    "ref_text": "donald rumsfeld secretary of defense-designate",
+    "hyp_text": "rumsfeld -designate defense- donald secretary ransition bush-chen community",
+    "cer": 1.08695650100708
   },
-  "562.5625625625626": {
-    "gold_text": "donald rumsfeld\\nsecretary of defense-designate",
-    "test_text": "community",
-    "cer": 0.8936170339584351
-  },
-  "563.5635635635635": {
-    "gold_text": "donald rumsfeld\\nsecretary of defense-designate",
-    "test_text": "a",
-    "cer": 0.978723406791687
-  },
-  "564.5645645645645": {
-    "gold_text": "donald rumsfeld\\nsecretary of defense-designate",
-    "test_text": "s",
-    "cer": 0.978723406791687
-  },
-  "565.5655655655656": {
-    "gold_text": "donald rumsfeld\\nsecretary of defense-designate",
-    "test_text": "xxxx",
-    "cer": 1.0
-  }
+  "mean_cer": 1.08695650100708
 }

@@ -53,7 +53,7 @@ def load_hypotheses(mmif_files: Iterable[pathlib.Path]) -> Dict[str, Dict[float,
     text transcripts are keyed by guid, then by timepoint (float)
     the unit of the timepoints is seconds (converted if necessary, assuming 29.97 fps)
     """
-    ocr_annotations = defaultdict(dict)
+    hyps = defaultdict(dict)
     for mmif_file in mmif_files:
         guid = filename_to_guid(mmif_file)
         mmif = Mmif(open(mmif_file).read())
@@ -71,6 +71,7 @@ def load_hypotheses(mmif_files: Iterable[pathlib.Path]) -> Dict[str, Dict[float,
         if bb_view is not None:
             anno_id_to_annotation.update({annotation.id: annotation
                                           for annotation in bb_view.annotations})
+        ocr_results = hyps[guid]
         if ocr_view is not None:
             for annotation in ocr_view.annotations:
                 if annotation.at_type == AnnotationTypes.Alignment:
@@ -82,23 +83,28 @@ def load_hypotheses(mmif_files: Iterable[pathlib.Path]) -> Dict[str, Dict[float,
                     time_point = vdh.convert(source_anno.properties['timePoint'], 'frames', 'seconds', fps)
                     time_text = target_anno.properties['text'].value
                     time_text = time_text.strip().lower()
-                    ocr_annotations[guid].update({time_point: time_text})
-    return ocr_annotations
+                    if time_point not in ocr_results:
+                        ocr_results[time_point] = time_text
+                    else:
+                        ocr_results[time_point] = ocr_results[time_point] + ' ' + time_text
+    return hyps
 
 
-# CER Calculation
-def compare_gold_with_test(gold_doc: Dict[tuple, str], test_doc: Dict[float, str]) \
-        -> Dict[float, Dict[str, Union[str, float]]]:
+def compare_gold_with_test(ref: Dict[tuple, str], hyp: Dict[float, str]):
     vals = {}
     doc_level_cer = CharErrorRate()
-    for timepoint, text in test_doc.items():
-        for timespan, gold_text in gold_doc.items():
+    for timepoint, text in hyp.items():
+        for timespan, gold_text in ref.items():
             start = float(timespan[0])
             end = float(timespan[1])
             if start <= timepoint and end > timepoint:
-                vals[timepoint] = {'gold_text': gold_text,
-                                   'test_text': text,
-                                   'cer': doc_level_cer(text, gold_text).item()}
+                if start not in vals:
+                    vals[start] = {'ref_text': gold_text, 'hyp_text': text}
+                else:
+                    if len(vals[start]['hyp_text']) < len(text):
+                        vals[start]['hyp_text'] = text
+        for comp in vals.values():
+            comp['cer'] = doc_level_cer(comp['hyp_text'], comp['ref_text']).item()
     return vals
 
 

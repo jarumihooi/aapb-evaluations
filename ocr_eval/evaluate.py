@@ -6,6 +6,7 @@ import pathlib
 from collections import defaultdict
 from typing import Dict, Union, Tuple, Iterable
 
+import numpy
 from mmif import Mmif, AnnotationTypes, DocumentTypes
 from mmif.utils import video_document_helper as vdh
 from torchmetrics.text import CharErrorRate
@@ -92,7 +93,7 @@ def load_hypotheses(mmif_files: Iterable[pathlib.Path]) -> Dict[str, Dict[float,
     return hyps
 
 
-def compare_gold_with_test(ref: Dict[tuple, str], hyp: Dict[float, str]):
+def cer_by_timeframe(ref: Dict[tuple, str], hyp: Dict[float, str]):
     vals = {}
     doc_level_cer = CharErrorRate()
     for timepoint, text in hyp.items():
@@ -111,15 +112,22 @@ def compare_gold_with_test(ref: Dict[tuple, str], hyp: Dict[float, str]):
 
 
 def evaluate(gold_data: Dict[str, Dict[tuple, str]], test_data: Dict[str, Dict[float, str]],
-             outdir: Union[str, os.PathLike]) -> None:
+             outdir: pathlib.Path) -> None:
     output = {}
-    for filename, annotations in test_data.items():
-        if filename in gold_data:
-            results = compare_gold_with_test(gold_data[filename], annotations)
-            output[filename] = results
-            file_json = json.dumps(results, indent=2)
-            with open(f'./{outdir}/{filename}.json', 'w') as b:
-                b.write(file_json)
+    for guid, annotations in test_data.items():
+        if guid in gold_data:
+            results = cer_by_timeframe(gold_data[guid], annotations)
+            output[guid] = results
+            cers = [comp['cer'] for comp in results.values()]
+            output[guid]['mean_cer'] = numpy.mean(cers)
+            with open(outdir/f'{guid}.json', 'w') as b:
+                json.dump(results, b, indent=2)
+    cers = []
+    with open(outdir/'results.txt', 'w') as f:
+        for guid, results in output.items():
+            cers.append(results['mean_cer'])
+            f.write(f'{guid}:\t{results["mean_cer"]}\n')
+        f.write(f"Total Mean CER:\t{numpy.mean(cers)}\n")
 
 
 # Main Block

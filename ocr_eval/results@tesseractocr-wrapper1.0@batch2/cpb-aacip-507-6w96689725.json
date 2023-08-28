@@ -1,122 +1,23 @@
 {
-  "167.16716716716718": {
-    "gold_text": "robert macneil",
-    "test_text": "",
+  "166.7771": {
+    "ref_text": "robert macneil",
+    "hyp_text": " m a c n e i l .",
     "cer": 1.0
   },
-  "168.16816816816817": {
-    "gold_text": "robert macneil",
-    "test_text": "m a c n e i l .",
-    "cer": 1.0
+  "410.7771": {
+    "ref_text": "jim lehrer washington",
+    "hyp_text": "n v   a s h i n g h i o n  ",
+    "cer": 1.0952380895614624
   },
-  "169.16916916916918": {
-    "gold_text": "robert macneil",
-    "test_text": "",
-    "cer": 1.0
+  "451.5271": {
+    "ref_text": "the rev. james ratigan nat. fed. of priests' councils",
+    "hyp_text": "c c o o o u n c h   \u00a9 p r i e s t s  l _ v m a 2 0 8 j a m e s r e v . i ",
+    "cer": 1.1698113679885864
   },
-  "170.17017017017017": {
-    "gold_text": "robert macneil",
-    "test_text": "",
-    "cer": 1.0
+  "564.5271": {
+    "ref_text": "the rev. james ratigan nat. fed. of priests' councils",
+    "hyp_text": "c o o o u u u n c i   > p r i e s t s \u2019 e r s 7 3 0 m    r e y . ",
+    "cer": 1.0377358198165894
   },
-  "171.17117117117118": {
-    "gold_text": "robert macneil",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "172.17217217217217": {
-    "gold_text": "robert macneil",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "411.41141141141145": {
-    "gold_text": "jim lehrer\\nwashington",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "412.41241241241244": {
-    "gold_text": "jim lehrer\\nwashington",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "413.4134134134134": {
-    "gold_text": "jim lehrer\\nwashington",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "414.4144144144144": {
-    "gold_text": "jim lehrer\\nwashington",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "415.41541541541545": {
-    "gold_text": "jim lehrer\\nwashington",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "416.41641641641644": {
-    "gold_text": "jim lehrer\\nwashington",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "417.4174174174174": {
-    "gold_text": "jim lehrer\\nwashington",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "452.45245245245246": {
-    "gold_text": "the rev. james ratigan\\nnat. fed. of priests' councils",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "453.45345345345345": {
-    "gold_text": "the rev. james ratigan\\nnat. fed. of priests' councils",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "454.4544544544545": {
-    "gold_text": "the rev. james ratigan\\nnat. fed. of priests' councils",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "455.4554554554555": {
-    "gold_text": "the rev. james ratigan\\nnat. fed. of priests' councils",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "456.45645645645646": {
-    "gold_text": "the rev. james ratigan\\nnat. fed. of priests' councils",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "457.45745745745745": {
-    "gold_text": "the rev. james ratigan\\nnat. fed. of priests' councils",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "458.4584584584585": {
-    "gold_text": "the rev. james ratigan\\nnat. fed. of priests' councils",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "459.4594594594595": {
-    "gold_text": "the rev. james ratigan\\nnat. fed. of priests' councils",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "564.5645645645645": {
-    "gold_text": "the rev. james ratigan\\nnat. fed. of priests' councils",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "565.5655655655656": {
-    "gold_text": "the rev. james ratigan\\nnat. fed. of priests' councils",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "566.5665665665666": {
-    "gold_text": "the rev. james ratigan\\nnat. fed. of priests' councils",
-    "test_text": "",
-    "cer": 1.0
-  }
+  "mean_cer": 1.0756963193416595
 }

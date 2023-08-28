@@ -1,42 +1,13 @@
 {
-  "263.2632632632633": {
-    "gold_text": "jim lehrer\\nwashington",
-    "test_text": "",
-    "cer": 1.0
+  "262.5271": {
+    "ref_text": "jim lehrer washington",
+    "hyp_text": "w a s h i n g t o n  ",
+    "cer": 0.9047619104385376
   },
-  "264.2642642642643": {
-    "gold_text": "jim lehrer\\nwashington",
-    "test_text": "",
-    "cer": 1.0
+  "405.7771": {
+    "ref_text": "james scanlon university of illinois",
+    "hyp_text": "l i n i v e r s i   t w s t u l l }   t e )   k s  ",
+    "cer": 1.1944444179534912
   },
-  "265.26526526526527": {
-    "gold_text": "jim lehrer\\nwashington",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "266.26626626626626": {
-    "gold_text": "jim lehrer\\nwashington",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "406.4064064064064": {
-    "gold_text": "james scanlon\\nuniversity of illinois",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "407.40740740740745": {
-    "gold_text": "james scanlon\\nuniversity of illinois",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "408.40840840840843": {
-    "gold_text": "james scanlon\\nuniversity of illinois",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "409.4094094094094": {
-    "gold_text": "james scanlon\\nuniversity of illinois",
-    "test_text": "",
-    "cer": 1.0
-  }
+  "mean_cer": 1.0496031641960144
 }

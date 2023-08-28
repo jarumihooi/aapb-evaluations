@@ -1,52 +1,13 @@
 {
-  "234.23423423423424": {
-    "gold_text": "voice of interpreter\\ndjoko murjatmodjo\\nacting director general of air transportation,\\nindonesian transport ministry",
-    "test_text": "i n t e r p r e t e r",
-    "cer": 0.8474576473236084
+  "233.7771": {
+    "ref_text": "voice of interpreter djoko murjatmodjo acting director general of air transportation, indonesian transport ministry",
+    "hyp_text": " a t m a d i o i d )   t e l   t o n  i n n o n e c i a n   t o a [ t o r   g e n e r a l c i n g   d i r e c t o r   c v o i c e   o f v i e l   \\ i c m a c d n i c c t d y i n t e r p r e t e r",
+    "cer": 1.3043478727340698
   },
-  "235.23523523523525": {
-    "gold_text": "voice of interpreter\\ndjoko murjatmodjo\\nacting director general of air transportation,\\nindonesian transport ministry",
-    "test_text": "i n t e r p r e t e r",
-    "cer": 0.8474576473236084
+  "564.5271": {
+    "ref_text": "friday heather abbott bombing survivor",
+    "hyp_text": "a b b o t t f r i d a y p e e t \u00a9   s u r v i v o r  b i t e   t i s i i   t e t",
+    "cer": 1.6578947305679321
   },
-  "236.23623623623624": {
-    "gold_text": "voice of interpreter\\ndjoko murjatmodjo\\nacting director general of air transportation,\\nindonesian transport ministry",
-    "test_text": "i n t e r p r e t e r",
-    "cer": 0.8474576473236084
-  },
-  "237.23723723723725": {
-    "gold_text": "voice of interpreter\\ndjoko murjatmodjo\\nacting director general of air transportation,\\nindonesian transport ministry",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "238.23823823823824": {
-    "gold_text": "voice of interpreter\\ndjoko murjatmodjo\\nacting director general of air transportation,\\nindonesian transport ministry",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "564.5645645645645": {
-    "gold_text": "friday\\nheather abbott\\nbombing survivor",
-    "test_text": "b i t e   t i s i i   t e t",
-    "cer": 0.824999988079071
-  },
-  "565.5655655655656": {
-    "gold_text": "friday\\nheather abbott\\nbombing survivor",
-    "test_text": "p t e )   s t }   e e",
-    "cer": 0.8999999761581421
-  },
-  "566.5665665665666": {
-    "gold_text": "friday\\nheather abbott\\nbombing survivor",
-    "test_text": "b o m b i n g",
-    "cer": 0.875
-  },
-  "567.5675675675676": {
-    "gold_text": "friday\\nheather abbott\\nbombing survivor",
-    "test_text": "b o m b i n g",
-    "cer": 0.875
-  },
-  "568.5685685685686": {
-    "gold_text": "friday\\nheather abbott\\nbombing survivor",
-    "test_text": "b o m b i n g",
-    "cer": 0.875
-  }
+  "mean_cer": 1.481121301651001
 }

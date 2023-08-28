@@ -1,0 +1,33 @@
+{
+  "142.7771": {
+    "ref_text": "washington, dc damian paletta the washington post",
+    "hyp_text": "d a m i a n   p , p o t   e t e a m \n a m   t h e   w a s h i n g t o n . 1 0 )   8 ) ; ",
+    "cer": 1.2857142686843872
+  },
+  "212.0271": {
+    "ref_text": "washington, dc damian paletta the washington post",
+    "hyp_text": "d a m i a n   p ,  \u2018 w a s h i n g t o n   d f a n \n a n   t h e   w a s h i n g t o n 1 0 )   8 ) ;  ",
+    "cer": 1.4693877696990967
+  },
+  "341.0271": {
+    "ref_text": "washington, dc damian paletta the washington post",
+    "hyp_text": "d a m i a n   p y k o e d   0 a t   t t , a e e e   t n \n a e e e   t n \u2018 t h e   w a s h i n g t o n  h o u f ",
+    "cer": 1.6326531171798706
+  },
+  "463.5271": {
+    "ref_text": "washington, dc nahal toosi politico",
+    "hyp_text": "n a h a i t o o o s !  e v   e s   n e  p o l i t i c o h o u r",
+    "cer": 1.3142857551574707
+  },
+  "517.7771": {
+    "ref_text": "washington, dc nahal toosi politico",
+    "hyp_text": "n a h a i t o o s i w a s h i n g t o n .   [  p o l i t i c o  ",
+    "cer": 1.2571429014205933
+  },
+  "568.0271": {
+    "ref_text": "washington, dc nahal toosi politico",
+    "hyp_text": "n a h a i t o o s i w a s h i n g t o n .   [   p o l i t i c o r e l e ;",
+    "cer": 1.514285683631897
+  },
+  "mean_cer": 1.4122449159622192
+}

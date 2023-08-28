@@ -1,82 +1,23 @@
 {
-  "317.3173173173173": {
-    "gold_text": "sen. bob dole\\n(r) kansas",
-    "test_text": "sen.",
-    "cer": 0.8399999737739563
+  "317.0271": {
+    "ref_text": "sen. bob dole (r) kansas",
+    "hyp_text": "bob dole kansasas sen.",
+    "cer": 0.6666666865348816
   },
-  "318.31831831831835": {
-    "gold_text": "sen. bob dole\\n(r) kansas",
-    "test_text": "sen.",
-    "cer": 0.8399999737739563
+  "395.2771": {
+    "ref_text": "william mcgowan mci",
+    "hyp_text": "william mcgowan mci 50",
+    "cer": 0.15789473056793213
   },
-  "319.31931931931933": {
-    "gold_text": "sen. bob dole\\n(r) kansas",
-    "test_text": "sen.",
-    "cer": 0.8399999737739563
+  "485.2771": {
+    "ref_text": "merrill brown washington post",
+    "hyp_text": "washin merrill brown ington post",
+    "cer": 0.37931033968925476
   },
-  "395.3953953953954": {
-    "gold_text": "william mcgowan\\nmci",
-    "test_text": "mci",
-    "cer": 0.8500000238418579
+  "591.2771": {
+    "ref_text": "merrill brown washington post",
+    "hyp_text": "washington brown merrill \"post",
+    "cer": 0.6551724076271057
   },
-  "396.3963963963964": {
-    "gold_text": "william mcgowan\\nmci",
-    "test_text": "mci",
-    "cer": 0.8500000238418579
-  },
-  "397.3973973973974": {
-    "gold_text": "william mcgowan\\nmci",
-    "test_text": "50",
-    "cer": 1.0
-  },
-  "485.4854854854855": {
-    "gold_text": "merrill brown\\nwashington post",
-    "test_text": "post",
-    "cer": 0.8666666746139526
-  },
-  "486.4864864864865": {
-    "gold_text": "merrill brown\\nwashington post",
-    "test_text": "post",
-    "cer": 0.8666666746139526
-  },
-  "487.4874874874875": {
-    "gold_text": "merrill brown\\nwashington post",
-    "test_text": "post",
-    "cer": 0.8666666746139526
-  },
-  "488.4884884884885": {
-    "gold_text": "merrill brown\\nwashington post",
-    "test_text": "post",
-    "cer": 0.8666666746139526
-  },
-  "489.48948948948953": {
-    "gold_text": "merrill brown\\nwashington post",
-    "test_text": "post",
-    "cer": 0.8666666746139526
-  },
-  "490.4904904904905": {
-    "gold_text": "merrill brown\\nwashington post",
-    "test_text": "post",
-    "cer": 0.8666666746139526
-  },
-  "591.5915915915916": {
-    "gold_text": "merrill brown\\nwashington post",
-    "test_text": "\"post",
-    "cer": 0.8666666746139526
-  },
-  "592.5925925925926": {
-    "gold_text": "merrill brown\\nwashington post",
-    "test_text": "'post",
-    "cer": 0.8666666746139526
-  },
-  "593.5935935935936": {
-    "gold_text": "merrill brown\\nwashington post",
-    "test_text": "\"post",
-    "cer": 0.8666666746139526
-  },
-  "594.5945945945946": {
-    "gold_text": "merrill brown\\nwashington post",
-    "test_text": "merrill",
-    "cer": 0.7666666507720947
-  }
+  "mean_cer": 0.46476104110479355
 }

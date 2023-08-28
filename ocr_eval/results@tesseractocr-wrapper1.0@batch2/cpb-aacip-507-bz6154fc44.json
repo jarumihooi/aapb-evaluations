@@ -1,62 +1,18 @@
 {
-  "189.1891891891892": {
-    "gold_text": "mike mccurry\\nwhite house spokesman",
-    "test_text": "n d   a n i   t y",
-    "cer": 0.8571428656578064
+  "189.0271": {
+    "ref_text": "mike mccurry white house spokesman",
+    "hyp_text": "   s e   l e l t s t = s p o k e s m a n \u00a2 w v i a n i e d i n g t o n",
+    "cer": 1.7058823108673096
   },
-  "190.1901901901902": {
-    "gold_text": "mike mccurry\\nwhite house spokesman",
-    "test_text": "n g t o n \u201d",
-    "cer": 0.8571428656578064
+  "324.5271": {
+    "ref_text": "john bruton prime minister, ireland",
+    "hyp_text": "j o h n ' b m i n i s t e r e c l e l e r e |  ",
+    "cer": 0.9428571462631226
   },
-  "191.1911911911912": {
-    "gold_text": "mike mccurry\\nwhite house spokesman",
-    "test_text": "\" n g t o n",
-    "cer": 0.800000011920929
+  "592.2771": {
+    "ref_text": "john kornblum acting asst. secretary of state",
+    "hyp_text": "s e r i c a  k o r \n \n n d t   m e v p   y e t t a ) s t a t e a s s t .",
+    "cer": 1.244444489479065
   },
-  "192.1921921921922": {
-    "gold_text": "mike mccurry\\nwhite house spokesman",
-    "test_text": "i n g t o n",
-    "cer": 0.7714285850524902
-  },
-  "325.32532532532537": {
-    "gold_text": "john bruton\\nprime minister, ireland",
-    "test_text": "t o n",
-    "cer": 0.8888888955116272
-  },
-  "326.32632632632635": {
-    "gold_text": "john bruton\\nprime minister, ireland",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "327.32732732732734": {
-    "gold_text": "john bruton\\nprime minister, ireland",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "592.5925925925926": {
-    "gold_text": "john kornblum\\nacting asst. secretary of state",
-    "test_text": "a s s t .",
-    "cer": 0.8478260636329651
-  },
-  "593.5935935935936": {
-    "gold_text": "john kornblum\\nacting asst. secretary of state",
-    "test_text": "a s s t .",
-    "cer": 0.8478260636329651
-  },
-  "594.5945945945946": {
-    "gold_text": "john kornblum\\nacting asst. secretary of state",
-    "test_text": "a s s t .",
-    "cer": 0.8478260636329651
-  },
-  "595.5955955955956": {
-    "gold_text": "john kornblum\\nacting asst. secretary of state",
-    "test_text": "a s s t .",
-    "cer": 0.8478260636329651
-  },
-  "596.5965965965967": {
-    "gold_text": "john kornblum\\nacting asst. secretary of state",
-    "test_text": "a s s t .",
-    "cer": 0.8478260636329651
-  }
+  "mean_cer": 1.2977279822031658
 }

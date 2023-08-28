@@ -1,42 +1,18 @@
 {
-  "302.30230230230234": {
-    "gold_text": "rep. lee hamilton\\n(d) indiana",
-    "test_text": "i   e s 5 )",
-    "cer": 0.8666666746139526
+  "301.7771": {
+    "ref_text": "rep. lee hamilton (d) indiana",
+    "hyp_text": "e t   i i r e p s ! o 1 i 0 n g i   e s %",
+    "cer": 1.137930989265442
   },
-  "303.3033033033033": {
-    "gold_text": "rep. lee hamilton\\n(d) indiana",
-    "test_text": "e s",
-    "cer": 0.9333333373069763
+  "405.7771": {
+    "ref_text": "rep. edward markey (d) massachusetts",
+    "hyp_text": "m a r k e y , e d w a r d \u2019 m a s s a c h u s e t t s",
+    "cer": 0.9722222089767456
   },
-  "304.3043043043043": {
-    "gold_text": "rep. lee hamilton\\n(d) indiana",
-    "test_text": "i   e s %",
-    "cer": 0.8666666746139526
+  "434.5271": {
+    "ref_text": "rep. robert lagomarsino (r) california",
+    "hyp_text": "  c a l i f o r n i a",
+    "cer": 0.7631579041481018
   },
-  "406.4064064064064": {
-    "gold_text": "rep. edward markey\\n(d) massachusetts",
-    "test_text": "m a s s a c h u s e t t s .",
-    "cer": 0.8648648858070374
-  },
-  "407.40740740740745": {
-    "gold_text": "rep. edward markey\\n(d) massachusetts",
-    "test_text": "m o s s a c h u s e t t s -",
-    "cer": 0.8648648858070374
-  },
-  "408.40840840840843": {
-    "gold_text": "rep. edward markey\\n(d) massachusetts",
-    "test_text": "m a s s a c h u s e t t s",
-    "cer": 0.8108108043670654
-  },
-  "435.43543543543547": {
-    "gold_text": "rep. robert lagomarsino\\n(r) california",
-    "test_text": "",
-    "cer": 1.0
-  },
-  "436.43643643643645": {
-    "gold_text": "rep. robert lagomarsino\\n(r) california",
-    "test_text": "c a l i f o r n i a",
-    "cer": 0.7948718070983887
-  }
+  "mean_cer": 0.9577703674634298
 }

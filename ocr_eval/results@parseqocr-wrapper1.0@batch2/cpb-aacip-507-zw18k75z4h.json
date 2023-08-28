@@ -1,97 +1,28 @@
 {
-  "83.08308308308308": {
-    "gold_text": "robert macneil\\nnew york",
-    "test_text": "new",
-    "cer": 0.875
+  "82.7771": {
+    "ref_text": "robert macneil new york",
+    "hyp_text": "macneil robert york new",
+    "cer": 0.695652186870575
   },
-  "84.08408408408408": {
-    "gold_text": "robert macneil\\nnew york",
-    "test_text": "york",
-    "cer": 0.8333333134651184
+  "136.5271": {
+    "ref_text": "jim lehrer washington",
+    "hyp_text": "lehrer washington jim banks battle",
+    "cer": 1.0
   },
-  "85.08508508508508": {
-    "gold_text": "robert macneil\\nnew york",
-    "test_text": "york",
-    "cer": 0.8333333134651184
+  "267.7771": {
+    "ref_text": "marshall loeb money magazine",
+    "hyp_text": "loeb marshall york new money magazine",
+    "cer": 0.3928571343421936
   },
-  "137.13713713713713": {
-    "gold_text": "jim lehrer\\nwashington",
-    "test_text": "battle",
-    "cer": 0.9090909361839294
+  "393.0271": {
+    "ref_text": "marshall loeb money magazine",
+    "hyp_text": "loeb marshall money imagazine",
+    "cer": 0.3928571343421936
   },
-  "138.13813813813815": {
-    "gold_text": "jim lehrer\\nwashington",
-    "test_text": "ofthe",
-    "cer": 0.9090909361839294
+  "511.7771": {
+    "ref_text": "john hardin savings banker",
+    "hyp_text": "hardin john washington savings banker",
+    "cer": 0.5384615659713745
   },
-  "139.13913913913913": {
-    "gold_text": "jim lehrer\\nwashington",
-    "test_text": "ofthe",
-    "cer": 0.9090909361839294
-  },
-  "268.2682682682683": {
-    "gold_text": "marshall loeb\\nmoney magazine",
-    "test_text": "magazine",
-    "cer": 0.7241379022598267
-  },
-  "269.2692692692693": {
-    "gold_text": "marshall loeb\\nmoney magazine",
-    "test_text": "magazine",
-    "cer": 0.7241379022598267
-  },
-  "270.27027027027026": {
-    "gold_text": "marshall loeb\\nmoney magazine",
-    "test_text": "magazine",
-    "cer": 0.7241379022598267
-  },
-  "271.2712712712713": {
-    "gold_text": "marshall loeb\\nmoney magazine",
-    "test_text": "magazine",
-    "cer": 0.7241379022598267
-  },
-  "272.2722722722723": {
-    "gold_text": "marshall loeb\\nmoney magazine",
-    "test_text": "magazine",
-    "cer": 0.7241379022598267
-  },
-  "393.3933933933934": {
-    "gold_text": "marshall loeb\\nmoney magazine",
-    "test_text": "imagazine",
-    "cer": 0.7241379022598267
-  },
-  "394.3943943943944": {
-    "gold_text": "marshall loeb\\nmoney magazine",
-    "test_text": "imagazine",
-    "cer": 0.7241379022598267
-  },
-  "395.3953953953954": {
-    "gold_text": "marshall loeb\\nmoney magazine",
-    "test_text": "magazine",
-    "cer": 0.7241379022598267
-  },
-  "396.3963963963964": {
-    "gold_text": "marshall loeb\\nmoney magazine",
-    "test_text": "imagazine",
-    "cer": 0.7241379022598267
-  },
-  "512.5125125125126": {
-    "gold_text": "john hardin\\nsavings banker",
-    "test_text": "banker",
-    "cer": 0.7777777910232544
-  },
-  "513.5135135135135": {
-    "gold_text": "john hardin\\nsavings banker",
-    "test_text": "banker",
-    "cer": 0.7777777910232544
-  },
-  "514.5145145145145": {
-    "gold_text": "john hardin\\nsavings banker",
-    "test_text": "banker",
-    "cer": 0.7777777910232544
-  },
-  "515.5155155155155": {
-    "gold_text": "john hardin\\nsavings banker",
-    "test_text": "savings",
-    "cer": 0.7407407164573669
-  }
+  "mean_cer": 0.6039656043052674
 }

@@ -3,7 +3,7 @@
 This is the alignment of the text to time positions for transcription/closed-captioning. 
 This tool processes human-annotated(`.tsv`) and machine-generated(`.mmif`) and outputs the evaluation results.
 
-To run the evaluation you will need matching predition `.mmif` and gold `.tsv` files
+To run the evaluation you will need matching prediction `.mmif` and gold `.tsv` files
 
 It is done by (tba).   
 It is evaluated by (tba). 
@@ -19,16 +19,17 @@ from the location specified in the `evaluate.py` script.
 
 ## Environment
 It is recommended to set up a python environment for running the evaluation code:  
-Somewhere:  
+Create a python env somewhere in your workspace:  
 ```bash
+# in-that-workspace 
 python3 -m venv my_env_name
 source my_env_name/bin/activate
 # this will activate the python environment.
 # then run this to install the requirements for this evaluation. 
 pip3 install -r requirements.txt
+# now you may proceed to Usage.
+# After running the eval, deactivate your venv, run: `$ deactivate`. 
 ```
-> [!Note]  
-> After running the eval, deactivate your venv, run: `$ deactivate`.  
 
 ## Usage
 To run the evaluation code, run the following command while in the `fa_eval` directory:  

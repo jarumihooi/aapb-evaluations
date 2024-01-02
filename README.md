@@ -16,7 +16,7 @@ Each subdirectory of the repository is an evaluation task within the project. Ea
   * This was used before to describe machine out prediction "results". THIS TERM NO LONGER REFERS TO THIS.  
   * There might be results per GUID, or it may be a summary. 
 * reports - Reports are more formal documents that describe the results meant for business intelligence.
-  * Plans are to automate some of the generation of the report from the results, which may require some automatic scripts. However, some parts of the report must often be manually curated. 
+  * Plans are to automate some generation of the report from the results, which may require some automatic scripts. However, some parts of the report must often be manually curated. 
 
 _See Remaining Work for continued filename convention issues._
 
@@ -24,7 +24,7 @@ _See Remaining Work for continued filename convention issues._
 > [!Important]  
 > In the future, evaluations should be invoked in the same manner. Likely through a Docker module, or via a CLI command that is the same.  
 > `cd into the appropriate task_eval directory`
-> example command: `python3 eval.py -g url/to/gold/web -m path/to/local/mmifs -r results_printout_filename.txt` 
+> example command: `python3 -m evaluate -g url/to/gold/web -p path/to/local/mmifpreds -r results_printout_filename.txt` 
 > Many of the evaluations should also retrieve the golds automatically by using `from clams_utils.aapb import goldretriever` and `goldretriever.download_golds(<params>)`. Thus, it is usually not required to provide -g. 
 
 1. Choose evaluation task, create batch with GUIDs.
@@ -38,12 +38,4 @@ _See Remaining Work for continued filename convention issues._
 [TestDrive Instructions (Alternate)](https://gist.github.com/keighrim/5e97a41a40d623d6ad4f1d0e325786a9).
 
 ## Remaining Work
-The users and use cases of this evaluation workflow remain under discussion. For the moment, this is some of the work expected in this repository: 
-1. TODO - standardize use of "golds" and "preds" terminology only for this repo.
-   1. (aka. hyps, results) for preds, and (aka. refs) for golds.
-2. TODO - standardize files to use the same invocation and/or use docker. 
-   1. standardize files to all be `evaluate.py`
-3. TODO - reformat/create eval python-module that handles all the same steps in the evaluation workflow: goldretriever, mmif-staging, common accuracy metrics.
-4. TODO - write readmes explaining how to run/understand each evaluation. 
-
-These should eventually become [issues](https://github.com/clamsproject/aapb-evaluations/issues).  
+The users and use cases of this evaluation workflow remain under discussion. For the moment, the work expected has been converted into [issues](https://github.com/clamsproject/aapb-evaluations/issues).  

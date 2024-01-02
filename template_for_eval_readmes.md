@@ -18,14 +18,16 @@ Where are the needed files - which github dir for golds? (some are not publicall
 > [!Note]: don't forget to set up a python environment for running the evaluation code.
 
 ## Usage
-To run the evaluation code, run the following command while in the `task_dir_name` directory:  
+In the future, to run the evaluation code as a module, run the following command while in the `task_dir_name` directory:  
 ```bash
-python evaluate.py -m <machine_dir> -g <gold_dir> -r <result_file>
-# See `python evaluate.py --help` to check if there have been changes to the run command. 
+python3 -m evaluate -g <gold_url> -p <mmif_preds_dir> -r <result_file.txt>
+# See `python3 evaluate --help` to check if there have been changes to the run command. 
 
+```
+Currently, the run commands may differ, and are generally of this format: 
+```
 # Example 1
-python evaluate.py required-params-args
-# this example generates a similar result as the results.txt shown.  
+python evaluate.py required-params-args 
 ```
 
 ## Output Format

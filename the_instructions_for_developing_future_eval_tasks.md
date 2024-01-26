@@ -1,9 +1,12 @@
-# Standards for Future Project Tasks
+# Instructions for Future Project Tasks
 These standards should make it easier for the evaluation process to be more automated in the future. 
 A "task" is defined as an evaluation procedure that evaluates how an app predicts certain things. Each `*_eval` in this repository is a task. 
 _This has been called "theme" as well._  
 
 ## When Writing the Evaluation Code
+* use (FUTURE/INPROGRESS/PLANNED) `generate_eval_template.py args-tbd` to create a new task directory that includes abstract class for creating evaluations, imports basic requirements, 
+creates requirements.txt, and creates base fillable template for report.
+
 * use `requirements.txt` for standardization/future-automation of the module install path. (Or this could be handled in docker.)
   * There may be situations where multiple requirements are in the same directory for different pieces of code. 
 
@@ -11,7 +14,9 @@ _This has been called "theme" as well._
   * This python module is yet to be implemented, however, part of it is present in [Clams_Utils Module](https://github.com/clamsproject/clams-utils).  
     * The goldretriever code is commonly accessed so: `from clams_utils.aapb import goldretriever` and `goldretriever.download_golds(<params>)`.  
   * **New Evaluations SHOULD use goldretriever where possible.** Tasks where golds data is not publicly accessible or are in a hidden repository due to copyright may differ. 
-  * The module should also include preds/golds mapping/pairing code, downloading/staging/accessing mmif+gold information, and common metrics. 
+    * If golds data is in a different place than expected typical, automatic-goldretrieval placement within [aapb-annotation repository](https://github.com/clamsproject/aapb-annotations/tree/main),
+the code and documentation should explain while adhering to constraints due to privacy and copyright. 
+  * The module is also slated include preds/golds mapping/pairing code, downloading/staging/accessing mmif+gold information, and common metrics sourced as imports from established libraries. 
 
 * Explain/document run commands/configurations and required file locations / file types.  
   * Highly recommended to use a detailed CLI argument parser such as `argparse`. 

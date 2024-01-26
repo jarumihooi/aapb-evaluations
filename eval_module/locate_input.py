@@ -26,3 +26,8 @@ def locate(args, APPNAME, APPVERSION, GOLDS_DIR):
 
     return golds_dir, preds_dir, out_dir
 
+def get_guid_matches():
+    '''Goal is to get the matches-list, and generate warnings/errors/output for unmatched-list. '''
+    # TODO: Progress here, continue to determine other useful, similar modules.
+    pass
+

@@ -11,8 +11,8 @@ root_dir = os.path.abspath(os.path.join(current_dir, '..'))
 root_dir = os.path.abspath(os.path.join(root_dir, '..'))
 # Add the root directory to sys.path
 sys.path.append(root_dir)
-# from eval_module import goldretriever
-import eval_module
+# from aapb_eval_module import goldretriever
+import aapb_eval_module
 
 # import pandas as pd
 
@@ -41,7 +41,7 @@ if __name__ == "__main__":
     # parser.add_argument("-o", "--out-dir", help="path for a results dir", default=None) # add this line if an output dir is needed.
     args = parser.parse_args(); # print(args)
 
-    golds_dir, preds_dir, out_dir = eval_module.locate_input.locate(args, APPNAME, APPVERSION, GOLDS_DIR)
+    golds_dir, preds_dir, out_dir = aapb_eval_module.locate_input.locate(args, APPNAME, APPVERSION, GOLDS_DIR)
     # outdir = None.
 
     # get individual entries from golds and preds =====

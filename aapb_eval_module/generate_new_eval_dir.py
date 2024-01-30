@@ -1,3 +1,8 @@
+'''Generates new directory for new evaluation codes.
+See readme.md
+TODO/Known Issues: Would be better if it failed if any components cannot be copied.
+'''
+
 import os
 import shutil
 from datetime import datetime
@@ -31,11 +36,11 @@ def create_requirements_txt(project_dir):
 def copy_evaluation_module_template(project_dir):
     # Copy evaluation module template
     eval_abc_name = 'eval_abc.py'
+    new_name = 'evaluate.py'
     eval_abc_path = os.path.join(os.getcwd(), eval_abc_name)
-    print(f"{eval_abc_path=}")
+    new_copy_path = os.path.join(project_dir, new_name) # renames the file to something more sensible in the new directory.
     if os.path.exists(eval_abc_path):
-        shutil.copy(eval_abc_path, project_dir)\
-        # TODO: RENAME THIS THING!! AND THE OTHER COPIED FILE TOO!
+        shutil.copy(eval_abc_path, new_copy_path)
         print(f"Evaluation module template created at: {eval_abc_path}")
     else:
         # Raise a FileNotFoundError and stop execution
@@ -47,15 +52,29 @@ def copy_report_template_file(project_dir):
     # Get the parent directory of the current working directory # a lil redundant
     parent_dir = os.path.dirname(os.getcwd())
     # Path to the template file in the parent directory
-    template_file_name = 'template_for_new_reports.md'
-    template_file_path = os.path.join(parent_dir, template_file_name)
-    if os.path.exists(template_file_path):
+    report_template_file_name = 'template_for_new_reports.md'
+    report_template_file_path = os.path.join(parent_dir, report_template_file_name)
+    if os.path.exists(report_template_file_path):
         # Copy the template file to the new dir
-        shutil.copy(template_file_path, project_dir)
-        print(f"Template file copied to: {project_dir}")
+        shutil.copy(report_template_file_path, project_dir)
+        print(f"Report Template file copied to: {project_dir}")
     else:
         # Raise a FileNotFoundError and stop execution
-        raise FileNotFoundError(f"Error: Template file '{template_file_name}' not found in the parent directory. "
+        raise FileNotFoundError(f"Error: Report Template file '{report_template_file_name}' not found in the parent directory. "
+                                f"Please edit template file path and target file.")
+
+def copy_readme_template_file(project_dir):
+    parent_dir = os.path.dirname(os.getcwd())
+    # Path to the template file in the parent directory
+    readme_template_file_name = 'template_for_new_readmes.md'
+    readme_template_file_path = os.path.join(parent_dir, readme_template_file_name)
+    if os.path.exists(readme_template_file_path):
+        # Copy the template file to the new dir
+        shutil.copy(readme_template_file_path, project_dir)
+        print(f"Readme Template file copied to: {project_dir}")
+    else:
+        # Raise a FileNotFoundError and stop execution
+        raise FileNotFoundError(f"Error: Readme Template file '{readme_template_file_path}' not found in the parent directory. "
                                 f"Please edit template file path and target file.")
 
 if __name__ == "__main__":
@@ -68,5 +87,6 @@ if __name__ == "__main__":
     create_requirements_txt(project_dir)
     copy_evaluation_module_template(project_dir)
     copy_report_template_file(project_dir)
+    copy_readme_template_file(project_dir)
 
     print(f"Project structure and template files created in: {project_dir}")

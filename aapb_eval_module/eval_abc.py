@@ -41,3 +41,30 @@ obj = MyEvaluation() # change the name of MyEvaluation
 # Call the implemented methods
 obj.abstract_method()
 obj.another_abstract_method()
+
+
+'''
+Parts of Eval: 
+enter argparse arguments during run (this should be templated!! - lets use comments in the abc?)
+ - Differentiate if they are paths or urls
+create outdir if needed? (templated!!)
+call locate_input.locate() with 3 args: -gpr # should likely be only 2. (comment in abc)
+ - locate calls goldretriever()
+ - locate calls predretriever() # create this
+ - locate calls get_guid_matches() which tests if similar. 
+
+individual eval code - input guid_matches, gold_files, mmif_files
+ - gets entries from golds (abst method)
+ - gets entries from mmifs (abst method)
+ - compare entries (abst method)
+ - get results, metrics 
+ - writes to outdir/results (abst method)
+ - print some results to report (abst method) # future: possibly take some metrics and directly print to report. 
+ 
+
+ 
+
+
+
+
+'''

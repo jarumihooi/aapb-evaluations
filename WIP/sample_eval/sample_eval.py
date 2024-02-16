@@ -42,7 +42,7 @@ if __name__ == "__main__":
     args = parser.parse_args(); # print(args)
 
     golds_dir, preds_dir, out_dir = aapb_eval_module.locate_input.locate(args, APPNAME, APPVERSION, GOLDS_DIR)
-    # outdir = None.
+    # outdir = None. #results directory?? created here??
 
     # get individual entries from golds and preds =====
     # get golds files

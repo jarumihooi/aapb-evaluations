@@ -14,23 +14,62 @@ along with any new requirements you require.
 
 from abc import ABC, abstractmethod
 import aapb_eval_module # import its own module when copied to a new dir.
+import argparse
 # add general imports here.
 
 class NewEvaluation(ABC):
     @abstractmethod
-    def abstract_method(self):
+    def define_runtime_cli_args(self):
         pass
 
     @abstractmethod
-    def another_abstract_method(self):
+    def get_entries_from_gold(self):
+        pass
+
+    @abstractmethod
+    def get_entries_from_preds(self):
+        pass
+
+    @abstractmethod
+    def compare_entries(self):
+        pass
+
+    @abstractmethod
+    def write_results(self):
+        pass
+
+    @abstractmethod
+    def write_to_report(self):
         pass
 
 class MyEvaluation(NewEvaluation): # change the name of MyEvaluation
-    def abstract_method(self):
-        print("Implemented abstract_method")
+    def define_runtime_cli_args(self):
+        print("Define the arguments that will be called during the running of your specific eval."
+              "The expected arguments are -gpr, gold, preds, res for the locations of two inputs and one."
+              "Call locate_input.locate() with -g and -p strings passed."
+              "Locate() will gather a list of guids that match, ones that dont (you can do error handling of this),"
+              "and lists of the gold files and mmif files with their locations, so you can begin to extract"
+              "individual entries of phenomena from them to compare/evaluate. ")
+        # guid_list, guid_mismatch, gold_files, mmif_files = locate_input.locate(args)
 
-    def another_abstract_method(self):
-        print("Implemented another_abstract_method")
+    def get_entries_from_gold(self):
+        print("Given gold file list,"
+              "Return list of the individual items-to-be-evald from gold files")
+
+    def get_entries_from_preds(self):
+        print("Give preds file list,"
+              "Return list of the individual items-to-be-evald from gold files")
+
+    def compare_entries(self):
+        print("Match and Compare the entries together")
+
+    def write_results(self):
+        print("Gather results from compare_entries, write them to a output directory, "
+              "suggested one result file per guid.")
+
+    def write_to_report(self):
+        print("Gather results from compare_entries, combine them into aggreggate results and write long form and"
+              "short form to a report file.")
 
 # You cannot create an instance of an abstract class
 # obj = MyAbstractClass()  # This would raise an error
@@ -39,8 +78,9 @@ class MyEvaluation(NewEvaluation): # change the name of MyEvaluation
 obj = MyEvaluation() # change the name of MyEvaluation
 
 # Call the implemented methods
-obj.abstract_method()
-obj.another_abstract_method()
+obj.define_runtime_cli_args()
+obj.get_entries_from_gold()
+# etc
 
 
 '''

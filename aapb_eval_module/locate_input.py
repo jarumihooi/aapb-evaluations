@@ -23,7 +23,8 @@ def locate(args, APPNAME, APPVERSION, GOLDS_DIR):
     if out_dir is not None and not out_dir.exists():
         out_dir.mkdir()
 
-    golds_entries = get_gold_files(Path(golds_dir).glob("*.tsv")) ## what kind??
+    # these are likely to be moved into abc
+    golds_entries = get_gold_files(Path(golds_dir).glob("*.tsv")) ## what kind of file ??
     preds_entries = get_mmif_pred_files(Path(preds_dir).glob("*.mmif"),
                                         golds_entries)  # uses gold_entries to get GUIDS to get matching preds?
 

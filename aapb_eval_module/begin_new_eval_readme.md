@@ -20,6 +20,4 @@ This will create a new subdirectory for your evaluation task. It will contain:
 required methods. 
 4. `template_for_new_reports.md` as a pre-generated report template, again suggesting commonly expected parts of the 
 report format for human reading. 
-
-> [!Note]  
-> TODO: Numbers 3 and 4 need to be renamed to a better file name.
+5. `template_for_new_readmes.md` as a pre-generated readme template, suggesting common part for task code clarification.

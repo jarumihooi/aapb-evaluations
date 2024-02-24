@@ -45,7 +45,7 @@ class NewEvaluation(ABC):
 class MyEvaluation(NewEvaluation): # change the name of MyEvaluation
     def define_runtime_cli_args(self):
         print("Define the arguments that will be called during the running of your specific eval."
-              "The expected arguments are -gpr, gold, preds, res for the locations of two inputs and one."
+              "The expected arguments are -gpr for gold, preds, results for the locations of two inputs and one."
               "Call locate_input.locate() with -g and -p strings passed."
               "Locate() will gather a list of guids that match, ones that dont (you can do error handling of this),"
               "and lists of the gold files and mmif files with their locations, so you can begin to extract"

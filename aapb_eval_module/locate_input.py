@@ -28,10 +28,15 @@ def locate(args, APPNAME, APPVERSION, GOLDS_DIR):
     preds_entries = get_mmif_pred_files(Path(preds_dir).glob("*.mmif"),
                                         golds_entries)  # uses gold_entries to get GUIDS to get matching preds?
 
-    return golds_dir, preds_dir, out_dir
+    # get guid matches and mismatches
+    guid_list, guid_mismatches = get_guid_matches()
+
+    return guid_list, guid_mismatches, golds_dir, preds_dir, out_dir
 
 def get_guid_matches():
     '''Goal is to get the matches-list, and generate warnings/errors/output for unmatched-list. '''
     # TODO: Progress here, continue to determine other useful, similar modules.
-    pass
+    guid_matches = list()
+    guid_mismatches = list()
+    return guid_matches, guid_mismatches
 
